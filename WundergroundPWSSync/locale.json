@@ -1,0 +1,23 @@
+{
+	"translations": {
+		"de": { 
+			"Wunderground Login Information": "Wuderground Login Daten",
+			"WU ID": "WU ID",
+			"WU Password": "WU Passwort",
+			"Temperature Outside": "Temperatur Aussen",
+			"Humidity": "Luftfeuchtigkeit",
+			"Dew Point": "Taupunkt",
+			"Wind Direction": "Windrichtung",
+			"Wind Speed": "Wind m/s",
+			"Wind Gust": "Wind in Böen m/s",
+			"Rain last Hour": "Regen letzte Stunde",
+			"Rain in 24h": "Regen in 24h",
+			"Air Pressure": "Luftdruck",
+			"UV Index": "UV Index",
+			"Update Timer": "Update Häufigkeit",
+			"Timer": "Zeit",
+			"Debug Message": "Debug Nachrichten",
+			"Debug": "Debug"			
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+    "elements":
+    [
+        { "type": "Label", "label": "Wunderground Login Information" },
+		{ "type": "ValidationTextBox", "name": "WU_ID", "caption": "WU ID" },
+        { "type": "ValidationTextBox", "name": "WU_Password", "caption": "WU Password" },
+		{ "type": "Label", "label": "Values to be uploaded to Wunderground" },
+		{ "type": "SelectVariable", "name": "OutsideTemperature", "caption": "Temperature Outside" },
+		{ "type": "SelectVariable", "name": "Humidity", "caption": "Humidity" },
+		{ "type": "SelectVariable", "name": "DewPoint", "caption": "Dew Point" },
+		{ "type": "SelectVariable", "name": "WindDirection", "caption": "Wind Direction" },
+		{ "type": "SelectVariable", "name": "WindSpeed", "caption": "Wind Speed" },
+		{ "type": "SelectVariable", "name": "WindGust", "caption": "Wind Gust" },
+		{ "type": "SelectVariable", "name": "Rain_last_Hour", "caption": "Rain last Hour" },
+		{ "type": "SelectVariable", "name": "Rain24h", "caption": "Rain in 24h" },
+		{ "type": "SelectVariable", "name": "AirPressure", "caption": "Air Pressure" },
+		{ "type": "SelectVariable", "name": "UVIndex", "caption": "UV Index" },
+		{ "type": "Label", "label": "Update Timer" },
+		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" },
+		{ "type": "Label", "label": "Debug Message" },
+		{ "type": "CheckBox", "name": "Debug", "caption": "Debug" }
+    ]
+}
