@@ -57,7 +57,8 @@
 		$TemperatureF = str_replace(",",".",(($Temperature * 9) /5 + 32));
 			If ($Debug == True)
 			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Temperature F: ".$TemperatureF);
+			//IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Temperature F: ".$TemperatureF);
+			$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);	
 			}
 
 		}
