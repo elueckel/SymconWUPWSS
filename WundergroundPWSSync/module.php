@@ -55,6 +55,7 @@
 		{
 		$Temperature = GetValue($this->ReadPropertyInteger("OutsideTemperature"));
 		$TemperatureF = str_replace(",",".",(($Temperature * 9) /5 + 32));
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);
 			If ($Debug == True)
 			{
 			//IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Temperature F: ".$TemperatureF);
