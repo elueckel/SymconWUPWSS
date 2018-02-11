@@ -55,13 +55,7 @@
 		{
 		$Temperature = GetValue($this->ReadPropertyInteger("OutsideTemperature"));
 		$TemperatureF = str_replace(",",".",(($Temperature * 9) /5 + 32));
-		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);
-			If ($Debug == True)
-			{
-			//IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Temperature F: ".$TemperatureF);
-			$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);	
-			}
-
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);	
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("OutsideTemperature") == "0")
@@ -75,10 +69,7 @@
 		{
 		$DewPoint = GetValue($this->ReadPropertyInteger("DewPoint"));
 		$DewPointF = str_replace(",",".",(($DewPoint * 9) /5 + 32));
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Taupunkt F: ".$DewPointF);
-			}
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Taupunkt F: ".$DewPointF, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("DewPoint") == "0")
@@ -91,10 +82,7 @@
 		If ($this->ReadPropertyInteger("Humidity") != "")
 		{
 		$Humidity = GetValue($this->ReadPropertyInteger("Humidity"));
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Humidity: ".$Humidity);
-			}
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Humidity: ".$Humidity, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("Humidity") == "0")
@@ -108,12 +96,7 @@
 		{
 		$WindDirection = GetValue($this->ReadPropertyInteger("WindDirection"));
 		$WindDirectionU = str_replace(",",".",$WindDirection);
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Wind Direction: ".$WindDirectionU);
-			}
-		
-		
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Direction: ".$WindDirectionU, 0);		
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("WindDirection") == "0")
@@ -127,10 +110,7 @@
 		{
 		$WindSpeed = GetValue($this->ReadPropertyInteger("WindSpeed"));
 		$WindSpeedU = str_replace(",",".",Round(($WindSpeed * 2.2369),2));
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Windspeed: ".$WindSpeedU);
-			}
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Windspeed: ".$WindSpeedU, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("WindSpeed") == "0")
@@ -144,10 +124,7 @@
 		{
 		$WindGust = GetValue($this->ReadPropertyInteger("WindGust"));
 		$WindGustU = str_replace(",",".",Round(($WindGust * 2.2369),2));
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Wind Gust: ".$WindGustU);
-			}
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Gust: ".$WindGustU, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("WindGust") == "0")
@@ -162,10 +139,7 @@
 		{
 		$Rain_last_Hour = GetValue($this->ReadPropertyInteger("Rain_last_Hour"));
 		$Rain_last_Hour = str_replace(",",".",Round(($Rain_last_Hour / 2.54),2));
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Rain Last Hour: ".$Rain_last_Hour);
-			}
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Rain Last Hour: ".$Rain_last_Hour, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("Rain_last_Hour") == "0")
@@ -179,10 +153,7 @@
 		{
 		$Rain24h = GetValue($this->ReadPropertyInteger("Rain24h"));
 		$Rain24h = str_replace(",",".",Round(($Rain24h / 2.54),2));
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Rain in 24h: ".$Rain24h);
-			}
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Rain in 24h: ".$Rain24h, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("Rain24h") == "0")
@@ -196,10 +167,7 @@
 		{
 		$AirPressure = GetValue($this->ReadPropertyInteger("AirPressure"));
 		$BPI = str_replace(",",".",Round(($AirPressure * 0.0295299830714),4));
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Airpressure in BPI: ".$AirPressure);
-			}
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Airpressure in BPI: ".$AirPressure, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("AirPressure") == "0")
@@ -212,10 +180,7 @@
 		If ($this->ReadPropertyInteger("UVIndex") != "")
 		{
 		$UVIndex = GetValue($this->ReadPropertyInteger("UVIndex"));
-			If ($Debug == True)
-			{
-			IPS_LogMessage($_IPS['SELF'], "Wunderground Upload UV Index: ".$UVIndex);
-			}
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload UV Index: ".$UVIndex, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("UVIndex") == "0")
@@ -249,14 +214,8 @@
 		"&baromin=".$BPI.
 		"&UV=".$UVIndex);
 		
-		$Debug = $this->ReadPropertyBoolean("Debug");
+		$this->SendDebug("Wunderground PWS Update",""Wunderground Upload Service: ".$Response, 0);
 		
-		If ($Debug == True)
-		{
-		IPS_LogMessage($_IPS['SELF'], "Wunderground Upload Service: ".$Response);
-		}
-		
-	
 		}
 	
 	}
