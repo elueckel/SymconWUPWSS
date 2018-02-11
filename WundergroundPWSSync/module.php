@@ -1,6 +1,6 @@
 <?
 
-	class WundergroundUpload extends IPSModule
+	class WundergroundPWSSync extends IPSModule
 	{
 		
 		public function Create()
@@ -8,8 +8,8 @@
 			//Never delete this line!
 			parent::Create();
 			
-			$this->RegisterPropertyString("WU_ID","IHESSENB46");
-			$this->RegisterPropertyString("WU_Password","D13YDD4euwcq");
+			$this->RegisterPropertyString("WU_ID", 0);
+			$this->RegisterPropertyString("WU_Password",0);
 			$this->RegisterPropertyInteger("OutsideTemperature", 0);
 			$this->RegisterPropertyInteger("Humidity", 0);
 			$this->RegisterPropertyInteger("DewPoint", 0);
