@@ -214,7 +214,7 @@
 		"&baromin=".$BPI.
 		"&UV=".$UVIndex);
 		
-		$this->SendDebug("Wunderground PWS Update",""Wunderground Upload Service: ".$Response, 0);
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Service: ".$Response, 0);
 		
 		}
 	
