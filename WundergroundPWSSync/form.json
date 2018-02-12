@@ -17,7 +17,5 @@
 		{ "type": "SelectVariable", "name": "UVIndex", "caption": "UV Index" },
 		{ "type": "Label", "label": "Update Timer" },
 		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" },
-		{ "type": "Label", "label": "Debug Message" },
-		{ "type": "CheckBox", "name": "Debug", "caption": "Debug" }
     ]
 }
