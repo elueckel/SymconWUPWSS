@@ -15,9 +15,7 @@
 			"Air Pressure": "Luftdruck",
 			"UV Index": "UV Index",
 			"Update Timer": "Update Häufigkeit",
-			"Timer": "Zeit",
-			"Debug Message": "Debug Nachrichten",
-			"Debug": "Debug"			
+			"Timer": "Zeit"			
 		}
 	}
 }
