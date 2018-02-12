@@ -31,6 +31,8 @@ Felder in Version 1.0
 * Luftdruck in HPA (wird in BPI im Modul umgerechnet)
 * UV Index (1-12)
 * Update Timer, in Sekunden (wie oft Daten an WU übermittelt werden)
-* Debug, es werden die Daten vor dem Upload inkl. dem Resultat des Uploads angezeigt
+
+## Wo finde ich Informationen ob das Modul funktioniert
+Das Modul postet Informationen in die Debugübersicht des Moduls und nicht in Log (Stand V1.0). Dort sieht man wie die Werte aktualisiert werden und ob der Upload funktioniert. In Wunderground werden die Werte übrigens nicht ständig aktualisiert, somit nicht wundern wenn nicht ständig neue Werte in der Tabelle der Wetterstation auftauchen.
 
 Komplette Doku bei Wunderground: http://wiki.wunderground.com/index.php/PWS_-_Upload_Protocol
