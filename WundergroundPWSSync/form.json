@@ -16,6 +16,6 @@
 		{ "type": "SelectVariable", "name": "AirPressure", "caption": "Air Pressure" },
 		{ "type": "SelectVariable", "name": "UVIndex", "caption": "UV Index" },
 		{ "type": "Label", "label": "Update Timer" },
-		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" },
+		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" }
     ]
 }
