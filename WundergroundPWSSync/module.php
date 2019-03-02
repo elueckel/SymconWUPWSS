@@ -19,7 +19,7 @@ if (!defined('vtBoolean')) {
 			parent::Create();
 			$this->RegisterPropertyInteger("SourceID", 0);
 			$this->RegisterPropertyString("WU_ID", "");
-			$this->RegisterPropertyString("WU_Password",");
+			$this->RegisterPropertyString("WU_Password","");
 			$this->RegisterPropertyString("WU_API","");
 			$this->RegisterPropertyString("Mode","U");
 			$this->RegisterPropertyString("Language","de-de");
