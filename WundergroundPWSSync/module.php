@@ -18,13 +18,13 @@ if (!defined('vtBoolean')) {
 			//Never delete this line!
 			parent::Create();
 			$this->RegisterPropertyInteger("SourceID", 0);
-			$this->RegisterPropertyString("WU_ID", "IHESSENB22");
-			$this->RegisterPropertyString("WU_Password","D13YDD4euwcq");
-			$this->RegisterPropertyString("WU_API","a2bc835330df4890bc835330dfc8905a");
+			$this->RegisterPropertyString("WU_ID", "");
+			$this->RegisterPropertyString("WU_Password",");
+			$this->RegisterPropertyString("WU_API","");
 			$this->RegisterPropertyString("Mode","U");
 			$this->RegisterPropertyString("Language","de-de");
-			$this->RegisterPropertyString("Latitude","50.51033");
-			$this->RegisterPropertyString("Longitude","8.3959198");
+			$this->RegisterPropertyString("Latitude","");
+			$this->RegisterPropertyString("Longitude","");
 			$this->RegisterPropertyInteger("ForecastShort","0");
 			$this->RegisterPropertyInteger("ForecastDP","0");
 			$this->RegisterPropertyBoolean("ForecastDPTemperature","0");
