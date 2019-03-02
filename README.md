@@ -14,25 +14,26 @@ https://github.com/elueckel/SymconWUPWSS
 ## Einrichten der Instanzen in IP-Symcon
 Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Hersteller '(Sonstige)' aufgeführt.
 
-## Konfigurationsseite:
+# Version 1.0 12/02/2018
+* Upload von Wetterdaten an Wunderground
+* Anmeldung an Wunderground via Station ID und API Key
+* Auswahl von diversen Wetterdaten
+* Upload Konfigurierbar in Schritten von Sekunden
 
-* WU ID: Name der Wetterstation, z.B. IHESSENB46
-* WU Passwort: Passwort welches für den Wunderground Account hinterlegt wurde
+# Version 2.0 02/03/2019 (aktuell noch beta)
+* Einbindung der neuen Weather.com API seitens Wunderground für Uploader von Wetterdaten
+* Anmeldung an der neuen API durch neuen Key (muss bei auf Wunderground erstellt werden https://www.wunderground.com/member/api-keys)
+* Download von Übersichtswetterdaten für bis zu 5 Tage
+* Download von Detailwetterdaten in 12h Segmenten (7am - 7pm Tag / 7pm - 7am Nacht) - Timer läuft immer um 7 und 19 Uhr um Daten abzurufen
+* Detailwetterdaten können konfiguriert werden z.B. nur Wind, Niederschlag usw.
+* Vorsicht ... wenn alles ausgewählt ist werden über 200 Variablen erstellt! 
+* Testfunktion innerhalb der Moduls um Download und Upload zu testen
 
-Felder in Version 1.0
-* Temperatur Aussen in C (wind in Fahrenheit im Modul umgerechnet)
-* Luftfeuchtigkeit in %
-* Taupunkt in C (wird in Fahrenheit im Modul umgerechnet)
-* Windrichtung in Grad
-* Wind - Durchschnitt in m/s (wird im Modulumgerechnet in mph)
-* Wind - Böen in m/s (wird im Modulumgerechnet in mph)
-* Regen letzte Stunde in mm (wird umgerechnet in inch)
-* Regen letzte 24 in mm (wird umgerechnet in inc)
-* Luftdruck in HPA (wird in BPI im Modul umgerechnet)
-* UV Index (1-12)
-* Update Timer, in Sekunden (wie oft Daten an WU übermittelt werden)
+WICHTIG Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - dieser Fehler wird bewusst aktuell nicht abgefangen - es kommen also evtl. ein paar Fehler ins Log. 
+
 
 ## Wo finde ich Informationen ob das Modul funktioniert
 Das Modul postet Informationen in die Debugübersicht des Moduls und nicht in Log (Stand V1.0). Dort sieht man wie die Werte aktualisiert werden und ob der Upload funktioniert. In Wunderground werden die Werte übrigens nicht ständig aktualisiert, somit nicht wundern wenn nicht ständig neue Werte in der Tabelle der Wetterstation auftauchen.
 
+Komplette Doku für Weather.com API: https://docs.google.com/document/d/1eKCnKXI9xnoMGRRzOL1xPCBihNV2rOet08qpE_gArAY/edit
 Komplette Doku bei Wunderground: http://wiki.wunderground.com/index.php/PWS_-_Upload_Protocol
