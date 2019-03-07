@@ -41,13 +41,31 @@
 		{ "type": "SelectVariable", "name": "AirPressure", "caption": "Air Pressure" },
 		{ "type": "SelectVariable", "name": "UVIndex", "caption": "UV Index" },
 		{ "type": "Label", "label": "Update Timer" },
-		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" }
+		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" },
+		{ "type": "Label", "label": "" },
+        	{ "type": "Label", "label": "Values to be downloaded from Wunderground" },
+		{ "type": "CheckBox", "name": "DLTemperature", "caption": "Temperature" },
+		{ "type": "CheckBox", "name": "DLSolarRadiation", "caption": "Solar Radiation" },
+		{ "type": "CheckBox", "name": "DLUV", "caption": "UV" },
+		{ "type": "CheckBox", "name": "DLWindDirection", "caption": "Wind Direction" },
+		{ "type": "CheckBox", "name": "DLHumidity", "caption": "Humidity" },
+		{ "type": "CheckBox", "name": "DLDewPT", "caption": "Dew Point" },
+		{ "type": "CheckBox", "name": "DLWindchill", "caption": "Windchill" },
+		{ "type": "CheckBox", "name": "DLWindSpeed", "caption": "WindSpeed" },
+		{ "type": "CheckBox", "name": "DLWindGust", "caption": "WindGust" },
+		{ "type": "CheckBox", "name": "DLPressure", "caption": "Pressure" },
+		{ "type": "CheckBox", "name": "DLRainRate", "caption": "RainRate" },
+		{ "type": "CheckBox", "name": "DLRainTotal", "caption": "RainTotal" },
+		{ "type": "Label", "label": "Update Timer for weather data download" },
+		{ "type": "IntervalBox", "name": "DLTimer", "caption": "Seconds" }
+		
     ],
-	
+
 	"actions":
 	[
 		{ "type": "Button", "label": "Test download of weather forecast", "onClick": "WUPWSS_Forecast($id);" },
-		{ "type": "Button", "label": "Test upload of weather data", "onClick": "WUPWSS_UploadToWunderground($id);" }
+		{ "type": "Button", "label": "Test download of current data", "onClick": "WUPWSS_CurrentPWSData($id);" },
+        { "type": "Button", "label": "Test upload of weather data", "onClick": "WUPWSS_UploadToWunderground($id);" }
 	
 	]
 	
