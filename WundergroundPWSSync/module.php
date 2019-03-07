@@ -1434,7 +1434,7 @@ if (!defined('vtBoolean')) {
 		$second = date('s');
 		$time = $date.'+'.$hour.'%3A'.$minute.'%3A'.$second;
 		
-		/*
+		
 		// Upload to Wunderground
 		$Response =file_get_contents('https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID='.$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time.
 		"&tempf=".$TemperatureF.
@@ -1449,7 +1449,7 @@ if (!defined('vtBoolean')) {
 		"&UV=".$UVIndex);
 		
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Service: ".$Response, 0);
-		*/
+		
 		}
 	
 	}
