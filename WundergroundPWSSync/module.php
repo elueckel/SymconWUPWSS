@@ -44,10 +44,25 @@ if (!defined('vtBoolean')) {
 			$this->RegisterPropertyInteger("AirPressure", 0);
 			$this->RegisterPropertyInteger("UVIndex", 0);
 			$this->RegisterPropertyInteger("Timer", 0);
+			$this->RegisterPropertyBoolean("DLTemperature","0");
+			$this->RegisterPropertyBoolean("DLSolarRadiation","0");
+			$this->RegisterPropertyBoolean("DLUV","0");
+			$this->RegisterPropertyBoolean("DLWindDirection","0");
+			$this->RegisterPropertyBoolean("DLHumidity","0");
+			$this->RegisterPropertyBoolean("DLDewPT","0");
+			$this->RegisterPropertyBoolean("DLWindchill","0");
+			$this->RegisterPropertyBoolean("DLWindSpeed","0");
+			$this->RegisterPropertyBoolean("DLWindGust","0");
+			$this->RegisterPropertyBoolean("DLPressure","0");
+			$this->RegisterPropertyBoolean("DLRainRate","0");
+			$this->RegisterPropertyBoolean("DLRainTotal","0");
+			$this->RegisterPropertyInteger("DLTimer", 0);
 			$this->RegisterPropertyBoolean("Debug", 0);
 			
 			//Component sets timer, but default is OFF
-			$this->RegisterTimer("UpdateTimer",0,"WUPWSS_UploadToWunderground(\$_IPS['TARGET']);");			
+			$this->RegisterTimer("UpdateTimer",0,"WUPWSS_UploadToWunderground(\$_IPS['TARGET']);");
+			$this->RegisterTimer("PWSDownloadTimer",0,"WUPWSS_CurrentPWSData(\$_IPS['TARGET']);");
+			
 		}
 	
 		public function ApplyChanges()
@@ -59,9 +74,16 @@ if (!defined('vtBoolean')) {
 									
 		        //Timer Update - if greater than 0 = On
 				
+				
+				//Timer for Data Upload
 				$TimerMS = $this->ReadPropertyInteger("Timer") * 1000;
 				
         		$this->SetTimerInterval("UpdateTimer",$TimerMS);
+				
+				//Timer for Data Download
+				$TimerMSDL = $this->ReadPropertyInteger("DLTimer") * 1000;
+				
+        		$this->SetTimerInterval("PWSDownloadTimer",$TimerMSDL);
     		
 
 			$vpos = 1;
@@ -368,8 +390,18 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('D5TemperatureMax', $this->Translate('Day 5 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
 				$this->MaintainVariable('D5TemperatureMin', $this->Translate('Day 5 Temperature Min'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
 				
-				
-				
+				$vpos = 2000;
+				$this->MaintainVariable('DLVTemperature', $this->Translate('Download Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyBoolean("DLTemperature") == "1");
+				$this->MaintainVariable('DLVSolarRadiation', $this->Translate('Download Solar Radiation'), vtFloat, "", $vpos++, $this->ReadPropertyBoolean("DLSolarRadiation") == "1");
+				$this->MaintainVariable('DLVUV', $this->Translate('Download UV Index'), vtInteger, "~UVIndex", $vpos++, $this->ReadPropertyBoolean("DLUV") == "1");
+				$this->MaintainVariable('DLVWindDirection', $this->Translate('Download Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyBoolean("DLWindDirection") == "1");
+				$this->MaintainVariable('DLVHumidity', $this->Translate('Download Humidity'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyBoolean("DLHumidity") == "1");
+				$this->MaintainVariable('DLVWindchill', $this->Translate('Download Windchill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyBoolean("DLWindchill") == "1");
+				$this->MaintainVariable('DLVWindSpeed', $this->Translate('Download Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyBoolean("DLWindSpeed") == "1");
+				$this->MaintainVariable('DLVWindGust', $this->Translate('Download Wind Gust'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyBoolean("DLWindGust") == "1");
+				$this->MaintainVariable('DLVPressure', $this->Translate('Download Pressure'), vtFloat, "", $vpos++, $this->ReadPropertyBoolean("DLPressure") == "1");
+				$this->MaintainVariable('DLVRainRate', $this->Translate('Download Rain Rate'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyBoolean("DLRainRate") == "1");
+				$this->MaintainVariable('DLVRainTotal', $this->Translate('Download Rain Total'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyBoolean("DLRainTotal") == "1");	
 			
 		}
 	
@@ -382,18 +414,18 @@ if (!defined('vtBoolean')) {
 			$WU_API = $this->ReadPropertyString("WU_API");
 			$Longitude = $this->ReadPropertyString("Longitude");
 			$Latitude = $this->ReadPropertyString("Latitude");
-			
-			$ch = curl_init(); 
+
+			$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Latitude.','.$Longitude.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 				$RawData = curl_exec($ch);
 				curl_close($ch);
-				
+
 				$this->SendDebug('Raw Data: ', $RawData,0);
 				$RawJSON = json_decode($RawData);
-				
-				
+
+
 				If ($this->ReadPropertyInteger("ForecastShort") > "0")
 				{
 				$Narrative1 = $RawJSON->narrative[0];
@@ -401,13 +433,13 @@ if (!defined('vtBoolean')) {
 				$QPF1 = $RawJSON->qpf[0];
 				SetValue($this->GetIDForIdent("D1QPF"), (string)$QPF1);
 				$QPFSNOW1 = $RawJSON->qpfSnow[0];
-				SetValue($this->GetIDForIdent("D1QPFSNOW"), (string)$QPFSNOW1);	
+				SetValue($this->GetIDForIdent("D1QPFSNOW"), (string)$QPFSNOW1);
 				$TemperatureMax1 = $RawJSON->temperatureMax[0];
 				SetValue($this->GetIDForIdent("D1TemperatureMax"), (float)$TemperatureMax1);
 				$TemperatureMin1 = $RawJSON->temperatureMin[0];
 				SetValue($this->GetIDForIdent("D1TemperatureMin"), (float)$TemperatureMin1);
 				}
-				
+
 				If ($this->ReadPropertyInteger("ForecastShort") > "1")
 				{
 				$Narrative2 = $RawJSON->narrative[1];
@@ -415,7 +447,7 @@ if (!defined('vtBoolean')) {
 				$QPF2 = $RawJSON->qpf[1];
 				SetValue($this->GetIDForIdent("D2QPF"), (string)$QPF2);
 				$QPFSNOW2 = $RawJSON->qpfSnow[1];
-				SetValue($this->GetIDForIdent("D2QPFSNOW"), (string)$QPFSNOW2);	
+				SetValue($this->GetIDForIdent("D2QPFSNOW"), (string)$QPFSNOW2);
 				$TemperatureMax2 = $RawJSON->temperatureMax[1];
 				SetValue($this->GetIDForIdent("D2TemperatureMax"), (float)$TemperatureMax2);
 				$TemperatureMin2 = $RawJSON->temperatureMin[1];
@@ -429,7 +461,7 @@ if (!defined('vtBoolean')) {
 				$QPF3 = $RawJSON->qpf[2];
 				SetValue($this->GetIDForIdent("D3QPF"), (string)$QPF3);
 				$QPFSNOW3 = $RawJSON->qpfSnow[2];
-				SetValue($this->GetIDForIdent("D3QPFSNOW"), (string)$QPFSNOW3);	
+				SetValue($this->GetIDForIdent("D3QPFSNOW"), (string)$QPFSNOW3);
 				$TemperatureMax3 = $RawJSON->temperatureMax[2];
 				SetValue($this->GetIDForIdent("D3TemperatureMax"), (float)$TemperatureMax3);
 				$TemperatureMin3 = $RawJSON->temperatureMin[2];
@@ -443,7 +475,7 @@ if (!defined('vtBoolean')) {
 				$QPF4 = $RawJSON->qpf[3];
 				SetValue($this->GetIDForIdent("D4QPF"), (string)$QPF4);
 				$QPFSNOW4 = $RawJSON->qpfSnow[3];
-				SetValue($this->GetIDForIdent("D4QPFSNOW"), (string)$QPFSNOW4);	
+				SetValue($this->GetIDForIdent("D4QPFSNOW"), (string)$QPFSNOW4);
 				$TemperatureMax4 = $RawJSON->temperatureMax[3];
 				SetValue($this->GetIDForIdent("D4TemperatureMax"), (float)$TemperatureMax4);
 				$TemperatureMin4 = $RawJSON->temperatureMin[3];
@@ -457,7 +489,7 @@ if (!defined('vtBoolean')) {
 				$QPF5 = $RawJSON->qpf[4];
 				SetValue($this->GetIDForIdent("D5QPF"), (string)$QPF5);
 				$QPFSNOW5 = $RawJSON->qpfSnow[4];
-				SetValue($this->GetIDForIdent("D5QPFSNOW"), (string)$QPFSNOW5);	
+				SetValue($this->GetIDForIdent("D5QPFSNOW"), (string)$QPFSNOW5);
 				$TemperatureMax5 = $RawJSON->temperatureMax[4];
 				SetValue($this->GetIDForIdent("D5TemperatureMax"), (float)$TemperatureMax5);
 				$TemperatureMin5 = $RawJSON->temperatureMin[4];
@@ -472,7 +504,7 @@ if (!defined('vtBoolean')) {
 				$DP0DN = $RawJSON->daypart[0]->dayOrNight[0];
 				SetValue($this->GetIDForIdent("DP0DN"), (string)$DP0DN);
 				$DP0Name = $RawJSON->daypart[0]->daypartName[0];
-				SetValue($this->GetIDForIdent("DP0Name"), (string)$DP0Name);					
+				SetValue($this->GetIDForIdent("DP0Name"), (string)$DP0Name);
 				$DP0Narrative = $RawJSON->daypart[0]->narrative[0];
 				SetValue($this->GetIDForIdent("DP0Narrative"), (string)$DP0Narrative);
 				$DP0PrecipChance = $RawJSON->daypart[0]->precipChance[1];
@@ -539,7 +571,7 @@ if (!defined('vtBoolean')) {
 				$DP1DN = $RawJSON->daypart[0]->dayOrNight[1];
 				SetValue($this->GetIDForIdent("DP1DN"), (string)$DP1DN);
 				$DP1Name = $RawJSON->daypart[0]->daypartName[1];
-				SetValue($this->GetIDForIdent("DP1Name"), (string)$DP1Name);					
+				SetValue($this->GetIDForIdent("DP1Name"), (string)$DP1Name);
 				$DP1Narrative = $RawJSON->daypart[0]->narrative[1];
 				SetValue($this->GetIDForIdent("DP1Narrative"), (string)$DP1Narrative);
 				$DP1PrecipChance = $RawJSON->daypart[0]->precipChance[1];
@@ -547,7 +579,7 @@ if (!defined('vtBoolean')) {
 				$DP1PrecipType = $RawJSON->daypart[0]->precipType[1];
 				SetValue($this->GetIDForIdent("DP1PrecipType"), (string)$DP1PrecipType);
 				
-				
+
 					If ($this->ReadPropertyBoolean("ForecastDPRain") == "1")
 					{
 					$DP1QPF = $RawJSON->daypart[0]->qpf[1];
@@ -606,7 +638,7 @@ if (!defined('vtBoolean')) {
 				$DP2DN = $RawJSON->daypart[0]->dayOrNight[2];
 				SetValue($this->GetIDForIdent("DP2DN"), (string)$DP2DN);
 				$DP2Name = $RawJSON->daypart[0]->daypartName[2];
-				SetValue($this->GetIDForIdent("DP2Name"), (string)$DP2Name);					
+				SetValue($this->GetIDForIdent("DP2Name"), (string)$DP2Name);
 				$DP2Narrative = $RawJSON->daypart[0]->narrative[2];
 				SetValue($this->GetIDForIdent("DP2Narrative"), (string)$DP2Narrative);
 				$DP2PrecipChance = $RawJSON->daypart[0]->precipChance[2];
@@ -673,7 +705,7 @@ if (!defined('vtBoolean')) {
 				$DP3DN = $RawJSON->daypart[0]->dayOrNight[3];
 				SetValue($this->GetIDForIdent("DP3DN"), (string)$DP3DN);
 				$DP3Name = $RawJSON->daypart[0]->daypartName[3];
-				SetValue($this->GetIDForIdent("DP3Name"), (string)$DP3Name);					
+				SetValue($this->GetIDForIdent("DP3Name"), (string)$DP3Name);
 				$DP3Narrative = $RawJSON->daypart[0]->narrative[3];
 				SetValue($this->GetIDForIdent("DP3Narrative"), (string)$DP3Narrative);
 				$DP3PrecipChance = $RawJSON->daypart[0]->precipChance[3];
@@ -697,7 +729,7 @@ if (!defined('vtBoolean')) {
 					$DP3WindChill = $RawJSON->daypart[0]->temperatureWindChill[3];
 					SetValue($this->GetIDForIdent("DP3WindChill"), (string)$DP3WindChill);
 					}
-				
+
 					If ($this->ReadPropertyBoolean("ForecastDPThunder") == "1")
 					{
 					$DP3Thunder = $RawJSON->daypart[0]->thunderCategory[3];
@@ -741,7 +773,7 @@ if (!defined('vtBoolean')) {
 				$DP4DN = $RawJSON->daypart[0]->dayOrNight[4];
 				SetValue($this->GetIDForIdent("DP4DN"), (string)$DP4DN);
 				$DP4Name = $RawJSON->daypart[0]->daypartName[4];
-				SetValue($this->GetIDForIdent("DP4Name"), (string)$DP4Name);					
+				SetValue($this->GetIDForIdent("DP4Name"), (string)$DP4Name);
 				$DP4Narrative = $RawJSON->daypart[0]->narrative[4];
 				SetValue($this->GetIDForIdent("DP4Narrative"), (string)$DP4Narrative);
 				$DP4PrecipChance = $RawJSON->daypart[0]->precipChance[4];
@@ -808,7 +840,7 @@ if (!defined('vtBoolean')) {
 				$DP5DN = $RawJSON->daypart[0]->dayOrNight[5];
 				SetValue($this->GetIDForIdent("DP5DN"), (string)$DP5DN);
 				$DP5Name = $RawJSON->daypart[0]->daypartName[5];
-				SetValue($this->GetIDForIdent("DP5Name"), (string)$DP5Name);					
+				SetValue($this->GetIDForIdent("DP5Name"), (string)$DP5Name);
 				$DP5Narrative = $RawJSON->daypart[0]->narrative[5];
 				SetValue($this->GetIDForIdent("DP5Narrative"), (string)$DP5Narrative);
 				$DP5PrecipChance = $RawJSON->daypart[0]->precipChance[5];
@@ -875,7 +907,7 @@ if (!defined('vtBoolean')) {
 				$DP6DN = $RawJSON->daypart[0]->dayOrNight[6];
 				SetValue($this->GetIDForIdent("DP6DN"), (string)$DP6DN);
 				$DP6Name = $RawJSON->daypart[0]->daypartName[6];
-				SetValue($this->GetIDForIdent("DP6Name"), (string)$DP6Name);					
+				SetValue($this->GetIDForIdent("DP6Name"), (string)$DP6Name);
 				$DP6Narrative = $RawJSON->daypart[0]->narrative[6];
 				SetValue($this->GetIDForIdent("DP6Narrative"), (string)$DP6Narrative);
 				$DP6PrecipChance = $RawJSON->daypart[0]->precipChance[6];
@@ -942,7 +974,7 @@ if (!defined('vtBoolean')) {
 				$DP7DN = $RawJSON->daypart[0]->dayOrNight[7];
 				SetValue($this->GetIDForIdent("DP7DN"), (string)$DP7DN);
 				$DP7Name = $RawJSON->daypart[0]->daypartName[7];
-				SetValue($this->GetIDForIdent("DP7Name"), (string)$DP7Name);					
+				SetValue($this->GetIDForIdent("DP7Name"), (string)$DP7Name);
 				$DP7Narrative = $RawJSON->daypart[0]->narrative[7];
 				SetValue($this->GetIDForIdent("DP7Narrative"), (string)$DP7Narrative);
 				$DP7PrecipChance = $RawJSON->daypart[0]->precipChance[7];
@@ -1009,7 +1041,7 @@ if (!defined('vtBoolean')) {
 				$DP8DN = $RawJSON->daypart[0]->dayOrNight[8];
 				SetValue($this->GetIDForIdent("DP8DN"), (string)$DP8DN);
 				$DP8Name = $RawJSON->daypart[0]->daypartName[8];
-				SetValue($this->GetIDForIdent("DP8Name"), (string)$DP8Name);					
+				SetValue($this->GetIDForIdent("DP8Name"), (string)$DP8Name);
 				$DP8Narrative = $RawJSON->daypart[0]->narrative[8];
 				SetValue($this->GetIDForIdent("DP8Narrative"), (string)$DP8Narrative);
 				$DP8PrecipChance = $RawJSON->daypart[0]->precipChance[8];
@@ -1076,7 +1108,7 @@ if (!defined('vtBoolean')) {
 				$DP9DN = $RawJSON->daypart[0]->dayOrNight[9];
 				SetValue($this->GetIDForIdent("DP9DN"), (string)$DP9DN);
 				$DP9Name = $RawJSON->daypart[0]->daypartName[9];
-				SetValue($this->GetIDForIdent("DP9Name"), (string)$DP9Name);					
+				SetValue($this->GetIDForIdent("DP9Name"), (string)$DP9Name);
 				$DP9Narrative = $RawJSON->daypart[0]->narrative[9];
 				SetValue($this->GetIDForIdent("DP9Narrative"), (string)$DP9Narrative);
 				$DP9PrecipChance = $RawJSON->daypart[0]->precipChance[9];
@@ -1143,7 +1175,7 @@ if (!defined('vtBoolean')) {
 				$DP10DN = $RawJSON->daypart[0]->dayOrNight[10];
 				SetValue($this->GetIDForIdent("DP10DN"), (string)$DP10DN);
 				$DP10Name = $RawJSON->daypart[0]->daypartName[10];
-				SetValue($this->GetIDForIdent("DP10Name"), (string)$DP10Name);					
+				SetValue($this->GetIDForIdent("DP10Name"), (string)$DP10Name);
 				$DP10Narrative = $RawJSON->daypart[0]->narrative[10];
 				SetValue($this->GetIDForIdent("DP10Narrative"), (string)$DP10Narrative);
 				$DP10PrecipChance = $RawJSON->daypart[0]->precipChance[10];
@@ -1210,7 +1242,7 @@ if (!defined('vtBoolean')) {
 				$DP11DN = $RawJSON->daypart[0]->dayOrNight[11];
 				SetValue($this->GetIDForIdent("DP11DN"), (string)$DP11DN);
 				$DP11Name = $RawJSON->daypart[0]->daypartName[11];
-				SetValue($this->GetIDForIdent("DP11Name"), (string)$DP11Name);					
+				SetValue($this->GetIDForIdent("DP11Name"), (string)$DP11Name);
 				$DP11Narrative = $RawJSON->daypart[0]->narrative[11];
 				SetValue($this->GetIDForIdent("DP11Narrative"), (string)$DP11Narrative);
 				$DP11PrecipChance = $RawJSON->daypart[0]->precipChance[11];
@@ -1247,7 +1279,7 @@ if (!defined('vtBoolean')) {
 					$DP11UVDescription = $RawJSON->daypart[0]->uvDescription[11];
 					SetValue($this->GetIDForIdent("DP11UVDescription"), (string)$DP11UVDescription);
 					}
-				
+
 					If ($this->ReadPropertyBoolean("ForecastDPUV") == "1")
 					{
 					$DP11UVIndex = $RawJSON->daypart[0]->uvIndex[11];
@@ -1271,11 +1303,11 @@ if (!defined('vtBoolean')) {
 					}
 							
 				}
-				
+
 			
 		}
 	
-	
+
 		
 		public function UploadToWunderground()
 		{
@@ -1289,7 +1321,7 @@ if (!defined('vtBoolean')) {
 		{
 		$Temperature = GetValue($this->ReadPropertyInteger("OutsideTemperature"));
 		$TemperatureF = str_replace(",",".",(($Temperature * 9) /5 + 32));
-		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);	
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("OutsideTemperature") == "0")
@@ -1330,7 +1362,7 @@ if (!defined('vtBoolean')) {
 		{
 		$WindDirection = GetValue($this->ReadPropertyInteger("WindDirection"));
 		$WindDirectionU = str_replace(",",".",$WindDirection);
-		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Direction: ".$WindDirectionU, 0);		
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Direction: ".$WindDirectionU, 0);
 		}
 		
 		ElseIf ($this->ReadPropertyInteger("WindDirection") == "0")
@@ -1433,9 +1465,9 @@ if (!defined('vtBoolean')) {
 		$minute = date('i');
 		$second = date('s');
 		$time = $date.'+'.$hour.'%3A'.$minute.'%3A'.$second;
-		
-		
-		// Upload to Wunderground
+
+
+		//Upload to Wunderground
 		$Response =file_get_contents('https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID='.$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time.
 		"&tempf=".$TemperatureF.
 		"&dewptf=".$DewPointF.
@@ -1447,11 +1479,98 @@ if (!defined('vtBoolean')) {
 		"&dailyrainin=".$Rain24h.
 		"&baromin=".$BPI.
 		"&UV=".$UVIndex);
-		
+
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Service: ".$Response, 0);
-		
+
 		}
-	
-	}
+
+
+
+    public function CurrentPWSData()
+		{
+
+            $WU_ID = $this->ReadPropertyString("WU_ID");
+            $WU_API = $this->ReadPropertyString("WU_API");
+
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v2/pws/observations/current?stationId='.$WU_ID.'&format=json&units=m&apiKey='.$WU_API);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            $RawData = curl_exec($ch);
+            curl_close($ch);
+
+            $RawJSON = json_decode($RawData);
+            
+            If ($this->ReadPropertyBoolean("DLTemperature") == "1")
+            {
+				$DLJSONTemp = $RawJSON->observations[0]->metric->temp;
+				SetValue($this->GetIDForIdent("DLVTemperature"), (float)$DLJSONTemp);
+            }			
+			
+			If ($this->ReadPropertyBoolean("DLSolarRadiation") == "1")
+            {
+				$DLJSONSolarRadiation = $RawJSON->observations[0]->solarRadiation;
+				SetValue($this->GetIDForIdent("DLVSolarRadiation"), (float)$DLJSONSolarRadiation);
+            }	
+			
+            If ($this->ReadPropertyBoolean("DLUV") == "1")
+            {
+				$DLJSONUV = $RawJSON->observations[0]->uv;
+				SetValue($this->GetIDForIdent("DLVUV"), (integer)$DLJSONUV);
+            }
+			
+			If ($this->ReadPropertyBoolean("DLWindDirection") == "1")
+            {
+				$DLJSONWindDirection = $RawJSON->observations[0]->winddir;
+				SetValue($this->GetIDForIdent("DLVWindDirection"), (float)$DLJSONWindDirection);
+            }
+			
+			If ($this->ReadPropertyBoolean("DLHumidity") == "1")
+            {
+				$DLJSONDLHumidity = $RawJSON->observations[0]->humidity;
+				SetValue($this->GetIDForIdent("DLVHumidity"), (integer)$DLJSONDLHumidity);
+            }
+			
+			If ($this->ReadPropertyBoolean("DLWindchill") == "1")
+            {
+				$DLJSONWindchill = $RawJSON->observations[0]->metric->windChill;
+				SetValue($this->GetIDForIdent("DLVWindchill"), (float)$DLJSONWindchill);
+            }
+			
+			If ($this->ReadPropertyBoolean("DLWindSpeed") == "1")
+            {
+				$DLJSONWindSpeed = $RawJSON->observations[0]->metric->windSpeed;
+				SetValue($this->GetIDForIdent("DLVWindSpeed"), (float)$DLJSONWindSpeed);
+            }
+			
+			If ($this->ReadPropertyBoolean("DLWindGust") == "1")
+            {
+				$DLJSONWindGust = $RawJSON->observations[0]->metric->windGust;
+				SetValue($this->GetIDForIdent("DLVWindGust"), (float)$DLJSONWindGust);
+            }
+			
+			If ($this->ReadPropertyBoolean("DLPressure") == "1")
+            {
+				$DLJSONPressure = $RawJSON->observations[0]->metric->pressure;
+				SetValue($this->GetIDForIdent("DLVPressure"), (float)$DLJSONPressure);
+            }
+			
+			If ($this->ReadPropertyBoolean("DLRainRate") == "1")
+            {
+				$DLJSONRainRate = $RawJSON->observations[0]->metric->precipRate;
+				SetValue($this->GetIDForIdent("DLVRainRate"), (float)$DLJSONRainRate);
+            }
+			
+			If ($this->ReadPropertyBoolean("DLRainTotal") == "1")
+            {
+				$DLJSONRainTotal = $RawJSON->observations[0]->metric->precipTotal;
+				SetValue($this->GetIDForIdent("DLVRainTotal"), (float)$DLJSONRainTotal);
+            }
+			
+
+		}
+
+    }
 
 ?>
