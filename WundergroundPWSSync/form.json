@@ -2,8 +2,8 @@
     "elements":
     [
         { "type": "Label", "label": "Wunderground Login Information" },
-		{ "type": "ValidationTextBox", "name": "WU_ID", "caption": "WU ID" },
-        { "type": "ValidationTextBox", "name": "WU_Password", "caption": "WU Password" },
+		{ "type": "ValidationTextBox", "name": "WU_ID", "caption": "WU Station ID" },
+        { "type": "PasswordTextBox", "name": "WU_Password", "caption": "WU Login Password" },
 		{ "type": "Label", "label": "Downloading forecasts requires a seperate WU API key" },
 		{ "type": "ValidationTextBox", "name": "WU_API", "caption": "WU API Key" },
 		{ "type": "ValidationTextBox", "name": "Latitude", "caption": "Latitude" },
@@ -43,7 +43,7 @@
 		{ "type": "Label", "label": "Update Timer" },
 		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" },
 		{ "type": "Label", "label": "" },
-        	{ "type": "Label", "label": "Values to be downloaded from Wunderground" },
+        { "type": "Label", "label": "Values to be downloaded from Wunderground" },
 		{ "type": "CheckBox", "name": "DLTemperature", "caption": "Temperature" },
 		{ "type": "CheckBox", "name": "DLSolarRadiation", "caption": "Solar Radiation" },
 		{ "type": "CheckBox", "name": "DLUV", "caption": "UV" },
@@ -51,11 +51,11 @@
 		{ "type": "CheckBox", "name": "DLHumidity", "caption": "Humidity" },
 		{ "type": "CheckBox", "name": "DLDewPT", "caption": "Dew Point" },
 		{ "type": "CheckBox", "name": "DLWindchill", "caption": "Windchill" },
-		{ "type": "CheckBox", "name": "DLWindSpeed", "caption": "WindSpeed" },
+		{ "type": "CheckBox", "name": "DLWindSpeed", "caption": "Wind Speed" },
 		{ "type": "CheckBox", "name": "DLWindGust", "caption": "WindGust" },
 		{ "type": "CheckBox", "name": "DLPressure", "caption": "Pressure" },
-		{ "type": "CheckBox", "name": "DLRainRate", "caption": "RainRate" },
-		{ "type": "CheckBox", "name": "DLRainTotal", "caption": "RainTotal" },
+		{ "type": "CheckBox", "name": "DLRainRate", "caption": "Rain Rate" },
+		{ "type": "CheckBox", "name": "DLRainTotal", "caption": "Rain Total" },
 		{ "type": "Label", "label": "Update Timer for weather data download" },
 		{ "type": "IntervalBox", "name": "DLTimer", "caption": "Seconds" }
 		
