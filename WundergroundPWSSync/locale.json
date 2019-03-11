@@ -1,9 +1,9 @@
 {
 	"translations": {
 		"de": { 
-			"Wunderground Login Information": "Wuderground Login Daten",
-			"WU ID": "WU ID",
-			"WU Password": "WU Passwort",
+			"Wunderground Login Information": "Wunderground Login Daten",
+			"WU Station ID": "WU Station ID",
+			"WU Login Password": "WU Login Passwort",
 			"Downloading forecasts requires a seperate WU API key":"Der Download von Wetterdaten benötigt einen WU API Key",
 			"WU API Key":"WU API Key",
 			"Latitude":"Breitengrad",
@@ -253,7 +253,20 @@
 			"Day 5 Precipitation Liquid":"Tag 5 Niederschlagsmenge",
 			"Day 5 Precipitation Snow":"Tag 5 Schneehöhe",
 			"Day 5 Temperature Max":"Tag 5 Temperatur Max",
-			"Day 5 Temperature Min":"Tag 5 Temperatur Min"
+			"Day 5 Temperature Min":"Tag 5 Temperatur Min",
+			"Values to be downloaded from Wunderground":"Werte die von Wunderground geladen werden sollen",
+			"Solar Radiation":"Sonnenstrahlung",
+			"Wind Direction":"Windrichtung",
+			"Windchill":"Gefühlte Temperatur",
+			"Wind Speed":"Windgeschwindigkeit",
+			"WindGust":"Windböen",
+			"Pressure":"Luftdruck",
+			"Rain Rate":"Regenrate",
+			"Rain Total":"Regenmenge Total",
+			"Update Timer for weather data download":"Aktualisierungsrate für Wetterdownload",
+			"Seconds":"Sekunden",
+			"Test download of current data":"Test Download von Daten"
+			
 		}
 	}
 }
