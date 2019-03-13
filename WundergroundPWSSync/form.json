@@ -26,6 +26,8 @@
 		{ "type": "CheckBox", "name": "ForecastDPWind", "caption": "Wind*"},
 		{ "type": "CheckBox", "name": "ForecastDPThunder", "caption": "Thunder"},
 		{ "type": "CheckBox", "name": "ForecastDPUV", "caption": "UV Data*"},
+		{ "type": "CheckBox", "name": "ForecastDPIcon", "caption": "Icons"},
+		{ "type": "CheckBox", "name": "JSONRawForecast", "caption": "JSON Raw Data Forecast" },
 		{ "type": "Label", "label": "Some fields (*) provide additional text based information" },
 		{ "type": "CheckBox", "name": "ForecastDPNarrative", "caption": "Text Info"},
 		{ "type": "Label", "label": "" },
@@ -56,8 +58,9 @@
 		{ "type": "CheckBox", "name": "DLPressure", "caption": "Pressure" },
 		{ "type": "CheckBox", "name": "DLRainRate", "caption": "Rain Rate" },
 		{ "type": "CheckBox", "name": "DLRainTotal", "caption": "Rain Total" },
+		{ "type": "CheckBox", "name": "JSONRawStation", "caption": "JSON Raw Data Station" },
 		{ "type": "Label", "label": "Update Timer for weather data download" },
-		{ "type": "IntervalBox", "name": "DLTimer", "caption": "Seconds" }
+		{ "type": "IntervalBox", "name": "DLTimer", "caption": "Seconds" }		
 		
     ],
 
