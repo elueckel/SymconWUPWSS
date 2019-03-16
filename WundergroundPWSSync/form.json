@@ -14,13 +14,13 @@
 			{ "label": "English", "value": "en-en" }
 			]
 		},
-		{ "type": "Label", "label": "High level Forecast - 0 is off" },
+		{ "type": "Label", "label": "High level Forecast" },
 		{ "type": "Label", "label": "******************************" },
-		{ "type": "IntervalBox", "name": "ForecastShort", "caption": "Days max 5" },
+		{ "type": "NumberSpinner", "name": "ForecastShort", "caption": "High level Forecast", "suffix": "Days max 5 - 0 is off"},
 		{ "type": "Label", "label": "" },
 		{ "type": "Label", "label": "Detail Forecast in 12h segments" },
 		{ "type": "Label", "label": "*******************************" },
-		{ "type": "IntervalBox", "name": "ForecastDP", "caption": "Segments max 12" },
+		{ "type": "NumberSpinner", "name": "ForecastDP", "caption": "Detail Forecast", "suffix": "Segments max 12 - 0 is off"},
 		{ "type": "CheckBox", "name": "ForecastDPTemperature", "caption": "Temperature"},
 		{ "type": "CheckBox", "name": "ForecastDPRain", "caption": "Precip / Rain"},
 		{ "type": "CheckBox", "name": "ForecastDPWind", "caption": "Wind*"},
@@ -45,7 +45,8 @@
 		{ "type": "Label", "label": "Update Timer" },
 		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" },
 		{ "type": "Label", "label": "" },
-        { "type": "Label", "label": "Values to be downloaded from Wunderground" },
+        { "type": "Label", "label": "Values to be downloaded from Wunderground PWS" },
+		{ "type": "Label", "label": "Requires a Station ID and WU Password - entered above" },
 		{ "type": "CheckBox", "name": "DLTemperature", "caption": "Temperature" },
 		{ "type": "CheckBox", "name": "DLSolarRadiation", "caption": "Solar Radiation" },
 		{ "type": "CheckBox", "name": "DLUV", "caption": "UV" },
@@ -60,8 +61,8 @@
 		{ "type": "CheckBox", "name": "DLRainTotal", "caption": "Rain Total" },
 		{ "type": "CheckBox", "name": "JSONRawStation", "caption": "JSON Raw Data Station" },
 		{ "type": "Label", "label": "Update Timer for weather data download" },
-		{ "type": "IntervalBox", "name": "DLTimer", "caption": "Seconds" }		
-		
+		{ "type": "NumberSpinner", "name": "DLTimer", "caption": "Update Timer", "suffix": "every x minutes"}
+			
     ],
 
 	"actions":
