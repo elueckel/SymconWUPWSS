@@ -1402,15 +1402,15 @@ if (!defined('vtBoolean')) {
 				If ($this->ReadPropertyBoolean("JSONRawForecast") == "1")
 				{
 					//$JSONRawForecast = $RawJSON;
-					$RawJSONForecast = json_encode($RawData);
-					SetValue($this->GetIDForIdent("JSONRawForecastVar"), (string)$RawJSONForecast);					
+					//$RawJSONForecast = json_encode($RawData);
+					SetValue($this->GetIDForIdent("JSONRawForecastVar"), (string)$RawData);	
+
+					
 				}
 				
 
 			
-		}
-	
-
+		} 
 		
 		public function UploadToWunderground()
 		{
@@ -1676,7 +1676,7 @@ if (!defined('vtBoolean')) {
 				//$JSONRawStation = $RawJSON;
 				$RawJSONStation = json_encode($RawData);
 				//$this->SendDebug('Raw Data: ', $RawData,0);
-				SetValue($this->GetIDForIdent("JSONRawStationVar"), (string)$RawJSONStation);
+				SetValue($this->GetIDForIdent("JSONRawStationVar"), (string)$RawData);
 				
 			}
 
