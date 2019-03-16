@@ -14,7 +14,7 @@
 			"High level Forecast - 0 is off":"Kurze Vorhersage - 0 ist aus",
 			"Days max 5":"Tage maximal 5",
 			"Detail Forecast in 12h segments":"Detailierte Vorhersage in 12h Segmenten",
-			"Segments max 12":"Segmente max 12",
+			"Segments max 12 - 0 is off":"Segmente max 12",
 			"Temperature":"Temperatur",
 			"Precip / Rain":"Niederschlag / Regen",
 			"Wind*":"Wind*",
@@ -266,7 +266,8 @@
 			"Day 5 Precipitation Snow":"Tag 5 Schneehöhe",
 			"Day 5 Temperature Max":"Tag 5 Temperatur Max",
 			"Day 5 Temperature Min":"Tag 5 Temperatur Min",
-			"Values to be downloaded from Wunderground":"Werte die von Wunderground geladen werden sollen",
+			"Values to be downloaded from Wunderground PWS":"Werte die von Wunderground Wetterstation geladen werden sollen",
+			"Requires a Station ID and WU Password - entered above":"Benötigt eine Station ID und ein WU Passwort - oben einzugeben",
 			"Solar Radiation":"Sonnenstrahlung",
 			"Wind Direction":"Windrichtung",
 			"Windchill":"Gefühlte Temperatur",
@@ -277,7 +278,10 @@
 			"Rain Total":"Regenmenge Total",
 			"Update Timer for weather data download":"Aktualisierungsrate für Wetterdownload",
 			"Seconds":"Sekunden",
-			"Test download of current data":"Test Download von Daten"
+			"Test download of current data":"Test Download von Daten",
+			"every x minutes":"alle x Minuten",
+			"Days max 5 - 0 is off":"Tage max 5",
+			"High level Forecast":"Grobe Vorhersage"
 			
 		}
 	}

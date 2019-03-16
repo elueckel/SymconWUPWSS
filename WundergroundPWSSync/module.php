@@ -87,7 +87,7 @@ if (!defined('vtBoolean')) {
         		$this->SetTimerInterval("UpdateTimer",$TimerMS);
 				
 				//Timer for Data Download
-				$TimerMSDL = $this->ReadPropertyInteger("DLTimer") * 1000;
+				$TimerMSDL = $this->ReadPropertyInteger("DLTimer") * 1000 * 60;
 				
         		$this->SetTimerInterval("PWSDownloadTimer",$TimerMSDL);
     		
