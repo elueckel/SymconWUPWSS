@@ -14,6 +14,7 @@
 			{ "label": "English", "value": "en-en" }
 			]
 		},
+		{ "type": "NumberSpinner", "name": "ForecastInterval", "caption": "Forecast Interval", "suffix": "Standard every 12h"},
 		{ "type": "Label", "label": "High level Forecast" },
 		{ "type": "Label", "label": "******************************" },
 		{ "type": "NumberSpinner", "name": "ForecastShort", "caption": "High level Forecast", "suffix": "Days max 5 - 0 is off"},
