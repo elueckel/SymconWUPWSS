@@ -2,9 +2,37 @@
     "elements":
     [
         { "type": "Label", "label": "Wunderground Login Information" },
-		{ "type": "ValidationTextBox", "name": "WU_ID", "caption": "WU ID" },
-        { "type": "ValidationTextBox", "name": "WU_Password", "caption": "WU Password" },
-		{ "type": "Label", "label": "Values to be uploaded to Wunderground" },
+		{ "type": "ValidationTextBox", "name": "WU_ID", "caption": "WU Station ID" },
+        { "type": "PasswordTextBox", "name": "WU_Password", "caption": "WU Login Password" },
+		{ "type": "Label", "label": "Downloading forecasts requires a seperate WU API key" },
+		{ "type": "ValidationTextBox", "name": "WU_API", "caption": "WU API Key" },
+		{ "type": "ValidationTextBox", "name": "Latitude", "caption": "Latitude" },
+		{ "type": "ValidationTextBox", "name": "Longitude", "caption": "Longitude" },
+		{ "name": "Language", "type": "Select", "caption": "Language",
+		"options": [
+			{ "label": "German", "value": "de-de" },
+			{ "label": "English", "value": "en-en" }
+			]
+		},
+		{ "type": "NumberSpinner", "name": "ForecastInterval", "caption": "Forecast Interval", "suffix": "Standard every 12h"},
+		{ "type": "Label", "label": "High level Forecast" },
+		{ "type": "Label", "label": "******************************" },
+		{ "type": "NumberSpinner", "name": "ForecastShort", "caption": "High level Forecast", "suffix": "Days max 5 - 0 is off"},
+		{ "type": "Label", "label": "" },
+		{ "type": "Label", "label": "Detail Forecast in 12h segments" },
+		{ "type": "Label", "label": "*******************************" },
+		{ "type": "NumberSpinner", "name": "ForecastDP", "caption": "Detail Forecast", "suffix": "Segments max 12 - 0 is off"},
+		{ "type": "CheckBox", "name": "ForecastDPTemperature", "caption": "Temperature"},
+		{ "type": "CheckBox", "name": "ForecastDPRain", "caption": "Precip / Rain"},
+		{ "type": "CheckBox", "name": "ForecastDPWind", "caption": "Wind*"},
+		{ "type": "CheckBox", "name": "ForecastDPThunder", "caption": "Thunder"},
+		{ "type": "CheckBox", "name": "ForecastDPUV", "caption": "UV Data*"},
+		{ "type": "CheckBox", "name": "ForecastDPIcon", "caption": "Icons"},
+		{ "type": "CheckBox", "name": "JSONRawForecast", "caption": "JSON Raw Data Forecast" },
+		{ "type": "Label", "label": "Some fields (*) provide additional text based information" },
+		{ "type": "CheckBox", "name": "ForecastDPNarrative", "caption": "Text Info"},
+		{ "type": "Label", "label": "" },
+        { "type": "Label", "label": "Values to be uploaded to Wunderground" },
 		{ "type": "SelectVariable", "name": "OutsideTemperature", "caption": "Temperature Outside" },
 		{ "type": "SelectVariable", "name": "Humidity", "caption": "Humidity" },
 		{ "type": "SelectVariable", "name": "DewPoint", "caption": "Dew Point" },
@@ -16,6 +44,34 @@
 		{ "type": "SelectVariable", "name": "AirPressure", "caption": "Air Pressure" },
 		{ "type": "SelectVariable", "name": "UVIndex", "caption": "UV Index" },
 		{ "type": "Label", "label": "Update Timer" },
-		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" }
-    ]
+		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" },
+		{ "type": "Label", "label": "" },
+        { "type": "Label", "label": "Values to be downloaded from Wunderground PWS" },
+		{ "type": "Label", "label": "Requires a Station ID and WU Password - entered above" },
+		{ "type": "CheckBox", "name": "DLTemperature", "caption": "Temperature" },
+		{ "type": "CheckBox", "name": "DLSolarRadiation", "caption": "Solar Radiation" },
+		{ "type": "CheckBox", "name": "DLUV", "caption": "UV" },
+		{ "type": "CheckBox", "name": "DLWindDirection", "caption": "Wind Direction" },
+		{ "type": "CheckBox", "name": "DLHumidity", "caption": "Humidity" },
+		{ "type": "CheckBox", "name": "DLDewPT", "caption": "Dew Point" },
+		{ "type": "CheckBox", "name": "DLWindchill", "caption": "Windchill" },
+		{ "type": "CheckBox", "name": "DLWindSpeed", "caption": "Wind Speed" },
+		{ "type": "CheckBox", "name": "DLWindGust", "caption": "WindGust" },
+		{ "type": "CheckBox", "name": "DLPressure", "caption": "Pressure" },
+		{ "type": "CheckBox", "name": "DLRainRate", "caption": "Rain Rate" },
+		{ "type": "CheckBox", "name": "DLRainTotal", "caption": "Rain Total" },
+		{ "type": "CheckBox", "name": "JSONRawStation", "caption": "JSON Raw Data Station" },
+		{ "type": "Label", "label": "Update Timer for weather data download" },
+		{ "type": "NumberSpinner", "name": "DLTimer", "caption": "Update Timer", "suffix": "every x minutes"}
+			
+    ],
+
+	"actions":
+	[
+		{ "type": "Button", "label": "Test download of weather forecast", "onClick": "WUPWSS_Forecast($id);" },
+		{ "type": "Button", "label": "Test download of current data", "onClick": "WUPWSS_CurrentPWSData($id);" },
+        { "type": "Button", "label": "Test upload of weather data", "onClick": "WUPWSS_UploadToWunderground($id);" }
+	
+	]
+	
 }
