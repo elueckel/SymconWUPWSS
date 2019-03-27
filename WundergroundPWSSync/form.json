@@ -32,7 +32,7 @@
 		{ "type": "Label", "label": "Some fields (*) provide additional text based information" },
 		{ "type": "CheckBox", "name": "ForecastDPNarrative", "caption": "Text Info"},
 		{ "type": "Label", "label": "" },
-        { "type": "Label", "label": "Values to be uploaded to Wunderground" },
+      		{ "type": "Label", "label": "Values to be uploaded to Wunderground" },
 		{ "type": "SelectVariable", "name": "OutsideTemperature", "caption": "Temperature Outside" },
 		{ "type": "SelectVariable", "name": "Humidity", "caption": "Humidity" },
 		{ "type": "SelectVariable", "name": "DewPoint", "caption": "Dew Point" },
