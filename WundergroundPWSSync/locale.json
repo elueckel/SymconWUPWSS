@@ -281,7 +281,8 @@
 			"Test download of current data":"Test Download von Daten",
 			"every x minutes":"alle x Minuten",
 			"Days max 5 - 0 is off":"Tage max 5",
-			"High level Forecast":"Grobe Vorhersage"
+			"High level Forecast":"Grobe Vorhersage",
+			"Wind Speed Unit":"Windgeschw. Einheit"
 			
 		}
 	}
