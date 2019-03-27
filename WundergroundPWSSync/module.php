@@ -46,6 +46,7 @@ if (!defined('vtBoolean')) {
 			$this->RegisterPropertyInteger("Rain24h", 0);
 			$this->RegisterPropertyInteger("AirPressure", 0);
 			$this->RegisterPropertyInteger("UVIndex", 0);
+			$this->RegisterPropertyString("WindConversion", "ms");
 			$this->RegisterPropertyInteger("Timer", 0);
 			$this->RegisterPropertyBoolean("DLTemperature","0");
 			$this->RegisterPropertyBoolean("DLSolarRadiation","0");
@@ -1530,6 +1531,14 @@ if (!defined('vtBoolean')) {
 		If ($this->ReadPropertyInteger("WindSpeed") != "")
 		{
 		$WindSpeed = GetValue($this->ReadPropertyInteger("WindSpeed"));
+		
+		If ($this->ReadPropertyString("WindConversion") == "kmh")
+			{
+				$WindSpeed = str_replace(",",".",Round(($WindSpeed / 3.6),2));
+				$this->SendDebug("Wunderground PWS Update","Converting from KMH to M/S", 0);
+				
+			}		
+		
 		$WindSpeedU = str_replace(",",".",Round(($WindSpeed * 2.2369),2));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Windspeed: ".$WindSpeedU, 0);
 		}
@@ -1544,6 +1553,14 @@ if (!defined('vtBoolean')) {
 		If ($this->ReadPropertyInteger("WindGust") != "")
 		{
 		$WindGust = GetValue($this->ReadPropertyInteger("WindGust"));
+			
+			If ($this->ReadPropertyString("WindConversion") == "kmh")
+			{
+				$WindGust = str_replace(",",".",Round(($WindGust / 3.6),2));
+				$this->SendDebug("Wunderground PWS Update","Converting from KMH to M/S", 0);
+				
+			}
+		
 		$WindGustU = str_replace(",",".",Round(($WindGust * 2.2369),2));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Gust: ".$WindGustU, 0);
 		}
