@@ -43,7 +43,7 @@
 		{ "type": "SelectVariable", "name": "Rain24h", "caption": "Rain in 24h" },
 		{ "type": "SelectVariable", "name": "AirPressure", "caption": "Air Pressure" },
 		{ "type": "SelectVariable", "name": "UVIndex", "caption": "UV Index" },
-		{ "name": "WindConversion", "type": "Select", "caption": "Wind Conversion",
+		{ "name": "WindConversion", "type": "Select", "caption": "Wind Speed Unit",
 		"options": [
 			{ "label": "m/s", "value": "ms" },
 			{ "label": "km/h", "value": "kmh" }
