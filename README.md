@@ -43,6 +43,11 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * Es ist möglich die Rohdaten in einer eigenen Variable für die eigene Auswertung bereitzustellen
 * Testfunktion innerhalb der Moduls um Download und Upload zu testen
 
+# Version 2.1 31/03/2019
+* Neu Bewölkung wird für die Detail Vorhersage bereitgestellt
+* Neu der Download von Wetterdaten kann jetzt unabhänig vom Upload definiert werden. Hierfür eine andere WU ID festlegen (somit können Daten z.B. durch eine andere nahe Station angereichert werden)
+* Neu bei dem Upload von Wetterdaten kann für den Wind jetzt m/s oder km/h gwählt werden (z.B. wenn man eine Homematic OC3 nutzt)
+
 ##WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen. 
 * Das kostenlose Limit für den Download von Daten liegt bei 1500 calls pro Tag oder 30 pro minute für den Download von Daten
