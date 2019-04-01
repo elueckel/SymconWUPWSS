@@ -464,28 +464,36 @@ if (!defined('vtBoolean')) {
 
 				If ($this->ReadPropertyInteger("ForecastShort") > "0")
 				{
-					$Narrative1 = $RawJSON->narrative[0];
-					if (isset($Narrative1)) {
+					if (isset($RawJSON->narrative[0])) 
+					{  
+						$Narrative1 = $RawJSON->narrative[0];  
+					
+					//$Narrative1 = $RawJSON->narrative[0];
+					//if (isset($Narrative1)) {
 						SetValue($this->GetIDForIdent("D1Forecast"), (string)$Narrative1);
 					}
 									
-					$QPF1 = $RawJSON->qpf[0];
-					if (isset($QPF1)) {
+					if (isset($RawJSON->qpf[0]))
+					{	
+						$QPF1 = $RawJSON->qpf[0];
 						SetValue($this->GetIDForIdent("D1QPF"), (float)$QPF1);
 					}
 					
-					$QPFSNOW1 = $RawJSON->qpfSnow[0];
-					if (isset($QPFSNOW1)) {
+					if (isset($RawJSON->qpfSnow[0]))
+					{
+						$QPFSNOW1 = $RawJSON->qpfSnow[0];
 						SetValue($this->GetIDForIdent("D1QPFSNOW"), (float)$QPFSNOW1);
 					}
 					
-					$TemperatureMax1 = $RawJSON->temperatureMax[0];
-					if (isset($TemperatureMax1)) {
+					if (isset($RawJSON->temperatureMax[0]))
+					{
+						$TemperatureMax1 = $RawJSON->temperatureMax[0];
 						SetValue($this->GetIDForIdent("D1TemperatureMax"), (float)$TemperatureMax1);
 					}
 					
-					$TemperatureMin1 = $RawJSON->temperatureMin[0];
-					if (isset($TemperatureMin1)) {
+					if (isset($RawJSON->temperatureMin[0]))
+					{
+						$TemperatureMin1 = $RawJSON->temperatureMin[0];
 						SetValue($this->GetIDForIdent("D1TemperatureMin"), (float)$TemperatureMin1);
 					}
 					
