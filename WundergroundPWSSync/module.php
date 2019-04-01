@@ -574,104 +574,119 @@ if (!defined('vtBoolean')) {
 				
 					If ($this->ReadPropertyBoolean("ForecastDPRain") == "1")
 					{
-						$DP0QPF = $RawJSON->daypart[0]->qpf[0];
-						if (isset($DP0QPF)) {
+						
+						if (isset($RawJSON->daypart[0]->qpf[0]))
+						{
+							$DP0QPF = $RawJSON->daypart[0]->qpf[0];
 							SetValue($this->GetIDForIdent("DP0QPF"), (float)$DP0QPF);
-							}
+						}
 					
-						$DP0QPFSNOW = $RawJSON->daypart[0]->qpfSnow[0];
-						if (isset($DP0QPFSNOW)) {
+						if (isset($RawJSON->daypart[0]->qpfSnow[0]))
+						{
+							$DP0QPFSNOW = $RawJSON->daypart[0]->qpfSnow[0];
+						
 							SetValue($this->GetIDForIdent("DP0QPFSNOW"), (float)$DP0QPFSNOW);
-							}
+						}
 					
 					}
 					
 					If ($this->ReadPropertyBoolean("ForecastDPTemperature") == "1")
 					{
-						$DP0Temperature = $RawJSON->daypart[0]->temperature[0];
-						if (isset($DP0Temperature)) {
-							SetValue($this->GetIDForIdent("DP0Temperature"), (float)$DP0Temperature);
-							}
 						
-						$DP0WindChill = $RawJSON->daypart[0]->temperatureWindChill[0];
-						if (isset($DP0WindChill)) {
+						if (isset($RawJSON->daypart[0]->temperature[0]))
+						{
+							$DP0Temperature = $RawJSON->daypart[0]->temperature[0];
+							SetValue($this->GetIDForIdent("DP0Temperature"), (float)$DP0Temperature);
+						}
+						
+						if (isset($RawJSON->daypart[0]->temperatureWindChill[0]))
+						{
+							$DP0WindChill = $RawJSON->daypart[0]->temperatureWindChill[0];
 							SetValue($this->GetIDForIdent("DP0WindChill"), (float)$DP0WindChill);
-							}
+						}
 						
 					}
 				
 					If ($this->ReadPropertyBoolean("ForecastDPThunder") == "1")
 					{
-						$DP0Thunder = $RawJSON->daypart[0]->thunderCategory[0];
-						if (isset($DP0Thunder)) {
+						if (isset($RawJSON->daypart[0]->thunderCategory[0]))
+						{
+							$DP0Thunder = $RawJSON->daypart[0]->thunderCategory[0];
 							SetValue($this->GetIDForIdent("DP0Thunder"), (string)$DP0Thunder);
-							}
+						}
 		
 					}
 					
 					If ($this->ReadPropertyBoolean("ForecastDPUV") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1")
 					{
 					
-						$DP0UVDescription = $RawJSON->daypart[0]->uvDescription[0];
-						if (isset($DP0UVDescription)) {
+						if (isset($RawJSON->daypart[0]->uvDescription[0]))
+						{
+							$DP0UVDescription = $RawJSON->daypart[0]->uvDescription[0];
 							SetValue($this->GetIDForIdent("DP0UVDescription"), (string)$DP0UVDescription);
-							}
+						}
 						
 					}
 				
 					If ($this->ReadPropertyBoolean("ForecastDPUV") == "1")
 					{
-						$DP0UVIndex = $RawJSON->daypart[0]->uvIndex[0];
-						if (isset($DP0UVIndex)) {
+						if (isset($RawJSON->daypart[0]->uvIndex[0]))
+						{
+							$DP0UVIndex = $RawJSON->daypart[0]->uvIndex[0];
 							SetValue($this->GetIDForIdent("DP0UVIndex"), (integer)$DP0UVIndex);
-							}
+						}
 						
 					}
 					
 					If ($this->ReadPropertyBoolean("ForecastDPWind") == "1")
 					{
-						$DP0WINDDIR = $RawJSON->daypart[0]->windDirection[0];
-						if (isset($DP0WINDDIR)) {
+						if (isset($RawJSON->daypart[0]->windDirection[0]))
+						{
+							$DP0WINDDIR = $RawJSON->daypart[0]->windDirection[0];
 							SetValue($this->GetIDForIdent("DP0WINDDIR"), (float)$DP0WINDDIR);
 						}
 						
-						
-						$DP0WINDSpeed = $RawJSON->daypart[0]->windSpeed[0];
-						if (isset($DP0WINDSpeed)) {
+						if (isset($RawJSON->daypart[0]->windSpeed[0]))
+						{
+							$DP0WINDSpeed = $RawJSON->daypart[0]->windSpeed[0];
 							SetValue($this->GetIDForIdent("DP0WINDSpeed"), (float)$DP0WINDSpeed);
-							}
+						}
 
 					}
 					
 					If ($this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1")
 					{
-						$DP0WINDDIRText = $RawJSON->daypart[0]->windDirectionCardinal[0];
-						if (isset($DP0WINDDIRText)) {
-								SetValue($this->GetIDForIdent("DP0WINDDIRText"), (string)$DP0WINDDIRText);
-								}
+						if (isset($RawJSON->daypart[0]->windDirectionCardinal[0]))
+						{
+							$DP0WINDDIRText = $RawJSON->daypart[0]->windDirectionCardinal[0];
+							SetValue($this->GetIDForIdent("DP0WINDDIRText"), (string)$DP0WINDDIRText);
+						}
 						
-						$DP0WINDDIRPhrase = $RawJSON->daypart[0]->windPhrase[0];
-						if (isset($DP0WINDDIRPhrase)) {
-								SetValue($this->GetIDForIdent("DP0WINDDIRPhrase"), (string)$DP0WINDDIRPhrase);
-								}
+						if (isset($RawJSON->daypart[0]->windPhrase[0]))
+						{
+							$DP0WINDDIRPhrase = $RawJSON->daypart[0]->windPhrase[0];
+							SetValue($this->GetIDForIdent("DP0WINDDIRPhrase"), (string)$DP0WINDDIRPhrase);
+						}
 					
 					}
 					
 					If ($this->ReadPropertyBoolean("ForecastDPIcon") == "1")
 					{
+						if (isset($RawJSON->daypart[0]->iconCode[0]))
+						{
 						$DP0Icon = $RawJSON->daypart[0]->iconCode[0];
-						if (isset($DP0Icon)) {
-							SetValue($this->GetIDForIdent("DP0Icon"), (integer)$DP0Icon);					
-							}
+						SetValue($this->GetIDForIdent("DP0Icon"), (integer)$DP0Icon);					
+						}
 						
 					}
 					
 					If ($this->ReadPropertyBoolean("ForecastDPCloudCover") == "1")
 					{
+						if (isset($RawJSON->daypart[0]->cloudCover[0]))
+						{
 						$DP0CloudCover = $RawJSON->daypart[0]->cloudCover[0];
-						if (isset($DP0CloudCover)) {
-							SetValue($this->GetIDForIdent("DP0CloudCover"), (integer)$DP0CloudCover);					
-							}
+						SetValue($this->GetIDForIdent("DP0CloudCover"), (integer)$DP0CloudCover);					
+						}
 						
 					}
 
