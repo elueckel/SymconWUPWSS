@@ -134,7 +134,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP0DN', $this->Translate('Daypart 0 (Current 12h) Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
 				$this->MaintainVariable('DP0Name', $this->Translate('Daypart 0 (Current 12h) Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
 				$this->MaintainVariable('DP0Narrative', $this->Translate('Daypart 0 (Current 12h) Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
-				$this->MaintainVariable('DP0PrecipChance', $this->Translate('Daypart 0 (Current 12h) Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
+				$this->MaintainVariable('DP0PrecipChance', $this->Translate('Daypart 0 (Current 12h) Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
 				$this->MaintainVariable('DP0PrecipType', $this->Translate('Daypart 0 (Current 12h) Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
 				$this->MaintainVariable('DP0CloudCover', $this->Translate('Daypart 0 (Current 12h) Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP0QPF', $this->Translate('Daypart 0 (Current 12h) Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -155,7 +155,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP1DN', $this->Translate('Daypart 1 (Next 12h) Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
 				$this->MaintainVariable('DP1Name', $this->Translate('Daypart 1 (Next 12h) Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
 				$this->MaintainVariable('DP1Narrative', $this->Translate('Daypart 1 (Next 12h) Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
-				$this->MaintainVariable('DP1PrecipChance', $this->Translate('Daypart 1 (Next 12h) Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
+				$this->MaintainVariable('DP1PrecipChance', $this->Translate('Daypart 1 (Next 12h) Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
 				$this->MaintainVariable('DP1PrecipType', $this->Translate('Daypart 1 (Next 12h) Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
 				$this->MaintainVariable('DP1CloudCover', $this->Translate('Daypart 1 (Next 12h) Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP1QPF', $this->Translate('Daypart 1 (Next 12h) Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -176,7 +176,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP2DN', $this->Translate('Daypart 2 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
 				$this->MaintainVariable('DP2Name', $this->Translate('Daypart 2 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
 				$this->MaintainVariable('DP2Narrative', $this->Translate('Daypart 2 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
-				$this->MaintainVariable('DP2PrecipChance', $this->Translate('Daypart 2 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
+				$this->MaintainVariable('DP2PrecipChance', $this->Translate('Daypart 2 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
 				$this->MaintainVariable('DP2PrecipType', $this->Translate('Daypart 2 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
 				$this->MaintainVariable('DP2CloudCover', $this->Translate('Daypart 2 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP2QPF', $this->Translate('Daypart 2 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -197,7 +197,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP3DN', $this->Translate('Daypart 3 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
 				$this->MaintainVariable('DP3Name', $this->Translate('Daypart 3 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
 				$this->MaintainVariable('DP3Narrative', $this->Translate('Daypart 3 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
-				$this->MaintainVariable('DP3PrecipChance', $this->Translate('Daypart 3 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
+				$this->MaintainVariable('DP3PrecipChance', $this->Translate('Daypart 3 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
 				$this->MaintainVariable('DP3PrecipType', $this->Translate('Daypart 3 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
 				$this->MaintainVariable('DP3CloudCover', $this->Translate('Daypart 3 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP3QPF', $this->Translate('Daypart 3 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -218,7 +218,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP4DN', $this->Translate('Daypart 4 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
 				$this->MaintainVariable('DP4Name', $this->Translate('Daypart 4 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
 				$this->MaintainVariable('DP4Narrative', $this->Translate('Daypart 4 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
-				$this->MaintainVariable('DP4PrecipChance', $this->Translate('Daypart 4 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
+				$this->MaintainVariable('DP4PrecipChance', $this->Translate('Daypart 4 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
 				$this->MaintainVariable('DP4PrecipType', $this->Translate('Daypart 4 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
 				$this->MaintainVariable('DP4CloudCover', $this->Translate('Daypart 4 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP4QPF', $this->Translate('Daypart 4 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -239,7 +239,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP5DN', $this->Translate('Daypart 5 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
 				$this->MaintainVariable('DP5Name', $this->Translate('Daypart 5 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
 				$this->MaintainVariable('DP5Narrative', $this->Translate('Daypart 5 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
-				$this->MaintainVariable('DP5PrecipChance', $this->Translate('Daypart 5 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
+				$this->MaintainVariable('DP5PrecipChance', $this->Translate('Daypart 5 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
 				$this->MaintainVariable('DP5PrecipType', $this->Translate('Daypart 5 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
 				$this->MaintainVariable('DP5CloudCover', $this->Translate('Daypart 5 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP5QPF', $this->Translate('Daypart 5 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -281,7 +281,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP7DN', $this->Translate('Daypart 7 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
 				$this->MaintainVariable('DP7Name', $this->Translate('Daypart 7 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
 				$this->MaintainVariable('DP7Narrative', $this->Translate('Daypart 7 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
-				$this->MaintainVariable('DP7PrecipChance', $this->Translate('Daypart 7 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
+				$this->MaintainVariable('DP7PrecipChance', $this->Translate('Daypart 7 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
 				$this->MaintainVariable('DP7PrecipType', $this->Translate('Daypart 7 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
 				$this->MaintainVariable('DP7CloudCover', $this->Translate('Daypart 7 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP7QPF', $this->Translate('Daypart 7 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -302,7 +302,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP8DN', $this->Translate('Daypart 8 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
 				$this->MaintainVariable('DP8Name', $this->Translate('Daypart 8 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
 				$this->MaintainVariable('DP8Narrative', $this->Translate('Daypart 8 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
-				$this->MaintainVariable('DP8PrecipChance', $this->Translate('Daypart 8 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
+				$this->MaintainVariable('DP8PrecipChance', $this->Translate('Daypart 8 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
 				$this->MaintainVariable('DP8PrecipType', $this->Translate('Daypart 8 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
 				$this->MaintainVariable('DP8CloudCover', $this->Translate('Daypart 8 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP8QPF', $this->Translate('Daypart 8 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -323,7 +323,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP9DN', $this->Translate('Daypart 9 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
 				$this->MaintainVariable('DP9Name', $this->Translate('Daypart 9 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
 				$this->MaintainVariable('DP9Narrative', $this->Translate('Daypart 9 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
-				$this->MaintainVariable('DP9PrecipChance', $this->Translate('Daypart 9 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
+				$this->MaintainVariable('DP9PrecipChance', $this->Translate('Daypart 9 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
 				$this->MaintainVariable('DP9PrecipType', $this->Translate('Daypart 9 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
 				$this->MaintainVariable('DP9CloudCover', $this->Translate('Daypart 9 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP9QPF', $this->Translate('Daypart 9 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -344,7 +344,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP10DN', $this->Translate('Daypart 10 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
 				$this->MaintainVariable('DP10Name', $this->Translate('Daypart 10 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
 				$this->MaintainVariable('DP10Narrative', $this->Translate('Daypart 10 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
-				$this->MaintainVariable('DP10PrecipChance', $this->Translate('Daypart 10 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
+				$this->MaintainVariable('DP10PrecipChance', $this->Translate('Daypart 10 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
 				$this->MaintainVariable('DP10PrecipType', $this->Translate('Daypart 10 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
 				$this->MaintainVariable('DP10CloudCover', $this->Translate('Daypart 10 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP10QPF', $this->Translate('Daypart 10 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -365,7 +365,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP11DN', $this->Translate('Daypart 11 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
 				$this->MaintainVariable('DP11Name', $this->Translate('Daypart 11 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
 				$this->MaintainVariable('DP11Narrative', $this->Translate('Daypart 11 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
-				$this->MaintainVariable('DP11PrecipChance', $this->Translate('Daypart 11 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
+				$this->MaintainVariable('DP11PrecipChance', $this->Translate('Daypart 11 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
 				$this->MaintainVariable('DP11PrecipType', $this->Translate('Daypart 11 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
 				$this->MaintainVariable('DP11CloudCover', $this->Translate('Daypart 11 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 				$this->MaintainVariable('DP11QPF', $this->Translate('Daypart 11 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
@@ -508,7 +508,7 @@ if (!defined('vtBoolean')) {
 				If ($this->ReadPropertyInteger("ForecastShort") > "2")
 				{
 				$Narrative3 = $RawJSON->narrative[2];
-				SetValue($this->GetIDForIdent("D3Forecast"), (string)$Narrative2);
+				SetValue($this->GetIDForIdent("D3Forecast"), (string)$Narrative3);
 				$QPF3 = $RawJSON->qpf[2];
 				SetValue($this->GetIDForIdent("D3QPF"), (float)$QPF3);
 				$QPFSNOW3 = $RawJSON->qpfSnow[2];
@@ -558,9 +558,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP0Name"), (string)$DP0Name);
 				$DP0Narrative = $RawJSON->daypart[0]->narrative[0];
 				SetValue($this->GetIDForIdent("DP0Narrative"), (string)$DP0Narrative);
-				$DP0PrecipChance = $RawJSON->daypart[0]->precipChance[1];
+				$DP0PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[1]);
 				SetValue($this->GetIDForIdent("DP0PrecipChance"), (integer)$DP0PrecipChance);
-				$DP0PrecipType = $RawJSON->daypart[0]->precipType[1];
+				$DP0PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[1]);
 				SetValue($this->GetIDForIdent("DP0PrecipType"), (string)$DP0PrecipType);
 				
 				
@@ -678,9 +678,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP1Name"), (string)$DP1Name);
 				$DP1Narrative = $RawJSON->daypart[0]->narrative[1];
 				SetValue($this->GetIDForIdent("DP1Narrative"), (string)$DP1Narrative);
-				$DP1PrecipChance = $RawJSON->daypart[0]->precipChance[1];
+				$DP1PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[1]);
 				SetValue($this->GetIDForIdent("DP1PrecipChance"), (integer)$DP1PrecipChance);
-				$DP1PrecipType = $RawJSON->daypart[0]->precipType[1];
+				$DP1PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[1]);
 				SetValue($this->GetIDForIdent("DP1PrecipType"), (string)$DP1PrecipType);
 				
 
@@ -763,9 +763,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP2Name"), (string)$DP2Name);
 				$DP2Narrative = $RawJSON->daypart[0]->narrative[2];
 				SetValue($this->GetIDForIdent("DP2Narrative"), (string)$DP2Narrative);
-				$DP2PrecipChance = $RawJSON->daypart[0]->precipChance[2];
+				$DP2PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[2]);
 				SetValue($this->GetIDForIdent("DP2PrecipChance"), (integer)$DP2PrecipChance);
-				$DP2PrecipType = $RawJSON->daypart[0]->precipType[2];
+				$DP2PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[2]);
 				SetValue($this->GetIDForIdent("DP2PrecipType"), (string)$DP2PrecipType);
 				
 				
@@ -845,9 +845,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP3Name"), (string)$DP3Name);
 				$DP3Narrative = $RawJSON->daypart[0]->narrative[3];
 				SetValue($this->GetIDForIdent("DP3Narrative"), (string)$DP3Narrative);
-				$DP3PrecipChance = $RawJSON->daypart[0]->precipChance[3];
+				$DP3PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[3]);
 				SetValue($this->GetIDForIdent("DP3PrecipChance"), (integer)$DP3PrecipChance);
-				$DP3PrecipType = $RawJSON->daypart[0]->precipType[3];
+				$DP3PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[3]);
 				SetValue($this->GetIDForIdent("DP3PrecipType"), (string)$DP3PrecipType);
 				
 				
@@ -928,9 +928,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP4Name"), (string)$DP4Name);
 				$DP4Narrative = $RawJSON->daypart[0]->narrative[4];
 				SetValue($this->GetIDForIdent("DP4Narrative"), (string)$DP4Narrative);
-				$DP4PrecipChance = $RawJSON->daypart[0]->precipChance[4];
+				$DP4PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[4]);
 				SetValue($this->GetIDForIdent("DP4PrecipChance"), (integer)$DP4PrecipChance);
-				$DP4PrecipType = $RawJSON->daypart[0]->precipType[4];
+				$DP4PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[4]);
 				SetValue($this->GetIDForIdent("DP4PrecipType"), (string)$DP4PrecipType);
 				
 				
@@ -1010,9 +1010,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP5Name"), (string)$DP5Name);
 				$DP5Narrative = $RawJSON->daypart[0]->narrative[5];
 				SetValue($this->GetIDForIdent("DP5Narrative"), (string)$DP5Narrative);
-				$DP5PrecipChance = $RawJSON->daypart[0]->precipChance[5];
+				$DP5PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[5]);
 				SetValue($this->GetIDForIdent("DP5PrecipChance"), (integer)$DP5PrecipChance);
-				$DP5PrecipType = $RawJSON->daypart[0]->precipType[5];
+				$DP5PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[5]);
 				SetValue($this->GetIDForIdent("DP5PrecipType"), (string)$DP5PrecipType);
 				
 				
@@ -1092,9 +1092,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP6Name"), (string)$DP6Name);
 				$DP6Narrative = $RawJSON->daypart[0]->narrative[6];
 				SetValue($this->GetIDForIdent("DP6Narrative"), (string)$DP6Narrative);
-				$DP6PrecipChance = $RawJSON->daypart[0]->precipChance[6];
+				$DP6PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[6]);
 				SetValue($this->GetIDForIdent("DP6PrecipChance"), (integer)$DP6PrecipChance);
-				$DP6PrecipType = $RawJSON->daypart[0]->precipType[6];
+				$DP6PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[6]);
 				SetValue($this->GetIDForIdent("DP6PrecipType"), (string)$DP6PrecipType);
 				
 				
@@ -1174,9 +1174,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP7Name"), (string)$DP7Name);
 				$DP7Narrative = $RawJSON->daypart[0]->narrative[7];
 				SetValue($this->GetIDForIdent("DP7Narrative"), (string)$DP7Narrative);
-				$DP7PrecipChance = $RawJSON->daypart[0]->precipChance[7];
+				$DP7PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[7]);
 				SetValue($this->GetIDForIdent("DP7PrecipChance"), (integer)$DP7PrecipChance);
-				$DP7PrecipType = $RawJSON->daypart[0]->precipType[7];
+				$DP7PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[7]);
 				SetValue($this->GetIDForIdent("DP7PrecipType"), (string)$DP7PrecipType);
 				
 				
@@ -1256,9 +1256,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP8Name"), (string)$DP8Name);
 				$DP8Narrative = $RawJSON->daypart[0]->narrative[8];
 				SetValue($this->GetIDForIdent("DP8Narrative"), (string)$DP8Narrative);
-				$DP8PrecipChance = $RawJSON->daypart[0]->precipChance[8];
+				$DP8PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[8]);
 				SetValue($this->GetIDForIdent("DP8PrecipChance"), (integer)$DP8PrecipChance);
-				$DP8PrecipType = $RawJSON->daypart[0]->precipType[8];
+				$DP8PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[8]);
 				SetValue($this->GetIDForIdent("DP8PrecipType"), (string)$DP8PrecipType);
 				
 				
@@ -1338,9 +1338,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP9Name"), (string)$DP9Name);
 				$DP9Narrative = $RawJSON->daypart[0]->narrative[9];
 				SetValue($this->GetIDForIdent("DP9Narrative"), (string)$DP9Narrative);
-				$DP9PrecipChance = $RawJSON->daypart[0]->precipChance[9];
+				$DP9PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[9]);
 				SetValue($this->GetIDForIdent("DP9PrecipChance"), (integer)$DP9PrecipChance);
-				$DP9PrecipType = $RawJSON->daypart[0]->precipType[9];
+				$DP9PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[9]);
 				SetValue($this->GetIDForIdent("DP9PrecipType"), (string)$DP9PrecipType);
 				
 				
@@ -1420,9 +1420,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP10Name"), (string)$DP10Name);
 				$DP10Narrative = $RawJSON->daypart[0]->narrative[10];
 				SetValue($this->GetIDForIdent("DP10Narrative"), (string)$DP10Narrative);
-				$DP10PrecipChance = $RawJSON->daypart[0]->precipChance[10];
+				$DP10PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[10]);
 				SetValue($this->GetIDForIdent("DP10PrecipChance"), (integer)$DP10PrecipChance);
-				$DP10PrecipType = $RawJSON->daypart[0]->precipType[10];
+				$DP10PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[10]);
 				SetValue($this->GetIDForIdent("DP10PrecipType"), (string)$DP10PrecipType);
 				
 				
@@ -1502,9 +1502,9 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("DP11Name"), (string)$DP11Name);
 				$DP11Narrative = $RawJSON->daypart[0]->narrative[11];
 				SetValue($this->GetIDForIdent("DP11Narrative"), (string)$DP11Narrative);
-				$DP11PrecipChance = $RawJSON->daypart[0]->precipChance[11];
+				$DP11PrecipChance = $this->Translate($RawJSON->daypart[0]->precipChance[11]);
 				SetValue($this->GetIDForIdent("DP11PrecipChance"), (integer)$DP11PrecipChance);
-				$DP11PrecipType = $RawJSON->daypart[0]->precipType[11];
+				$DP11PrecipType = $this->Translate($RawJSON->daypart[0]->precipType[11]);
 				SetValue($this->GetIDForIdent("DP11PrecipType"), (string)$DP11PrecipType);
 				
 				
