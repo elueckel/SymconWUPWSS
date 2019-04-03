@@ -1,9 +1,6 @@
 {
     "elements":
     [
-        { "type": "Label", "label": "Wunderground Login Information" },
-		{ "type": "ValidationTextBox", "name": "WU_ID", "caption": "WU Station ID" },
-        { "type": "PasswordTextBox", "name": "WU_Password", "caption": "WU Login Password" },
 		{ "type": "Label", "label": "Downloading forecasts requires a seperate WU API key" },
 		{ "type": "ValidationTextBox", "name": "WU_API", "caption": "WU API Key" },
 		{ "type": "ValidationTextBox", "name": "Latitude", "caption": "Latitude" },
@@ -25,6 +22,7 @@
 		{ "type": "CheckBox", "name": "ForecastDPTemperature", "caption": "Temperature"},
 		{ "type": "CheckBox", "name": "ForecastDPRain", "caption": "Precip / Rain"},
 		{ "type": "CheckBox", "name": "ForecastDPWind", "caption": "Wind*"},
+		{ "type": "CheckBox", "name": "ForecastDPCloudCover", "caption": "Cloud Cover"},
 		{ "type": "CheckBox", "name": "ForecastDPThunder", "caption": "Thunder"},
 		{ "type": "CheckBox", "name": "ForecastDPUV", "caption": "UV Data*"},
 		{ "type": "CheckBox", "name": "ForecastDPIcon", "caption": "Icons"},
@@ -33,6 +31,9 @@
 		{ "type": "CheckBox", "name": "ForecastDPNarrative", "caption": "Text Info"},
 		{ "type": "Label", "label": "" },
         { "type": "Label", "label": "Values to be uploaded to Wunderground" },
+		{ "type": "Label", "label": "Wunderground Login Information" },
+		{ "type": "ValidationTextBox", "name": "WU_ID", "caption": "WU Station ID" },
+        { "type": "PasswordTextBox", "name": "WU_Password", "caption": "WU Login Password" },
 		{ "type": "SelectVariable", "name": "OutsideTemperature", "caption": "Temperature Outside" },
 		{ "type": "SelectVariable", "name": "Humidity", "caption": "Humidity" },
 		{ "type": "SelectVariable", "name": "DewPoint", "caption": "Dew Point" },
@@ -43,11 +44,18 @@
 		{ "type": "SelectVariable", "name": "Rain24h", "caption": "Rain in 24h" },
 		{ "type": "SelectVariable", "name": "AirPressure", "caption": "Air Pressure" },
 		{ "type": "SelectVariable", "name": "UVIndex", "caption": "UV Index" },
+		{ "name": "WindConversion", "type": "Select", "caption": "Wind Conversion",
+		"options": [
+			{ "label": "m/s", "value": "ms" },
+			{ "label": "km/h", "value": "kmh" }
+			]
+		},
 		{ "type": "Label", "label": "Update Timer" },
 		{ "type": "IntervalBox", "name": "Timer", "caption": "Seconds" },
 		{ "type": "Label", "label": "" },
         { "type": "Label", "label": "Values to be downloaded from Wunderground PWS" },
-		{ "type": "Label", "label": "Requires a Station ID and WU Password - entered above" },
+		{ "type": "Label", "label": "Station ID you want to query" },
+		{ "type": "ValidationTextBox", "name": "DLT_WU_ID", "caption": "WU Station ID" },
 		{ "type": "CheckBox", "name": "DLTemperature", "caption": "Temperature" },
 		{ "type": "CheckBox", "name": "DLSolarRadiation", "caption": "Solar Radiation" },
 		{ "type": "CheckBox", "name": "DLUV", "caption": "UV" },
