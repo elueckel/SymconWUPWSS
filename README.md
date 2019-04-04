@@ -23,13 +23,13 @@ https://github.com/elueckel/SymconWUPWSS
 ## Einrichten der Instanzen in IP-Symcon
 Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Hersteller '(Sonstige)' aufgeführt.
 
-## Version 1.0 12/02/2018
+### Version 1.0 12/02/2018
 * Upload von Wetterdaten an Wunderground
 * Anmeldung an Wunderground via Station ID und API Key
 * Auswahl von diversen Wetterdaten
 * Upload Konfigurierbar in Schritten von Sekunden
 
-## Version 2.0 17/03/2019
+### Version 2.0 17/03/2019
 * Einbindung der neuen Weather.com API seitens Wunderground für Uploader von Wetterdaten
 * Anmeldung an der neuen API durch neuen Key (siehe oben)
 * Download von Übersichtswetterdaten für bis zu 5 Tage (benötigt wird API Key und Geodaten)
@@ -43,7 +43,7 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * Es ist möglich die Rohdaten in einer eigenen Variable für die eigene Auswertung bereitzustellen
 * Testfunktion innerhalb der Moduls um Download und Upload zu testen
 
-## Version 2.1 31/03/2019
+### Version 2.1 31/03/2019
 * Neu Bewölkung wird für die Detail Vorhersage bereitgestellt
 * Neu der Download von Wetterdaten kann jetzt unabhänig vom Upload definiert werden. Hierfür eine andere WU ID festlegen (somit können Daten z.B. durch eine andere nahe Station angereichert werden)
 * Neu bei dem Upload von Wetterdaten kann für den Wind jetzt m/s oder km/h gwählt werden (z.B. wenn man eine Homematic OC3 nutzt)
