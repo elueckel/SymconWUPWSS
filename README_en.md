@@ -43,7 +43,7 @@ Version 2.1 31/03/2019
 * New download of weather data is seperate from upload using a second station ID (allowing to enrich local data from another PWS)
 * New possibility to select windspeed in m/s or km/h to e.g. support the Homematic OC3 Weather Station
 
-##IMPORTANT:
+#IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.
 The maximum number of calls is 1500 per day or 30 per minute for downloading data
 Komplette Doku für Weather.com API: https://docs.google.com/document/d/1eKCnKXI9xnoMGRRzOL1xPCBihNV2rOet08qpE_gArAY/edit
