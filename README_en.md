@@ -20,13 +20,13 @@ Via Module-Control using the following URL: https://github.com/elueckel/SymconWU
 # Setup of the Instance in IP-Symcon
 Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 
-Version 1.0 12/02/2018
+### Version 1.0 12/02/2018
 * Upload of weatherdata to Wunderground
 * Login via Station ID and API Key
 * Picklist with local sensor data 
 * Upload configurable in seconds 
 
-Version 2.0 17/03/2019
+### Version 2.0 17/03/2019
 * Update using the new Wunderground API
 * Login via new API key
 * Download of a high level forecast of up to 5 days (based on API key and Geodata)
@@ -39,7 +39,7 @@ Version 2.0 17/03/2019
 * Possibility to download the raw data in a JSON file 
 * Test function for all 3 segments
 
-Version 2.1 31/03/2019
+### Version 2.1 31/03/2019
 * New cloud cover is provided in the detail forecast
 * New download of weather data is seperate from upload using a second station ID (allowing to enrich local data from another PWS)
 * New possibility to select windspeed in m/s or km/h to e.g. support the Homematic OC3 Weather Station
