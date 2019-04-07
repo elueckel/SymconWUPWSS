@@ -1808,12 +1808,12 @@ if (!defined('vtBoolean')) {
     public function CurrentPWSData()
 		{
 
-            $WU_ID = $this->ReadPropertyString("DLT_WU_ID");
+            $DLT_WU_ID = $this->ReadPropertyString("DLT_WU_ID");
             $WU_API = $this->ReadPropertyString("WU_API");
 
 
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v2/pws/observations/current?stationId='.$WU_ID.'&format=json&units=m&apiKey='.$WU_API);
+            curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v2/pws/observations/current?stationId='.$DLT_WU_ID.'&format=json&units=m&apiKey='.$WU_API);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_TIMEOUT, 5);
             $RawData = curl_exec($ch);
