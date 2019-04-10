@@ -67,6 +67,7 @@ if (!defined('vtBoolean')) {
 			$this->RegisterPropertyBoolean("Debug", 0);
 			
 			//Component sets timer, but default is OFF
+			$this->RegisterTimer("ForecastTimer",0,"WUPWSS_Forecast(\$_IPS['TARGET']);");
 			$this->RegisterTimer("UpdateTimer",0,"WUPWSS_UploadToWunderground(\$_IPS['TARGET']);");
 			$this->RegisterTimer("PWSDownloadTimer",0,"WUPWSS_CurrentPWSData(\$_IPS['TARGET']);");
 			
@@ -92,6 +93,11 @@ if (!defined('vtBoolean')) {
 				$TimerMSDL = $this->ReadPropertyInteger("DLTimer") * 1000 * 60;
 				
         		$this->SetTimerInterval("PWSDownloadTimer",$TimerMSDL);
+				
+				//Timer for Forecast
+				$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval") * 1000 * 3600;
+				
+        		$this->SetTimerInterval("ForecastTimer",$ForecastInterval);
     		
 
 			$vpos = 1;
@@ -100,7 +106,8 @@ if (!defined('vtBoolean')) {
 				
 				$sourceID = $this->ReadPropertyInteger("SourceID");
 				$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval");
-		
+				
+				/*
 				$eid = @IPS_GetObjectIDByIdent("Forecast", $this->InstanceID);
 				if ($eid == 0) {
 					$eid = IPS_CreateEvent(1);
@@ -112,6 +119,8 @@ if (!defined('vtBoolean')) {
 					IPS_SetEventCyclicTimeFrom($eid, 07, 05, 0);
 					IPS_SetEventScript($eid, 'WUPWSS_Forecast($_IPS[\'TARGET\'], "Up");');
 				}
+				
+				
 				
 				If (($this->ReadPropertyInteger("ForecastDP") > 0 OR $this->ReadPropertyInteger("ForecastShort") > 0))
 				{
@@ -125,6 +134,8 @@ if (!defined('vtBoolean')) {
 					$eid = @IPS_GetObjectIDByIdent("Forecast", $this->InstanceID);
 					IPS_SetEventActive($eid, false);
 				}
+				
+				*/
 
 				//Variablen anlegen
 
