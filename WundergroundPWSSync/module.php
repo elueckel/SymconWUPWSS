@@ -107,37 +107,11 @@ if (!defined('vtBoolean')) {
 				$sourceID = $this->ReadPropertyInteger("SourceID");
 				$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval");
 				
-				
+				//Löscht alten externen Timer mit Namen Forecast falls vorhanden
 				$eid = @IPS_GetObjectIDByIdent("Forecast", $this->InstanceID);
 				if ($eid == 1) {
-					$eid = IPS_DeleteEvent(1);
-					/*
-					IPS_SetParent($eid, $this->InstanceID);
-					IPS_SetIdent($eid, "Forecast");
-					IPS_SetName($eid, "Forecast");
-					IPS_SetHidden($eid, true);
-					IPS_SetEventCyclic($eid, 2, 1, 0, 0, 3, $ForecastInterval);    //Jeden Tag
-					IPS_SetEventCyclicTimeFrom($eid, 07, 05, 0);
-					IPS_SetEventScript($eid, 'WUPWSS_Forecast($_IPS[\'TARGET\'], "Up");');
-					*/
+				$eid = IPS_DeleteEvent(1);	
 				}
-				
-				/*
-				
-				If (($this->ReadPropertyInteger("ForecastDP") > 0 OR $this->ReadPropertyInteger("ForecastShort") > 0))
-				{
-					$eid = @IPS_GetObjectIDByIdent("Forecast", $this->InstanceID);
-					IPS_SetEventCyclic($eid, 2, 1, 0, 0, 3, $ForecastInterval);    //Jeden Tag
-					IPS_SetEventActive($eid, true);
-				}
-				
-				ElseIf (($this->ReadPropertyInteger("ForecastDP") == 0) OR ($this->ReadPropertyInteger("ForecastShort") == 0))
-				{
-					$eid = @IPS_GetObjectIDByIdent("Forecast", $this->InstanceID);
-					IPS_SetEventActive($eid, false);
-				}
-				
-				*/
 
 				//Variablen anlegen
 
