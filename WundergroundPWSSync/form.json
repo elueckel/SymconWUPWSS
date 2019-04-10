@@ -3,6 +3,7 @@
     [
 		{ "type": "Label", "label": "Downloading forecasts requires a seperate WU API key" },
 		{ "type": "ValidationTextBox", "name": "WU_API", "caption": "WU API Key" },
+	    	{ "type": "SelectLocation", "name": "Latitude", "caption": "Location" },
 		{ "type": "ValidationTextBox", "name": "Latitude", "caption": "Latitude" },
 		{ "type": "ValidationTextBox", "name": "Longitude", "caption": "Longitude" },
 		{ "name": "Language", "type": "Select", "caption": "Language",
