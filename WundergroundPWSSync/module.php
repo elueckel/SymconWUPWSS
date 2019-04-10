@@ -107,10 +107,11 @@ if (!defined('vtBoolean')) {
 				$sourceID = $this->ReadPropertyInteger("SourceID");
 				$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval");
 				
-				/*
+				
 				$eid = @IPS_GetObjectIDByIdent("Forecast", $this->InstanceID);
-				if ($eid == 0) {
-					$eid = IPS_CreateEvent(1);
+				if ($eid == 1) {
+					$eid = IPS_DeleteEvent(1);
+					/*
 					IPS_SetParent($eid, $this->InstanceID);
 					IPS_SetIdent($eid, "Forecast");
 					IPS_SetName($eid, "Forecast");
@@ -118,9 +119,10 @@ if (!defined('vtBoolean')) {
 					IPS_SetEventCyclic($eid, 2, 1, 0, 0, 3, $ForecastInterval);    //Jeden Tag
 					IPS_SetEventCyclicTimeFrom($eid, 07, 05, 0);
 					IPS_SetEventScript($eid, 'WUPWSS_Forecast($_IPS[\'TARGET\'], "Up");');
+					*/
 				}
 				
-				
+				/*
 				
 				If (($this->ReadPropertyInteger("ForecastDP") > 0 OR $this->ReadPropertyInteger("ForecastShort") > 0))
 				{
