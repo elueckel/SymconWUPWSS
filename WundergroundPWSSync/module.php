@@ -429,8 +429,8 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DLVWindDirection', $this->Translate('Download Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyBoolean("DLWindDirection") == "1");
 				$this->MaintainVariable('DLVHumidity', $this->Translate('Download Humidity'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyBoolean("DLHumidity") == "1");
 				$this->MaintainVariable('DLVWindchill', $this->Translate('Download Windchill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyBoolean("DLWindchill") == "1");
-				$this->MaintainVariable('DLVWindSpeed', $this->Translate('Download Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyBoolean("DLWindSpeed") == "1");
-				$this->MaintainVariable('DLVWindGust', $this->Translate('Download Wind Gust'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyBoolean("DLWindGust") == "1");
+				$this->MaintainVariable('DLVWindSpeed', $this->Translate('Download Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyBoolean("DLWindSpeed") == "1");
+				$this->MaintainVariable('DLVWindGust', $this->Translate('Download Wind Gust'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyBoolean("DLWindGust") == "1");
 				$this->MaintainVariable('DLVPressure', $this->Translate('Download Pressure'), vtFloat, "~AirPressure.F", $vpos++, $this->ReadPropertyBoolean("DLPressure") == "1");
 				$this->MaintainVariable('DLVRainRate', $this->Translate('Download Rain Rate'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyBoolean("DLRainRate") == "1");
 				$this->MaintainVariable('DLVRainTotal', $this->Translate('Download Rain Total'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyBoolean("DLRainTotal") == "1");	
