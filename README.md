@@ -50,6 +50,14 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * UI aufgeräumt
 * Bugfixes
 
+### Version 2.1.1 07-04-2019
+* Bugfix beim Download von einer anderen Station
+
+### Version 2.1.2 12-04-2019
+* Change Timer für Forecast nun intern - läuft alle x-Stunden (Grund - damit das Modul in den Module Store kann). Theoretisch sollte ein existierender  externer Timer gelöscht werden / falls nicht bitte manuell tun.
+* Bugfix Profil für aktuellen Wetter Download jetzt auf kmh gesetzt
+
+
 ## WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen. 
 * Das kostenlose Limit für den Download von Daten liegt bei 1500 calls pro Tag oder 30 pro minute für den Download von Daten
