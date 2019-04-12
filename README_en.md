@@ -44,6 +44,13 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 * New download of weather data is seperate from upload using a second station ID (allowing to enrich local data from another PWS)
 * New possibility to select windspeed in m/s or km/h to e.g. support the Homematic OC3 Weather Station
 
+### Version 2.1.1 07-04-2019
+* Bugfix when downloading from another station
+
+### Version 2.1.2 12-04-2019
+* Change for timer now runs hourly internal (change required to get the module into the module store - in case the existing time does not get deleted please do so manually)
+* Bugfix profile for weather download now in kmh
+
 # IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.
 The maximum number of calls is 1500 per day or 30 per minute for downloading data
