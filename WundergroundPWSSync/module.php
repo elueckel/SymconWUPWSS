@@ -442,7 +442,7 @@ if (!defined('vtBoolean')) {
 			$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Latitude.','.$Longitude.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 				$RawData = curl_exec($ch);
 				curl_close($ch);
 
@@ -1802,7 +1802,7 @@ if (!defined('vtBoolean')) {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v2/pws/observations/current?stationId='.$DLT_WU_ID.'&format=json&units=m&apiKey='.$WU_API);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
             $RawData = curl_exec($ch);
             curl_close($ch);
 
