@@ -1,6 +1,6 @@
 # Symcon - Wunderground PWS Sync & Vorhersage Modul (new WU API)
 
-Diese Modul erlaubt basierend auf der neuen Wunderground/Weather.com API
+Dieses Modul erlaubt basierend auf der neuen Wunderground/Weather.com API
 
 * den Upload von Wetterdaten einer eigenen Wetterstation 
 * den Download von Daten ein Wetterstation anhand der Station ID
