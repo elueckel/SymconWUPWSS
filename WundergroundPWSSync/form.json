@@ -5,7 +5,7 @@
 		{ "type": "ValidationTextBox", "name": "WU_API", "caption": "WU API Key" },
 		{ "type": "ValidationTextBox", "name": "Latitude", "caption": "Latitude" },
 		{ "type": "ValidationTextBox", "name": "Longitude", "caption": "Longitude" },
-	    	{ "type": "SelectLocation", "name": "Location", "caption": "Location" }
+	    	{ "type": "SelectLocation", "name": "Location", "caption": "Location" },
 		{ "name": "Language", "type": "Select", "caption": "Language",
 		"options": [
 			{ "label": "German", "value": "de-de" },
