@@ -25,7 +25,7 @@ if (!defined('vtBoolean')) {
 			$this->RegisterPropertyString("Language","de-de");
 			$this->RegisterPropertyString("Latitude","");
 			$this->RegisterPropertyString("Longitude","");
-			$this->RegisterPropertyString("Location,"");
+			$this->RegisterPropertyString("Location","");
 			$this->RegisterPropertyInteger("ForecastShort","0");
 			$this->RegisterPropertyInteger("ForecastDP","0");
 			$this->RegisterPropertyInteger("ForecastInterval",12);
