@@ -1,6 +1,6 @@
 # Symcon - Wunderground PWS Sync & Vorhersage Modul (new WU API)
 
-Diese Modul erlaubt basierend auf der neuen Wunderground/Weather.com API
+Dieses Modul erlaubt basierend auf der neuen Wunderground/Weather.com API
 
 * den Upload von Wetterdaten einer eigenen Wetterstation 
 * den Download von Daten ein Wetterstation anhand der Station ID
@@ -57,6 +57,8 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * Change Timer für Forecast nun intern - läuft alle x-Stunden (Grund - damit das Modul in den Module Store kann). Theoretisch sollte ein existierender  externer Timer gelöscht werden / falls nicht bitte manuell tun.
 * Bugfix Profil für aktuellen Wetter Download jetzt auf kmh gesetzt
 
+### Version 2.1.3 22-04-2019
+* Change CURL timer auf 10 Sekunden gesetzt
 
 ## WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen. 

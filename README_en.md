@@ -51,6 +51,9 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 * Change for timer now runs hourly internal (change required to get the module into the module store - in case the existing time does not get deleted please do so manually)
 * Bugfix profile for weather download now in kmh
 
+### Version 2.1.3 22-04-2019
+* Change CURL timer set to 10 seconds
+
 # IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.
 The maximum number of calls is 1500 per day or 30 per minute for downloading data

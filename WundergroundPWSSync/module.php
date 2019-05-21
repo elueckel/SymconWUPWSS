@@ -134,7 +134,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP0WINDDIR', $this->Translate('Daypart 0 (Current 12h) Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP0WINDDIRText', $this->Translate('Daypart 0 (Current 12h) Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP0WINDDIRPhrase', $this->Translate('Daypart 0 (Current 12h) Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP0WINDSpeed', $this->Translate('Daypart 0 (Current 12h) Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP0WINDSpeed', $this->Translate('Daypart 0 (Current 12h) Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP0Icon', $this->Translate('Daypart 0 (Current 12h) Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 				
 				$vpos = 50;
@@ -155,7 +155,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP1WINDDIR', $this->Translate('Daypart 1 (Next 12h) Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP1WINDDIRText', $this->Translate('Daypart 1 (Next 12h) Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP1WINDDIRPhrase', $this->Translate('Daypart 1 (Next 12h) Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP1WINDSpeed', $this->Translate('Daypart 1 (Next 12h) Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP1WINDSpeed', $this->Translate('Daypart 1 (Next 12h) Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP1Icon', $this->Translate('Daypart 1 (Next 12h) Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
 				$vpos = 100;
@@ -176,7 +176,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP2WINDDIR', $this->Translate('Daypart 2 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP2WINDDIRText', $this->Translate('Daypart 2 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP2WINDDIRPhrase', $this->Translate('Daypart 2 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP2WINDSpeed', $this->Translate('Daypart 2 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP2WINDSpeed', $this->Translate('Daypart 2 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP2Icon', $this->Translate('Daypart 2 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
 				$vpos = 150;
@@ -197,7 +197,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP3WINDDIR', $this->Translate('Daypart 3 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP3WINDDIRText', $this->Translate('Daypart 3 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP3WINDDIRPhrase', $this->Translate('Daypart 3 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP3WINDSpeed', $this->Translate('Daypart 3 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP3WINDSpeed', $this->Translate('Daypart 3 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP3Icon', $this->Translate('Daypart 3 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
 				$vpos = 200;
@@ -218,7 +218,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP4WINDDIR', $this->Translate('Daypart 4 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP4WINDDIRText', $this->Translate('Daypart 4 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP4WINDDIRPhrase', $this->Translate('Daypart 4 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP4WINDSpeed', $this->Translate('Daypart 4 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP4WINDSpeed', $this->Translate('Daypart 4 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP4Icon', $this->Translate('Daypart 4 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
 				$vpos = 250;
@@ -239,7 +239,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP5WINDDIR', $this->Translate('Daypart 5 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP5WINDDIRText', $this->Translate('Daypart 5 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP5WINDDIRPhrase', $this->Translate('Daypart 5 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP5WINDSpeed', $this->Translate('Daypart 5 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP5WINDSpeed', $this->Translate('Daypart 5 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP5Icon', $this->Translate('Daypart 5 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 				
 				$vpos = 300;
@@ -260,7 +260,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP6WINDDIR', $this->Translate('Daypart 6 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP6WINDDIRText', $this->Translate('Daypart 6 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP6WINDDIRPhrase', $this->Translate('Daypart 6 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP6WINDSpeed', $this->Translate('Daypart 6 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP6WINDSpeed', $this->Translate('Daypart 6 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP6Icon', $this->Translate('Daypart 6 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 				
 				$vpos = 350;
@@ -281,7 +281,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP7WINDDIR', $this->Translate('Daypart 7 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP7WINDDIRText', $this->Translate('Daypart 7 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP7WINDDIRPhrase', $this->Translate('Daypart 7 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP7WINDSpeed', $this->Translate('Daypart 7 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP7WINDSpeed', $this->Translate('Daypart 7 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP7Icon', $this->Translate('Daypart 7 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 				
 				$vpos = 400;
@@ -302,7 +302,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP8WINDDIR', $this->Translate('Daypart 8 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP8WINDDIRText', $this->Translate('Daypart 8 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP8WINDDIRPhrase', $this->Translate('Daypart 8 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP8WINDSpeed', $this->Translate('Daypart 8 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP8WINDSpeed', $this->Translate('Daypart 8 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP8Icon', $this->Translate('Daypart 8 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 				
 				$vpos = 450;
@@ -323,7 +323,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP9WINDDIR', $this->Translate('Daypart 9 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP9WINDDIRText', $this->Translate('Daypart 9 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP9WINDDIRPhrase', $this->Translate('Daypart 9 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP9WINDSpeed', $this->Translate('Daypart 9 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP9WINDSpeed', $this->Translate('Daypart 9 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP9Icon', $this->Translate('Daypart 9 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 				
 				$vpos = 500;
@@ -344,7 +344,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP10WINDDIR', $this->Translate('Daypart 10 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP10WINDDIRText', $this->Translate('Daypart 10 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP10WINDDIRPhrase', $this->Translate('Daypart 10 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP10WINDSpeed', $this->Translate('Daypart 10 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP10WINDSpeed', $this->Translate('Daypart 10 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP10Icon', $this->Translate('Daypart 10 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 				
 				$vpos = 550;
@@ -365,7 +365,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP11WINDDIR', $this->Translate('Daypart 11 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP11WINDDIRText', $this->Translate('Daypart 11 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP11WINDDIRPhrase', $this->Translate('Daypart 11 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-				$this->MaintainVariable('DP11WINDSpeed', $this->Translate('Daypart 11 - Wind Speed'), vtFloat, "~WindSpeed.ms", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
+				$this->MaintainVariable('DP11WINDSpeed', $this->Translate('Daypart 11 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP11Icon', $this->Translate('Daypart 11 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 				
 				
@@ -442,7 +442,7 @@ if (!defined('vtBoolean')) {
 			$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Latitude.','.$Longitude.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 				$RawData = curl_exec($ch);
 				curl_close($ch);
 
@@ -1802,7 +1802,7 @@ if (!defined('vtBoolean')) {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v2/pws/observations/current?stationId='.$DLT_WU_ID.'&format=json&units=m&apiKey='.$WU_API);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
             $RawData = curl_exec($ch);
             curl_close($ch);
 
