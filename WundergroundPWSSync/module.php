@@ -1675,7 +1675,7 @@ if (!defined('vtBoolean')) {
 			}		
 		
 		$WindSpeedU = str_replace(",",".",Round(($WindSpeed * 2.2369),2));
-		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Windspeed: ".$WindSpeedU, 0);
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Windspeed: ".$WindSpeedU." mph (".$WindSpeed." m/s)", 0);
 
 		$responseUrl .= "&windspeedmph=".$WindSpeedU;
 		}
