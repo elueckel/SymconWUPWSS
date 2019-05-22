@@ -1611,12 +1611,7 @@ if (!defined('vtBoolean')) {
 		
 		$WU_ID = $this->ReadPropertyString("WU_ID");
 		$WU_Password = $this->ReadPropertyString("WU_Password");
-		
-		$date = date('Y-m-d');
-		$hour = date('H');
-		$minute = date('i');
-		$second = date('s');
-		$time = $date.'+'.$hour.'%3A'.$minute.'%3A'.$second;
+		$time = "now";
 
 		
 		$responseUrl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
