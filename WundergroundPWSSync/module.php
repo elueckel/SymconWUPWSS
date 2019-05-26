@@ -1712,7 +1712,7 @@ if (!defined('vtBoolean')) {
 		If ($this->ReadPropertyInteger("Rain_last_Hour") != "")
 		{
 		$Rain_last_Hour = GetValue($this->ReadPropertyInteger("Rain_last_Hour"));
-		$Rain_last_Hour = str_replace(",",".",Round(($Rain_last_Hour / 2.54),2));
+		$Rain_last_Hour = str_replace(",",".",Round(($Rain_last_Hour / 25.4),2));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Rain Last Hour: ".$Rain_last_Hour, 0);
 		}
 		
@@ -1726,7 +1726,7 @@ if (!defined('vtBoolean')) {
 		If ($this->ReadPropertyInteger("Rain24h") != "")
 		{
 		$Rain24h = GetValue($this->ReadPropertyInteger("Rain24h"));
-		$Rain24h = str_replace(",",".",Round(($Rain24h / 2.54),2));
+		$Rain24h = str_replace(",",".",Round(($Rain24h / 25.4),2));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Rain in 24h: ".$Rain24h, 0);
 		}
 		
