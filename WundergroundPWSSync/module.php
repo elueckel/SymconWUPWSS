@@ -445,8 +445,7 @@ if (!defined('vtBoolean')) {
 			//$Latitude = str_replace(",",".",$this->ReadPropertyString("Latitude"));
 
 			$ch = curl_init();
-				curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Location.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
-				//curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Latitude.','.$Longitude.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
+				curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Latitude.','.$Longitude.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 				$RawData = curl_exec($ch);
