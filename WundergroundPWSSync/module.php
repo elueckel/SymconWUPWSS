@@ -25,6 +25,10 @@ if (!defined('vtBoolean')) {
 			$this->RegisterPropertyString("Language","de-de");
 			$this->RegisterPropertyString("Latitude","");
 			$this->RegisterPropertyString("Longitude","");
+			if (isset($this->RegisterPropertyString("Latitude") AND $this->RegisterPropertyString("Longitude"));
+				{
+					$this->RegisterPropertyString("Location", '{"latitude":$this->RegisterPropertyString("Latitude"),"longitude":$this->RegisterPropertyString("Longitude")}');
+				}
 			$this->RegisterPropertyString("Location", '{"latitude":0,"longitude":0}');
 			$this->RegisterPropertyInteger("ForecastShort","0");
 			$this->RegisterPropertyInteger("ForecastDP","0");
