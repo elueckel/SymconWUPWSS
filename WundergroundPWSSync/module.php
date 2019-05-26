@@ -438,8 +438,8 @@ if (!defined('vtBoolean')) {
 			$Language = $this->ReadPropertyString("Language");
 			$WU_API = $this->ReadPropertyString("WU_API");
 			$locationObject = json_decode($this->ReadPropertyString('Location'), true); 
-			$Latitude = $locationObject['latitude']; 
-			$Longitude = $locationObject['longitude'];  
+			$Latitude = str_replace(",",".",$locationObject['latitude']); 
+			$Longitude = str_replace(",",".",$locationObject['longitude']);  
 			
 			//$Longitude = str_replace(",",".",$this->ReadPropertyString("Longitude"));
 			//$Latitude = str_replace(",",".",$this->ReadPropertyString("Latitude"));
