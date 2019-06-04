@@ -10,6 +10,7 @@ Dieses Modul erlaubt basierend auf der neuen Wunderground/Weather.com API
 ## Benötigte Dinge
 - Account bei Wunderground inkl einer dort angelegten Wetterstation!
 - Einen neuen API Key https://www.wunderground.com/member/api-keys
+- Für den Upload mit Station ID und Key anmelden (kann bei Station im WU Portal nachgesehen werden)
 
 WICHTIG: Die Seite für die Erstellung des API Keys ist erst noch dem Upload von Daten (die aktuelle Aussentemperatur reicht) verfügbar. Stand März 2019 kommt man auf den API Link NUR durch den Link - es gibt noch keinen Aufruf auf der Website. 
 
