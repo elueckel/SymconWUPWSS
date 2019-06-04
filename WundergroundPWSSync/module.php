@@ -1606,18 +1606,25 @@ if (!defined('vtBoolean')) {
 		// Prepare Temperature for upload
 		
 		$Debug = $this->ReadPropertyBoolean("Debug");
+
+		// setting standard values like time and login
+		
+		$WU_ID = $this->ReadPropertyString("WU_ID");
+		$WU_Password = $this->ReadPropertyString("WU_Password");
+		$time = "now";
+
+		
+		$responseUrl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
 		
 		If ($this->ReadPropertyInteger("OutsideTemperature") != "")
 		{
 		$Temperature = GetValue($this->ReadPropertyInteger("OutsideTemperature"));
 		$TemperatureF = str_replace(",",".",(($Temperature * 9) /5 + 32));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);
+		
+		$responseUrl .= "&tempf=".$TemperatureF;
 		}
 		
-		ElseIf ($this->ReadPropertyInteger("OutsideTemperature") == "0")
-		{
-		$TemperatureF = "";
-		}
 		
 		// Prepare Dewpoint for upload
 				
@@ -1626,12 +1633,10 @@ if (!defined('vtBoolean')) {
 		$DewPoint = GetValue($this->ReadPropertyInteger("DewPoint"));
 		$DewPointF = str_replace(",",".",(($DewPoint * 9) /5 + 32));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Taupunkt F: ".$DewPointF, 0);
+
+		$responseUrl .= "&dewptf=".$DewPointF;
 		}
-		
-		ElseIf ($this->ReadPropertyInteger("DewPoint") == "0")
-		{
-		$DewPointF = "";
-		}
+
 
 		// Prepare Humidity for upload
 				
@@ -1639,12 +1644,10 @@ if (!defined('vtBoolean')) {
 		{
 		$Humidity = GetValue($this->ReadPropertyInteger("Humidity"));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Humidity: ".$Humidity, 0);
+
+		$responseUrl .= "&humidity=".$Humidity;
 		}
-		
-		ElseIf ($this->ReadPropertyInteger("Humidity") == "0")
-		{
-		$Humidity = "";
-		}
+
 			
 		// Prepare Windirection for upload
 				
@@ -1653,12 +1656,10 @@ if (!defined('vtBoolean')) {
 		$WindDirection = GetValue($this->ReadPropertyInteger("WindDirection"));
 		$WindDirectionU = str_replace(",",".",$WindDirection);
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Direction: ".$WindDirectionU, 0);
+
+		$responseUrl .= "&winddir=".$WindDirectionU;
 		}
 		
-		ElseIf ($this->ReadPropertyInteger("WindDirection") == "0")
-		{
-		$WindDirectionU = "";
-		}
 
 		// Prepare Windspeed for upload
 				
@@ -1674,13 +1675,11 @@ if (!defined('vtBoolean')) {
 			}		
 		
 		$WindSpeedU = str_replace(",",".",Round(($WindSpeed * 2.2369),2));
-		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Windspeed: ".$WindSpeedU, 0);
+		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Windspeed: ".$WindSpeedU." mph (".$WindSpeed." m/s)", 0);
+
+		$responseUrl .= "&windspeedmph=".$WindSpeedU;
 		}
 		
-		ElseIf ($this->ReadPropertyInteger("WindSpeed") == "0")
-		{
-		$WindSpeedU = "";
-		}
 		
 		// Prepare Windgust for upload
 				
@@ -1697,13 +1696,10 @@ if (!defined('vtBoolean')) {
 		
 		$WindGustU = str_replace(",",".",Round(($WindGust * 2.2369),2));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Gust: ".$WindGustU, 0);
+
+		$responseUrl .= "&windgustmph=".$WindGustU;
 		}
 		
-		ElseIf ($this->ReadPropertyInteger("WindGust") == "0")
-		{
-		$WindGustU = "";
-		}
-
 		
 		// Prepare Rain last hour for upload
 				
@@ -1712,12 +1708,10 @@ if (!defined('vtBoolean')) {
 		$Rain_last_Hour = GetValue($this->ReadPropertyInteger("Rain_last_Hour"));
 		$Rain_last_Hour = str_replace(",",".",Round(($Rain_last_Hour / 2.54),2));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Rain Last Hour: ".$Rain_last_Hour, 0);
+
+		$responseUrl .= "&rainin=".$Rain_last_Hour;
 		}
 		
-		ElseIf ($this->ReadPropertyInteger("Rain_last_Hour") == "0")
-		{
-		$Rain_last_Hour = "";
-		}
 
 		// Prepare Rain 24h for upload
 				
@@ -1726,12 +1720,10 @@ if (!defined('vtBoolean')) {
 		$Rain24h = GetValue($this->ReadPropertyInteger("Rain24h"));
 		$Rain24h = str_replace(",",".",Round(($Rain24h / 2.54),2));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Rain in 24h: ".$Rain24h, 0);
+
+		$responseUrl .= "&dailyrainin=".$Rain24h;
 		}
 		
-		ElseIf ($this->ReadPropertyInteger("Rain24h") == "0")
-		{
-		$Rain24h = "";
-		}
 
 		// Prepare Airpressure for upload
 				
@@ -1740,12 +1732,10 @@ if (!defined('vtBoolean')) {
 		$AirPressure = GetValue($this->ReadPropertyInteger("AirPressure"));
 		$BPI = str_replace(",",".",Round(($AirPressure * 0.0295299830714),4));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Airpressure in BPI: ".$AirPressure, 0);
+
+		$responseUrl .= "&baromin=".$BPI;
 		}
 		
-		ElseIf ($this->ReadPropertyInteger("AirPressure") == "0")
-		{
-		$BPI = "";
-		}
 
 		// Prepare UV Index for upload
 				
@@ -1753,38 +1743,14 @@ if (!defined('vtBoolean')) {
 		{
 		$UVIndex = GetValue($this->ReadPropertyInteger("UVIndex"));
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload UV Index: ".$UVIndex, 0);
-		}
-		
-		ElseIf ($this->ReadPropertyInteger("UVIndex") == "0")
-		{
-		$UVIndex = "";
+
+		$responseUrl .= "&UV=".$UVIndex;
 		}
 
 			
-		// setting standard values like time and login
-		
-		$WU_ID = $this->ReadPropertyString("WU_ID");
-		$WU_Password = $this->ReadPropertyString("WU_Password");
-		
-		$date = date('Y-m-d');
-		$hour = date('H');
-		$minute = date('i');
-		$second = date('s');
-		$time = $date.'+'.$hour.'%3A'.$minute.'%3A'.$second;
-
-
 		//Upload to Wunderground
-		$Response =file_get_contents('https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID='.$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time.
-		"&tempf=".$TemperatureF.
-		"&dewptf=".$DewPointF.
-		"&winddir=".$WindDirectionU.
-		"&humidity=".$Humidity.
-		"&windspeedmph=".$WindSpeedU.
-		"&windgustmph=".$WindGustU.
-		"&rainin=".$Rain_last_Hour.
-		"&dailyrainin=".$Rain24h.
-		"&baromin=".$BPI.
-		"&UV=".$UVIndex);
+		$Response =file_get_contents($responseUrl);
+//		$this->SendDebug("Wunderground PWS Update","Wunderground URL: ".$responseUrl, 0);
 
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Service: ".$Response, 0);
 
