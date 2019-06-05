@@ -439,10 +439,10 @@ if (!defined('vtBoolean')) {
 			$Language = $this->ReadPropertyString("Language");
 			$WU_API = $this->ReadPropertyString("WU_API");
 			$locationObject = json_decode($this->ReadPropertyString('Location'), true);
-			//$Latitude = str_replace(",",".",$locationObject['latitude']);
-			//$Longitude = str_replace(",",".",$locationObject['longitude']);
-			$Longitude = str_replace(",",".",$this->ReadPropertyString("longitude"));
-			$Latitude = str_replace(",",".",$this->ReadPropertyString("latitude"));
+      $Latitude = str_replace(",",".",$locationObject['latitude']);
+			$Longitude = str_replace(",",".",$locationObject['longitude']);
+			//$Longitude = str_replace(",",".",$this->ReadPropertyString("longitude"));
+			//$Latitude = str_replace(",",".",$this->ReadPropertyString("latitude"));
 
 			$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Latitude.','.$Longitude.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
