@@ -3,9 +3,7 @@
     [
 		{ "type": "Label", "label": "Downloading forecasts requires a seperate WU API key" },
 		{ "type": "ValidationTextBox", "name": "WU_API", "caption": "WU API Key" },
-		{ "type": "ValidationTextBox", "name": "Latitude", "caption": "Latitude" },
-		{ "type": "ValidationTextBox", "name": "Longitude", "caption": "Longitude" },
-	    	{ "type": "SelectLocation", "name": "Location", "caption": "Location" },
+	  { "type": "SelectLocation", "name": "Location", "caption": "Location" },
 		{ "name": "Language", "type": "Select", "caption": "Language",
 		"options": [
 			{ "label": "German", "value": "de-de" },
@@ -73,7 +71,7 @@
 		{ "type": "CheckBox", "name": "JSONRawStation", "caption": "JSON Raw Data Station" },
 		{ "type": "Label", "label": "Update Timer for weather data download" },
 		{ "type": "NumberSpinner", "name": "DLTimer", "caption": "Update Timer", "suffix": "every x minutes"}
-			
+
     ],
 
 	"actions":
@@ -81,7 +79,7 @@
 		{ "type": "Button", "label": "Test download of weather forecast", "onClick": "WUPWSS_Forecast($id);" },
 		{ "type": "Button", "label": "Test download of current data", "onClick": "WUPWSS_CurrentPWSData($id);" },
         	{ "type": "Button", "label": "Test upload of weather data", "onClick": "WUPWSS_UploadToWunderground($id);" }
-	
+
 	]
-	
+
 }
