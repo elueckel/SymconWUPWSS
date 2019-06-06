@@ -1779,6 +1779,108 @@ if (!defined('vtBoolean')) {
 
             $RawJSON = json_decode($RawData);
 
+            // new section for download
+
+            If ($this->ReadPropertyBoolean("DLTemperature") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->metric->temp))
+      					{
+                  $DLJSONTemp = $RawJSON->observations[0]->metric->temp;
+                  SetValue($this->GetIDForIdent("DLVTemperature"), (float)$DLJSONTemp);
+      					}
+            }
+
+            If ($this->ReadPropertyBoolean("DLSolarRadiation") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->solarRadiation))
+      					{
+                  $DLJSONSolarRadiation = $RawJSON->observations[0]->solarRadiation;
+                  SetValue($this->GetIDForIdent("DLVSolarRadiation"), (float)$DLJSONSolarRadiation);
+      					}
+            }
+
+
+            If ($this->ReadPropertyBoolean("DLWindDirection") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->winddir))
+      					{
+                  $DLJSONWindDirection = $RawJSON->observations[0]->winddir;
+                  SetValue($this->GetIDForIdent("DLVWindDirection"), (float)$DLJSONWindDirection);
+      					}
+            }
+
+
+            If ($this->ReadPropertyBoolean("DLHumidity") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->humidity))
+      					{
+                  $DLJSONDLHumidity = $RawJSON->observations[0]->humidity;
+				          SetValue($this->GetIDForIdent("DLVHumidity"), (integer)$DLJSONDLHumidity);
+      					}
+            }
+
+
+            If ($this->ReadPropertyBoolean("DLWindchill") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->metric->windChill))
+      					{
+                  $DLJSONWindchill = $RawJSON->observations[0]->metric->windChill;
+                  SetValue($this->GetIDForIdent("DLVWindchill"), (float)$DLJSONWindchill);
+      					}
+            }
+
+
+            If ($this->ReadPropertyBoolean("DLWindSpeed") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->metric->windSpeed))
+      					{
+                  $DLJSONWindSpeed = $RawJSON->observations[0]->metric->windSpeed;
+                  SetValue($this->GetIDForIdent("DLVWindSpeed"), (float)$DLJSONWindSpeed);
+      					}
+            }
+
+
+            If ($this->ReadPropertyBoolean("DLWindGust") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->metric->windGust))
+      					{
+                  $DLJSONWindGust = $RawJSON->observations[0]->metric->windGust;
+                  SetValue($this->GetIDForIdent("DLVWindGust"), (float)$DLJSONWindGust);
+      					}
+            }
+
+
+            If ($this->ReadPropertyBoolean("DLPressure") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->metric->pressure))
+      					{
+                  $DLJSONPressure = $RawJSON->observations[0]->metric->pressure;
+                  SetValue($this->GetIDForIdent("DLVPressure"), (float)$DLJSONPressure);
+      					}
+            }
+
+
+            If ($this->ReadPropertyBoolean("DLRainRate") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->metric->precipRate))
+      					{
+                  $DLJSONRainRate = $RawJSON->observations[0]->metric->precipRate;
+                  SetValue($this->GetIDForIdent("DLVRainRate"), (float)$DLJSONRainRate);
+      					}
+            }
+
+
+            If ($this->ReadPropertyBoolean("DLRainTotal") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->metric->precipTotal))
+      					{
+                  $DLJSONRainTotal = $RawJSON->observations[0]->metric->precipTotal;
+                  SetValue($this->GetIDForIdent("DLVRainTotal"), (float)$DLJSONRainTotal);
+      					}
+            }
+
+
+/**
             If ($this->ReadPropertyBoolean("DLTemperature") == "1")
             {
 				          $DLJSONTemp = $RawJSON->observations[0]->metric->temp;
@@ -1844,6 +1946,8 @@ if (!defined('vtBoolean')) {
 				          $DLJSONRainTotal = $RawJSON->observations[0]->metric->precipTotal;
                   SetValue($this->GetIDForIdent("DLVRainTotal"), (float)$DLJSONRainTotal);
             }
+
+**/
 
 			If ($this->ReadPropertyBoolean("JSONRawStation") == "1")
 			{
