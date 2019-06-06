@@ -1955,6 +1955,8 @@ if (!defined('vtBoolean')) {
 				$RawJSONStation = json_encode($RawData);
 				//$this->SendDebug('Raw Data: ', $RawData,0);
 				SetValue($this->GetIDForIdent("JSONRawStationVar"), (string)$RawData);
+        $this->SetBuffer('RawJSONStation', $RawJSONStation);
+				$Bufferdata = $this->GetBuffer("RawJSONStation");
         $this->SendDebug('Raw Data Current Weather: ', $Bufferdata ,0);
 				//Encode
 				/*
