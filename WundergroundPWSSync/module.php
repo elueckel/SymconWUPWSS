@@ -377,7 +377,7 @@ if (!defined('vtBoolean')) {
 				
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th10hum-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Soil_Moisture1 = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Soil_Moisture1"), (float)trim($Soil_Moisture1));
@@ -394,7 +394,7 @@ if (!defined('vtBoolean')) {
 				
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th10temp-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Soil_Temperature1 = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Soil_Temperature1"), (float)trim($Soil_Temperature1));
@@ -411,7 +411,7 @@ if (!defined('vtBoolean')) {
 				
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th11hum-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Soil_Moisture2 = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Soil_Moisture2"), (float)trim($Soil_Moisture2));
@@ -428,7 +428,7 @@ if (!defined('vtBoolean')) {
 				
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th11temp-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Soil_Temperature2 = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Soil_Temperature2"), (float)trim($Soil_Temperature2));
@@ -445,7 +445,7 @@ if (!defined('vtBoolean')) {
 				
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th12hum-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Soil_Moisture3 = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Soil_Moisture3"), (float)trim($Soil_Moisture3));
@@ -462,7 +462,7 @@ if (!defined('vtBoolean')) {
 				
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th12temp-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Soil_Temperature3 = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Soil_Temperature3"), (float)trim($Soil_Temperature3));
@@ -479,7 +479,7 @@ if (!defined('vtBoolean')) {
 				
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th13hum-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Soil_Moisture4 = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Soil_Moisture4"), (float)trim($Soil_Moisture4));
@@ -496,7 +496,7 @@ if (!defined('vtBoolean')) {
 				
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th13temp-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Soil_Temperature4 = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Soil_Temperature4"), (float)trim($Soil_Temperature4));
@@ -510,7 +510,7 @@ if (!defined('vtBoolean')) {
 					
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th16hum-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$leaf = curl_exec($ch);
 				$this->SendDebug('Result', $leaf,0);
@@ -544,7 +544,7 @@ if (!defined('vtBoolean')) {
 					
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[sol0evo-act]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$evo = curl_exec($ch);
 				$this->SendDebug('Result', $evo,0);
@@ -558,7 +558,7 @@ if (!defined('vtBoolean')) {
 			{
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[forecast-textdehtml]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Forecast = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Forecast"), (string)trim($Forecast));
@@ -568,7 +568,7 @@ if (!defined('vtBoolean')) {
 			{
 				$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[forecast-text]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Forecast = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Forecast"), (string)trim($Forecast));
@@ -652,7 +652,7 @@ if (!defined('vtBoolean')) {
 			
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th0temp-dmin]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Temp_S1_Min = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Temp_S1_Min"), (float)trim($Stat_Temp_S1_Min));
@@ -660,7 +660,7 @@ if (!defined('vtBoolean')) {
 				
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th0temp-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Temp_S1_Max = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Temp_S1_Max"), (float)trim($Stat_Temp_S1_Max));
@@ -668,7 +668,7 @@ if (!defined('vtBoolean')) {
 
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th0hum-dmin]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Hum_S1_Min = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Hum_S1_Min"), (integer)trim($Stat_Hum_S1_Min));
@@ -676,7 +676,7 @@ if (!defined('vtBoolean')) {
 				
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th0hum-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Hum_S1_Max = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Hum_S1_Max"), (integer)trim($Stat_Hum_S1_Max));
@@ -684,7 +684,7 @@ if (!defined('vtBoolean')) {
 				
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[thb0press-dmin]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Pres_Min = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Pres_Min"), (float)trim($Stat_Pres_Min));
@@ -692,7 +692,7 @@ if (!defined('vtBoolean')) {
 				
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[thb0press-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Pres_Max = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Pres_Max"), (float)trim($Stat_Pres_Max));
@@ -700,7 +700,7 @@ if (!defined('vtBoolean')) {
 			
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th0dew-dmin]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Dew_S1_Min = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Dew_S1_Min"), (float)trim($Stat_Dew_S1_Min));
@@ -708,7 +708,7 @@ if (!defined('vtBoolean')) {
 				
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[th0dew-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Dew_S1_Max = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Dew_S1_Max"), (float)trim($Stat_Dew_S1_Max));
@@ -716,7 +716,7 @@ if (!defined('vtBoolean')) {
 			
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[wind0avgwind-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Wind_Max = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Wind_Max"), (float)trim($Stat_Wind_Max));
@@ -725,7 +725,7 @@ if (!defined('vtBoolean')) {
 				
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[wind0wind-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Gust_Max = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Gust_Max"), (float)trim($Stat_Gust_Max));
@@ -733,7 +733,7 @@ if (!defined('vtBoolean')) {
 			
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[wind0chill-dmin]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Windchill_Min = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Windchill_Min"), (float)trim($Stat_Windchill_Min));
@@ -741,7 +741,7 @@ if (!defined('vtBoolean')) {
 				
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[wind0chill-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Windchill_Max = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Windchill_Max"), (float)trim($Stat_Windchill_Max));
@@ -749,7 +749,7 @@ if (!defined('vtBoolean')) {
 
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[uv0-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_UV = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_UV"), (integer)trim($Stat_UV));
@@ -757,7 +757,7 @@ if (!defined('vtBoolean')) {
 			
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[sol0rad-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Sol = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Sol"), (float)trim($Stat_Sol));
@@ -765,7 +765,7 @@ if (!defined('vtBoolean')) {
 				
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[sol0evo-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Evo = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Evo"), (float)trim($Stat_Evo));
@@ -774,7 +774,7 @@ if (!defined('vtBoolean')) {
 			
 			$ch = curl_init(); 
 				curl_setopt($ch, CURLOPT_URL, 'http://'.$User_Name.':'.$Password.'@'.$Server_Address.'/cgi-bin/template.cgi?template=[rain0total-dmax]');
-				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$Stat_Rain = curl_exec($ch);
 				SetValue($this->GetIDForIdent("Stat_Rain"), (float)trim($Stat_Rain));
