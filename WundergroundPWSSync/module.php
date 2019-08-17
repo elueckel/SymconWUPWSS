@@ -1619,8 +1619,9 @@ if (!defined('vtBoolean')) {
 		$WU_Password = $this->ReadPropertyString("WU_StationKey");
 		$time = "now";
 
-
-		$responseUrl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
+		
+		$responseUrl = "https://rtupdate.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
+		//$responseUrl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
 
 		If ($this->ReadPropertyInteger("OutsideTemperature") != "")
 		{
