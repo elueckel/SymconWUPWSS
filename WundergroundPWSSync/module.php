@@ -1620,8 +1620,8 @@ if (!defined('vtBoolean')) {
 		$time = "now";
 
 		
-		$responseUrl = "https://rtupdate.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
-		//$responseUrl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
+		//$responseUrl = "https://rtupdate.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
+		$responseUrl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
 
 		If ($this->ReadPropertyInteger("OutsideTemperature") != "")
 		{
@@ -1756,6 +1756,7 @@ if (!defined('vtBoolean')) {
 
 
 		//Upload to Wunderground
+		echo $responseUrl;
 		$Response =file_get_contents($responseUrl);
 //		$this->SendDebug("Wunderground PWS Update","Wunderground URL: ".$responseUrl, 0);
 
@@ -1957,9 +1958,9 @@ if (!defined('vtBoolean')) {
 				$RawJSONStation = json_encode($RawData);
 				//$this->SendDebug('Raw Data: ', $RawData,0);
 				SetValue($this->GetIDForIdent("JSONRawStationVar"), (string)$RawData);
-        $this->SetBuffer('RawJSONStation', $RawJSONStation);
+        			$this->SetBuffer('RawJSONStation', $RawJSONStation);
 				$Bufferdata = $this->GetBuffer("RawJSONStation");
-        $this->SendDebug('Raw Data Current Weather: ', $Bufferdata ,0);
+        			$this->SendDebug('Raw Data Current Weather: ', $Bufferdata ,0);
 				//Encode
 				/*
 				$this->SetBuffer('RawJSONStation', $RawJSONStation);
