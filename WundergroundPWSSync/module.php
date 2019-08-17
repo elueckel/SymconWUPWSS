@@ -1756,10 +1756,8 @@ if (!defined('vtBoolean')) {
 
 
 		//Upload to Wunderground
-		echo $responseUrl;
+		//echo $responseUrl;
 		$Response =file_get_contents($responseUrl);
-//		$this->SendDebug("Wunderground PWS Update","Wunderground URL: ".$responseUrl, 0);
-
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Service: ".$Response, 0);
 
 		}
