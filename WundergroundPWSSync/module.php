@@ -21,6 +21,7 @@ if (!defined('vtBoolean')) {
 			$this->RegisterPropertyString("WU_ID", "");
 			$this->RegisterPropertyString("WU_Password","");
 			$this->RegisterPropertyString("WU_API","");
+			$this->RegisterPropertyString("WU_StationKey","");
 			$this->RegisterPropertyString("Mode","U");
 			$this->RegisterPropertyString("Language","de-de");
 			//$this->RegisterPropertyString("Latitude","");
@@ -1615,7 +1616,7 @@ if (!defined('vtBoolean')) {
 		// setting standard values like time and login
 
 		$WU_ID = $this->ReadPropertyString("WU_ID");
-		$WU_Password = $this->ReadPropertyString("WU_Password");
+		$WU_Password = $this->ReadPropertyString("WU_StationKey");
 		$time = "now";
 
 
