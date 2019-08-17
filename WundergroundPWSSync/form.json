@@ -32,7 +32,7 @@
         	{ "type": "Label", "label": "Values to be uploaded to Wunderground" },
 		{ "type": "Label", "label": "Wunderground Login Information" },
 		{ "type": "ValidationTextBox", "name": "DLT_WU_ID", "caption": "WU Station ID" },
-        	{ "type": "PasswordTextBox", "name": "WU_Password", "caption": "Station Key" },
+        	{ "type": "PasswordTextBox", "name": "WU_StationKey", "caption": "Station Key" },
 		{ "type": "SelectVariable", "name": "OutsideTemperature", "caption": "Temperature Outside" },
 		{ "type": "SelectVariable", "name": "Humidity", "caption": "Humidity" },
 		{ "type": "SelectVariable", "name": "DewPoint", "caption": "Dew Point" },
