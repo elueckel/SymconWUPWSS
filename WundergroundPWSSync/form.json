@@ -54,7 +54,7 @@
 		{ "type": "Label", "label": "" },
         	{ "type": "Label", "label": "Values to be downloaded from Wunderground PWS" },
 		{ "type": "Label", "label": "Station ID you want to query" },
-		{ "type": "ValidationTextBox", "name": "DLT_WU_ID", "caption": "WU Station ID" },
+		{ "type": "ValidationTextBox", "name": "WU_ID", "caption": "WU Station ID" },
 		{ "type": "PasswordTextBox", "name": "WU_Password", "caption": "WU Login Password" },
 		{ "type": "CheckBox", "name": "DLTemperature", "caption": "Temperature" },
 		{ "type": "CheckBox", "name": "DLSolarRadiation", "caption": "Solar Radiation" },
