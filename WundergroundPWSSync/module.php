@@ -21,6 +21,7 @@ if (!defined('vtBoolean')) {
 			$this->RegisterPropertyString("WU_ID", "");
 			$this->RegisterPropertyString("WU_Password","");
 			$this->RegisterPropertyString("WU_API","");
+			$this->RegisterPropertyString("WU_StationKey","");
 			$this->RegisterPropertyString("Mode","U");
 			$this->RegisterPropertyString("Language","de-de");
 			//$this->RegisterPropertyString("Latitude","");
@@ -1615,10 +1616,11 @@ if (!defined('vtBoolean')) {
 		// setting standard values like time and login
 
 		$WU_ID = $this->ReadPropertyString("WU_ID");
-		$WU_Password = $this->ReadPropertyString("WU_Password");
+		$WU_Password = $this->ReadPropertyString("WU_StationKey");
 		$time = "now";
 
-
+		
+		//$responseUrl = "https://rtupdate.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
 		$responseUrl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
 
 		If ($this->ReadPropertyInteger("OutsideTemperature") != "")
@@ -1754,9 +1756,8 @@ if (!defined('vtBoolean')) {
 
 
 		//Upload to Wunderground
+		//echo $responseUrl;
 		$Response =file_get_contents($responseUrl);
-//		$this->SendDebug("Wunderground PWS Update","Wunderground URL: ".$responseUrl, 0);
-
 		$this->SendDebug("Wunderground PWS Update","Wunderground Upload Service: ".$Response, 0);
 
 		}
@@ -1955,9 +1956,9 @@ if (!defined('vtBoolean')) {
 				$RawJSONStation = json_encode($RawData);
 				//$this->SendDebug('Raw Data: ', $RawData,0);
 				SetValue($this->GetIDForIdent("JSONRawStationVar"), (string)$RawData);
-        $this->SetBuffer('RawJSONStation', $RawJSONStation);
+        			$this->SetBuffer('RawJSONStation', $RawJSONStation);
 				$Bufferdata = $this->GetBuffer("RawJSONStation");
-        $this->SendDebug('Raw Data Current Weather: ', $Bufferdata ,0);
+        			$this->SendDebug('Raw Data Current Weather: ', $Bufferdata ,0);
 				//Encode
 				/*
 				$this->SetBuffer('RawJSONStation', $RawJSONStation);
