@@ -71,7 +71,7 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * Der Ort für die Wetterstation kann jetzt in der WebConsole über das Location Modul gewählt werden. In der Classic Konsole ist die Eingabe nicht so komfortabel, aber es stehen jeweils ein Feld für Längen und Breitengrad zur Verfügung. [B] WICHTIG - für bestehende Installationen des Moduls muss der Längen und Breitengrad nochmals eingegeben werden, da die alten Werte nicht übernommen werden!!! [/b]
 * Der Download von Wetterdaten einer anderen Station wurde überarbeitet und sollte jetzt keine Probleme mehr machen wenn keine Werte kommen.
 
-### Version 2.3 08-09-2019
+### Version 2.2.1 08-09-2019
 * Diverse Bugfixes in Bezug auf den Upload von Daten und auch Anpassungen der Beschriftung 
 
 
