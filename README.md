@@ -72,7 +72,10 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * Der Download von Wetterdaten einer anderen Station wurde überarbeitet und sollte jetzt keine Probleme mehr machen wenn keine Werte kommen.
 
 ### Version 2.2.1 08-09-2019
-* Diverse Bugfixes in Bezug auf den Upload von Daten und auch Anpassungen der Beschriftung 
+* Diverse Bugfixes in Bezug auf den Upload von Daten und auch Anpassungen der Beschriftung
+
+### Version 2.3 29-04-2020
+* Es gibt nun die Möglichkeit die Regenmenge aus der 5 Tages-Vorhersage zu kumulieren, also Tag 1 + Tag 2 usw. um z.B. die zukünftige Wassermenge zur Bewässerung des Rasens durch eine Bewässerungssteuerung basierend auf der Wettervorhersage zu bestimmen.
 
 
 ## WICHTIG:
