@@ -29,6 +29,7 @@ if (!defined('vtBoolean')) {
 			//$this->RegisterPropertyString("Location", '{"latitude":$this->RegisterPropertyString("Latitude"),"longitude":$this->RegisterPropertyString("Longitude")}');
 			$this->RegisterPropertyString("Location", '{"latitude":0,"longitude":0}');
 			$this->RegisterPropertyInteger("ForecastShort","0");
+			$this->RegisterPropertyBoolean("CalculateUpcomingRain","0");
 			$this->RegisterPropertyInteger("ForecastDP","0");
 			$this->RegisterPropertyInteger("ForecastInterval",12);
 			$this->RegisterPropertyBoolean("ForecastDPTemperature","0");
@@ -380,13 +381,13 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('D1TemperatureMax', $this->Translate('Day 1 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "0");
 				$this->MaintainVariable('D1TemperatureMin', $this->Translate('Day 1 Temperature Min'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "0");
 
-
 				$vpos = 1050;
 				$this->MaintainVariable('D2Forecast', $this->Translate('Day 2 Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
 				$this->MaintainVariable('D2QPF', $this->Translate('Day 2 Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
 				$this->MaintainVariable('D2QPFSNOW', $this->Translate('Day 2 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
 				$this->MaintainVariable('D2TemperatureMax', $this->Translate('Day 2 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
 				$this->MaintainVariable('D2TemperatureMin', $this->Translate('Day 2 Temperature Min'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
+				$this->MaintainVariable('D2RainAmount', $this->Translate('Day 2 Amount of Rain'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1" AND $this->ReadPropertyBoolean("CalculateUpcomingRain") == 1);
 
 
 				$vpos = 1100;
@@ -395,6 +396,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('D3QPFSNOW', $this->Translate('Day 3 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2");
 				$this->MaintainVariable('D3TemperatureMax', $this->Translate('Day 3 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2");
 				$this->MaintainVariable('D3TemperatureMin', $this->Translate('Day 3 Temperature Min'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2");
+				$this->MaintainVariable('D3RainAmount', $this->Translate('Day 3 Amount of Rain'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2" AND $this->ReadPropertyBoolean("CalculateUpcomingRain") == 1);
 
 
 				$vpos = 1250;
@@ -403,6 +405,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('D4QPFSNOW', $this->Translate('Day 4 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3");
 				$this->MaintainVariable('D4TemperatureMax', $this->Translate('Day 4 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3");
 				$this->MaintainVariable('D4TemperatureMin', $this->Translate('Day 4 Temperature Min'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3");
+				$this->MaintainVariable('D4RainAmount', $this->Translate('Day 4 Amount of Rain'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3" AND $this->ReadPropertyBoolean("CalculateUpcomingRain") == 1);
 
 
 				$vpos = 1300;
@@ -411,6 +414,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('D5QPFSNOW', $this->Translate('Day 5 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
 				$this->MaintainVariable('D5TemperatureMax', $this->Translate('Day 5 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
 				$this->MaintainVariable('D5TemperatureMin', $this->Translate('Day 5 Temperature Min'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
+				$this->MaintainVariable('D5RainAmount', $this->Translate('Day 5 Amount of Rain'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4" AND $this->ReadPropertyBoolean("CalculateUpcomingRain") == 1);
 
 				$vpos = 2000;
 				$this->MaintainVariable('DLVTemperature', $this->Translate('Download Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyBoolean("DLTemperature") == "1");
@@ -440,7 +444,7 @@ if (!defined('vtBoolean')) {
 			$Language = $this->ReadPropertyString("Language");
 			$WU_API = $this->ReadPropertyString("WU_API");
 			$locationObject = json_decode($this->ReadPropertyString('Location'), true);
-      $Latitude = str_replace(",",".",$locationObject['latitude']);
+			$Latitude = str_replace(",",".",$locationObject['latitude']);
 			$Longitude = str_replace(",",".",$locationObject['longitude']);
 			//$Longitude = str_replace(",",".",$this->ReadPropertyString("longitude"));
 			//$Latitude = str_replace(",",".",$this->ReadPropertyString("latitude"));
@@ -504,6 +508,10 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("D2TemperatureMax"), (float)$TemperatureMax2);
 				$TemperatureMin2 = $RawJSON->temperatureMin[1];
 				SetValue($this->GetIDForIdent("D2TemperatureMin"), (float)$TemperatureMin2);
+				if ($this->ReadPropertyBoolean("CalculateUpcomingRain") == 1) {
+					$RainIn2Days = $QPF2 + $QPF1;
+					SetValue($this->GetIDForIdent("D2RainAmount"), (float)$RainIn2Days);
+					}
 				}
 
 				If ($this->ReadPropertyInteger("ForecastShort") > "2")
@@ -518,6 +526,10 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("D3TemperatureMax"), (float)$TemperatureMax3);
 				$TemperatureMin3 = $RawJSON->temperatureMin[2];
 				SetValue($this->GetIDForIdent("D3TemperatureMin"), (float)$TemperatureMin3);
+				if ($this->ReadPropertyBoolean("CalculateUpcomingRain") == 1) {
+					$RainIn3Days = $QPF3 + $RainIn2Days;
+					SetValue($this->GetIDForIdent("D3RainAmount"), (float)$RainIn3Days);
+					}
 				}
 
 				If ($this->ReadPropertyInteger("ForecastShort") > "3")
@@ -532,6 +544,10 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("D4TemperatureMax"), (float)$TemperatureMax4);
 				$TemperatureMin4 = $RawJSON->temperatureMin[3];
 				SetValue($this->GetIDForIdent("D4TemperatureMin"), (float)$TemperatureMin4);
+				if ($this->ReadPropertyBoolean("CalculateUpcomingRain") == 1) {
+					$RainIn4Days = $QPF4 + $RainIn3Days;
+					SetValue($this->GetIDForIdent("D4RainAmount"), (float)$RainIn4Days);
+					}
 				}
 
 				If ($this->ReadPropertyInteger("ForecastShort") > "4")
@@ -546,6 +562,10 @@ if (!defined('vtBoolean')) {
 				SetValue($this->GetIDForIdent("D5TemperatureMax"), (float)$TemperatureMax5);
 				$TemperatureMin5 = $RawJSON->temperatureMin[4];
 				SetValue($this->GetIDForIdent("D5TemperatureMin"), (float)$TemperatureMin5);
+				if ($this->ReadPropertyBoolean("CalculateUpcomingRain") == 1) {
+					$RainIn5Days = $QPF5 + $RainIn4Days;
+					SetValue($this->GetIDForIdent("D5RainAmount"), (float)$RainIn5Days);
+					}
 				}
 
 			// Detail Forecast Segments
