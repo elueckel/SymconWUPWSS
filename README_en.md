@@ -64,6 +64,9 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 * The location of the forecast can now be selected using a location function (Webconsole) or in the classic console via 2 fields. [B] IMPORTANT for existing installation please update these settings, since they are not inherited from the prior configuration[/b]
 * The download of current weather data was improved in case value are empty.
 
+### Version 2.3 29-04-2020
+* New option to cumulate the amount of rain in 5 days based upon the forecast, e.g. Day 1 + Day 2 etc. This can be used to calculate the needed amount of water for a sprinkler system. 
+
 
 # IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.
