@@ -1,4 +1,4 @@
-<?
+<?php
 
 if (!defined('vtBoolean')) {
     define('vtBoolean', 0);
@@ -1991,4 +1991,3 @@ if (!defined('vtBoolean')) {
 
 	}
 
-?>
