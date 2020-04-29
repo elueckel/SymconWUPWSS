@@ -14,6 +14,7 @@
 		{ "type": "Label", "label": "High level Forecast" },
 		{ "type": "Label", "label": "******************************" },
 		{ "type": "NumberSpinner", "name": "ForecastShort", "caption": "High level Forecast", "suffix": "Days max 5 - 0 is off"},
+		{ "type": "CheckBox", "name": "CalculateUpcomingRain", "caption": "Cumulate Upcoming Rain"},
 		{ "type": "Label", "label": "" },
 		{ "type": "Label", "label": "Detail Forecast in 12h segments" },
 		{ "type": "Label", "label": "*******************************" },
