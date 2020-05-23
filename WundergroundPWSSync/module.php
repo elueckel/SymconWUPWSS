@@ -422,6 +422,7 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DLVUV', $this->Translate('Download UV Index'), vtInteger, "~UVIndex", $vpos++, $this->ReadPropertyBoolean("DLUV") == "1");
 				$this->MaintainVariable('DLVWindDirection', $this->Translate('Download Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyBoolean("DLWindDirection") == "1");
 				$this->MaintainVariable('DLVHumidity', $this->Translate('Download Humidity'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyBoolean("DLHumidity") == "1");
+                $this->MaintainVariable('DLDewPoint', $this->Translate('Download Dew Point'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyBoolean("DLDewPT") == "1");
 				$this->MaintainVariable('DLVWindchill', $this->Translate('Download Windchill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyBoolean("DLWindchill") == "1");
 				$this->MaintainVariable('DLVWindSpeed', $this->Translate('Download Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyBoolean("DLWindSpeed") == "1");
 				$this->MaintainVariable('DLVWindGust', $this->Translate('Download Wind Gust'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyBoolean("DLWindGust") == "1");
@@ -1932,6 +1933,15 @@ if (!defined('vtBoolean')) {
 				          SetValue($this->GetIDForIdent("DLVHumidity"), (integer)$DLJSONDLHumidity);
             }
 
+            If ($this->ReadPropertyBoolean("DLDewPT") == "1")
+    				{
+      					if (isset($RawJSON->observations[0]->dewpt))
+      					{
+                        $DLDewPT = $RawJSON->observations[0]->dewpt;
+				          SetValue($this->GetIDForIdent("DLDewPoint"), (float)$DLDewPT);
+      					}
+            }
+
 			If ($this->ReadPropertyBoolean("DLWindchill") == "1")
             {
 				          $DLJSONWindchill = $RawJSON->observations[0]->metric->windChill;
@@ -1990,4 +2000,3 @@ if (!defined('vtBoolean')) {
 		}
 
 	}
-
