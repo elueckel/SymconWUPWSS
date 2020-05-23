@@ -1935,7 +1935,7 @@ if (!defined('vtBoolean')) {
 
             If ($this->ReadPropertyBoolean("DLDewPT") == "1")
     				{
-      					if (isset($RawJSON->observations[0]->dewpt))
+      					if (isset($RawJSON->observations[0]->metric->dewpt))
       					{
                         $DLDewPT = $RawJSON->observations[0]->metric->dewpt;
 				          SetValue($this->GetIDForIdent("DLDewPoint"), (float)$DLDewPT);
