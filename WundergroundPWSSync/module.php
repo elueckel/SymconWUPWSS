@@ -1937,7 +1937,7 @@ if (!defined('vtBoolean')) {
     				{
       					if (isset($RawJSON->observations[0]->dewpt))
       					{
-                        $DLDewPT = $RawJSON->observations[0]->dewpt;
+                        $DLDewPT = $RawJSON->observations[0]->metric->dewpt;
 				          SetValue($this->GetIDForIdent("DLDewPoint"), (float)$DLDewPT);
       					}
             }
