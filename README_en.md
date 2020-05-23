@@ -67,6 +67,9 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 ### Version 2.3 29-04-2020
 * New option to cumulate the amount of rain in 5 days based upon the forecast, e.g. Day 1 + Day 2 etc. This can be used to calculate the needed amount of water for a sprinkler system. 
 
+### Version 2.31 23-05-2020
+* Fix - Dewpoint will be downloaded for chosen Weather Station
+
 
 # IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.
