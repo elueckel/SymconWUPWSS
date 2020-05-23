@@ -77,6 +77,9 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 ### Version 2.3 29-04-2020
 * Es gibt nun die Möglichkeit die Regenmenge aus der 5 Tages-Vorhersage zu kumulieren, also Tag 1 + Tag 2 usw. um z.B. die zukünftige Wassermenge zur Bewässerung des Rasens durch eine Bewässerungssteuerung basierend auf der Wettervorhersage zu bestimmen.
 
+### Version 2.31 23-05-2020
+* Fix - Taupunkt wird jetzt korrekt für ein gewählte Wetterstation geladen
+
 
 ## WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen.
