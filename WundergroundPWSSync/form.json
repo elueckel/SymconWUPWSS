@@ -10,6 +10,10 @@
 			"label": "Downloading forecasts requires a seperate WU API key - https://www.wunderground.com/member/api-keys"
 		},
 		{
+			"type": "Label",
+			"label": "In case help is required, you want to ask questions please visit - https://www.symcon.de/forum/threads/37029-Modul-Wunderground-Wetterstation-%28PWS%29-Upload?highlight=wunderground"
+		},
+		{
 			"type": "RowLayout",
 			"items": [
 				{
@@ -264,7 +268,7 @@
 		},
 		{
 			"type": "ExpansionPanel",
-			"caption": "Values to be downloaded from Wunderground PWS",
+			"caption": "Weatherdata to be downloaded from Wunderground PWS",
 			"items": [
 				{
 					"type": "Label",
