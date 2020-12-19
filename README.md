@@ -15,7 +15,7 @@ Dieses Modul erlaubt basierend auf der neuen Wunderground/Weather.com API
 WICHTIG: Die Seite für die Erstellung des API Keys ist erst noch dem Upload von Daten (die aktuelle Aussentemperatur reicht) verfügbar. Stand März 2019 kommt man auf den API Link NUR durch den Link - es gibt noch keinen Aufruf auf der Website.
 
 ## Voraussetzungen
-IP-Symcon ab Version 4.x
+IP-Symcon ab Version 5.1
 
 ## Software-Installation
 Über das Modul-Control folgende URL hinzufügen.
@@ -80,6 +80,9 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 ### Version 2.31 23-05-2020
 * Fix - Taupunkt wird jetzt korrekt für ein gewählte Wetterstation geladen
 
+### Version 3.0 19-12-2020
+* Neu - Komplett neue Öberfläche für die Konfiguration des Moduls
+* Code Cleanup 
 
 ## WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen.

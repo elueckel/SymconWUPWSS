@@ -12,7 +12,7 @@ An API key (new): https://www.wunderground.com/member/api-keys
 IMPORTANT: This creation of the key will only be available post a first upload of weather data - outside temperature should be enough.
 
 # Requirements
-IP-Symcon from Version 4.x
+IP-Symcon from Version 5.1
 
 # Software-Installation
 Via Module-Control using the following URL: https://github.com/elueckel/SymconWUPWSS
@@ -69,6 +69,10 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 
 ### Version 2.31 23-05-2020
 * Fix - Dewpoint will be downloaded for chosen Weather Station
+
+### Version 3.0 19-12-2020
+* New Complete new UI for configuration
+* Code Cleanup 
 
 
 # IMPORTANT:
