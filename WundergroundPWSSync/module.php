@@ -98,10 +98,24 @@ if (!defined('vtBoolean')) {
         		$this->SetTimerInterval("PWSDownloadTimer",$TimerMSDL);
 
 				//Timer for Forecast
-				$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval") * 1000 * 3600;
+				$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval") * 1000 * 3600;	
 
-        		$this->SetTimerInterval("ForecastTimer",$ForecastInterval);
-
+				//$this->SetTimerInterval("ForecastTimer",$ForecastInterval);
+				if ($ForecastInterval > 0) {
+					$nowH = (Date("H")+1);	
+					$now = new DateTime();
+					$target = new DateTime();
+					$now->getTimestamp();
+					
+					$target->setTime($nowH, 00, 00);
+					$diff = $target->getTimestamp() - $now->getTimestamp();
+					$EvaTimer = $diff * 1000;
+					$this->SetTimerInterval('ForecastTimer', $EvaTimer);
+				}	
+				else if ($ForecastInterval == 0) {
+					$this->SetTimerInterval("ForecastTimer", 0);
+				}
+			
 
 				$vpos = 1;
 
@@ -518,8 +532,17 @@ if (!defined('vtBoolean')) {
 
 		}
 
-
 		public function Forecast() {
+
+			$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval");
+			$now = new DateTime();
+			$target = new DateTime();
+			$NewTime = (Date("H")+$ForecastInterval);	
+			$now->getTimestamp();
+			$target->setTime($NewTime, 00, 00);
+			$diff = $target->getTimestamp() - $now->getTimestamp();
+			$EvaTimer = $diff * 1000;
+			$this->SetTimerInterval('ForecastTimer', $EvaTimer);
 
 			$WU_ID = $this->ReadPropertyString("WU_ID");
 			$Language = $this->ReadPropertyString("Language");
