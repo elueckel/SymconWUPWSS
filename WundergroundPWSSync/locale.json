@@ -318,7 +318,8 @@
 			"Days max 5 - 0 is off":"Tage max 5",
 			"rain": "Regen",
 			"snow": "Schnee",
-			"precip": "Niederschlag"			
+			"precip": "Niederschlag",
+			"Daypart ": "Tagesabschnitt "			
 		}
 	}
 }

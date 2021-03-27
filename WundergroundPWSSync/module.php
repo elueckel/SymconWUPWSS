@@ -153,6 +153,14 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP0WINDDIRPhrase', $this->Translate('Daypart 0 (Current 12h) Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP0WINDSpeed', $this->Translate('Daypart 0 (Current 12h) Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP0Icon', $this->Translate('Daypart 0 (Current 12h) Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
+				/*
+				if ($this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1"){ 
+					$Media = IPS_CreateMedia(1);
+					//IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
+					IPS_SetName($Media, "Icon1");
+					IPS_SetParent($Media, $this->InstanceID);
+				}
+				*/
 
 				$vpos = 50;
 
@@ -703,6 +711,40 @@ if (!defined('vtBoolean')) {
 						if (isset($RawJSON->daypart[$day]->iconCode[$part])) {
 							$DPIcon[$i] = $RawJSON->daypart[$day]->iconCode[$part];
 							SetValue($this->GetIDForIdent("DP".$i."Icon"), (int)$DPIcon[$i]);
+							
+							if (strpos(IPS_GetKernelDir(), "/") !== false) {
+								//Linux OS
+								$ImageFile[$i] = IPS_GetKernelDir()."modules/SymconWUPWSS/WundergroundPWSSync/icons/".$DPIcon[$i].".png";
+								$MediaID[$i] = IPS_CreateMedia(1);
+								IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
+								IPS_SetName($MediaID[$i], "Wunderground_Icon"[$i]);
+								IPS_SetParent($MediaID[$i], $this->InstanceID);
+							}
+							else {
+								//Windows OS
+								$ImageFile[$i] = IPS_GetKernelDir()."modules\\SymconWUPWSS\\WundergroundPWSSync\\icons\\".$DPIcon[$i].".png";
+								
+								$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
+								if ($MediaID == 0) {
+									$MediaID[$i] = IPS_CreateMedia(1);
+									IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
+									IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon');
+									IPS_SetParent($MediaID[$i], $this->InstanceID);
+								}
+								else {
+									//$MediaID[$i] = $MediaID;
+									IPS_SetMediaFile($MediaID, $ImageFile[$i], true);
+								}
+									//IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon');
+									//IPS_SetParent($MediaID[$i], $this->InstanceID);
+								/*
+								$MediaID[$i] = IPS_CreateMedia(1);
+								IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
+								IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon');
+								IPS_SetParent($MediaID[$i], $this->InstanceID);
+								*/
+							}
+							
 						}
 					}
 
