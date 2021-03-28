@@ -714,15 +714,22 @@ if (!defined('vtBoolean')) {
 							
 							if (strpos(IPS_GetKernelDir(), "/") !== false) {
 								//Linux OS
-								$ImageFile[$i] = IPS_GetKernelDir()."modules/SymconWUPWSS/WundergroundPWSSync/icons/".$DPIcon[$i].".png";
-								$MediaID[$i] = IPS_CreateMedia(1);
-								IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
-								IPS_SetName($MediaID[$i], "Wunderground_Icon"[$i]);
-								IPS_SetParent($MediaID[$i], $this->InstanceID);
+								$ImageFile[$i] = IPS_GetKernelDir()."modules/.store/elueckel.wundergroundpwssync/WundergroundPWSSync/icons/".$DPIcon[$i].".png";
+								$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
+								if ($MediaID == 0) {
+									$MediaID[$i] = IPS_CreateMedia(1);
+									IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
+									IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon');
+									IPS_SetParent($MediaID[$i], $this->InstanceID);
+								}
+								else {
+									//$MediaID[$i] = $MediaID;
+									IPS_SetMediaFile($MediaID, $ImageFile[$i], true);
+								}
 							}
 							else {
 								//Windows OS
-								$ImageFile[$i] = IPS_GetKernelDir()."modules\\SymconWUPWSS\\WundergroundPWSSync\\icons\\".$DPIcon[$i].".png";
+								$ImageFile[$i] = IPS_GetKernelDir()."modules\\.store\\elueckel.wundergroundpwssync\\WundergroundPWSSync\\icons\\".$DPIcon[$i].".png";
 								
 								$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
 								if ($MediaID == 0) {
