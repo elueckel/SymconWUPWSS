@@ -74,6 +74,9 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 * New Complete new UI for configuration
 * Code Cleanup 
 
+### Version 3.1 02-04-2020
+* New - Module now creates media objects for daily forecast to be used e.g. with IPSView
+
 
 # IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.
