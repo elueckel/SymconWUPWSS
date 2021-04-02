@@ -15,7 +15,7 @@ Dieses Modul erlaubt basierend auf der neuen Wunderground/Weather.com API
 WICHTIG: Die Seite für die Erstellung des API Keys ist erst noch dem Upload von Daten (die aktuelle Aussentemperatur reicht) verfügbar. Stand März 2019 kommt man auf den API Link NUR durch den Link - es gibt noch keinen Aufruf auf der Website.
 
 ## Voraussetzungen
-IP-Symcon ab Version 4.x
+IP-Symcon ab Version 5.1
 
 ## Software-Installation
 Über das Modul-Control folgende URL hinzufügen.
@@ -72,8 +72,20 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * Der Download von Wetterdaten einer anderen Station wurde überarbeitet und sollte jetzt keine Probleme mehr machen wenn keine Werte kommen.
 
 ### Version 2.2.1 08-09-2019
-* Diverse Bugfixes in Bezug auf den Upload von Daten und auch Anpassungen der Beschriftung 
+* Diverse Bugfixes in Bezug auf den Upload von Daten und auch Anpassungen der Beschriftung
 
+### Version 2.3 29-04-2020
+* Es gibt nun die Möglichkeit die Regenmenge aus der 5 Tages-Vorhersage zu kumulieren, also Tag 1 + Tag 2 usw. um z.B. die zukünftige Wassermenge zur Bewässerung des Rasens durch eine Bewässerungssteuerung basierend auf der Wettervorhersage zu bestimmen.
+
+### Version 2.31 23-05-2020
+* Fix - Taupunkt wird jetzt korrekt für ein gewählte Wetterstation geladen
+
+### Version 3.0 19-12-2020
+* Neu - Komplett neue Öberfläche für die Konfiguration des Moduls
+* Code Cleanup 
+
+### Version 3.1 02-04-2020
+* Neu - Darstellung der Vorhersage Icons als Medienelementen z.B. zur Verwendung mit IPSView
 
 ## WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen.

@@ -5,7 +5,8 @@
     "vendor": "elueckel",
     "aliases": 
     [
-        "WundergroundPWSSync"
+        "Wunderground",
+		"Weather.com"
     ],
     "parentRequirements": [],
     "childRequirements": [],
