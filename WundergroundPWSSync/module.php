@@ -665,7 +665,7 @@ if (!defined('vtBoolean')) {
 								//Linux OS
 								$ImageFile[$i] = IPS_GetKernelDir()."modules/.store/elueckel.wundergroundpwssync/WundergroundPWSSync/icons/".$DPIcon[$i].".png";
 								//$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
-								$MediaID = @IPS_GetObjectIDByIdent("DP".$i."Icon", $this->InstanceID);
+								$MediaID = @IPS_GetObjectIDByIdent("DP".$i."IconWebfront", $this->InstanceID);
 								if ($MediaID == 0) {
 									$MediaID[$i] = IPS_CreateMedia(1);
 									IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon webfront');
