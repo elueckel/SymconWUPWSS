@@ -74,7 +74,7 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 * New Complete new UI for configuration
 * Code Cleanup 
 
-### Version 3.1 02-04-2020
+### Version 3.1 07-04-2020
 * New - Module now creates media objects for daily forecast to be used e.g. with IPSView
 
 

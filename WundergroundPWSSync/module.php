@@ -124,12 +124,6 @@ if (!defined('vtBoolean')) {
 				$sourceID = $this->ReadPropertyInteger("SourceID");
 				$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval");
 
-				//Löscht alten externen Timer mit Namen Forecast falls vorhanden
-				$eid = @IPS_GetObjectIDByIdent("Forecast", $this->InstanceID);
-				if ($eid == 1) {
-					$eid = IPS_DeleteEvent(1);
-				}
-
 				//Variablen anlegen
 
 
@@ -153,14 +147,6 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP0WINDDIRPhrase', $this->Translate('Daypart 0 (Current 12h) Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP0WINDSpeed', $this->Translate('Daypart 0 (Current 12h) Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP0Icon', $this->Translate('Daypart 0 (Current 12h) Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
-				/*
-				if ($this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1"){ 
-					$Media = IPS_CreateMedia(1);
-					//IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
-					IPS_SetName($Media, "Icon1");
-					IPS_SetParent($Media, $this->InstanceID);
-				}
-				*/
 
 				$vpos = 50;
 
@@ -440,41 +426,6 @@ if (!defined('vtBoolean')) {
 				$this->MaintainVariable('DP11WINDDIRPhrase', $this->Translate('Daypart 11 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 				$this->MaintainVariable('DP11WINDSpeed', $this->Translate('Daypart 11 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 				$this->MaintainVariable('DP11Icon', $this->Translate('Daypart 11 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
-		
-				/*
-				$ForecastDP = $this->ReadPropertyInteger("ForecastDP");
-
-				if ($ForecastDP > 1 OR $ForecastDP == 0) {
-			        $this->SendDebug('Var Create: ', 'in create', 0);
-					$i = 2;
-
-					while ($i < $ForecastDP) {
-						$vpos = 100;
-						$this->SendDebug('Var Create: ', $i, 0);
-						$this->MaintainVariable('DP'.$i.'DN', $this->Translate('Daypart '.$i.' - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i);
-						$this->MaintainVariable('DP'.$i.'Name', $this->Translate('Daypart '.$i.' - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i);
-						$this->MaintainVariable('DP'.$i.'Narrative', $this->Translate('Daypart '.$i.' - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i);
-						$this->MaintainVariable('DP'.$i.'PrecipChance', $this->Translate('Daypart '.$i.' - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i);
-						$this->MaintainVariable('DP'.$i.'PrecipType', $this->Translate('Daypart '.$i.' - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i);
-						$this->MaintainVariable('DP'.$i.'CloudCover', $this->Translate('Daypart '.$i.' - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
-						$this->MaintainVariable('DP'.$i.'QPF', $this->Translate('Daypart '.$i.' - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
-						$this->MaintainVariable('DP'.$i.'QPFSNOW', $this->Translate('Daypart '.$i.' - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
-						$this->MaintainVariable('DP'.$i.'Temperature', $this->Translate('Daypart '.$i.' - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-						$this->MaintainVariable('DP'.$i.'WindChill', $this->Translate('Daypart '.$i.' - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-						$this->MaintainVariable('DP'.$i.'Thunder', $this->Translate('Daypart '.$i.' - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-						$this->MaintainVariable('DP'.$i.'UVDescription', $this->Translate('Daypart '.$i.' - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-						$this->MaintainVariable('DP'.$i.'UVIndex', $this->Translate('Daypart '.$i.' - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
-						$this->MaintainVariable('DP'.$i.'WINDDIR', $this->Translate('Daypart '.$i.' - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-						$this->MaintainVariable('DP'.$i.'WINDDIRText', $this->Translate('Daypart '.$i.' - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-						$this->MaintainVariable('DP'.$i.'WINDDIRPhrase', $this->Translate('Daypart '.$i.' - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-						$this->MaintainVariable('DP'.$i.'WINDSpeed', $this->Translate('Daypart '.$i.' - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-						$this->MaintainVariable('DP'.$i.'Icon', $this->Translate('Daypart '.$i.' - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > $i and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
-						$this->SendDebug('VPOS: ', $vpos, 0);
-						$i++;
-					}
-
-				}
-				*/
 
 				$vpos = 1000;
 
@@ -558,8 +509,6 @@ if (!defined('vtBoolean')) {
 			$locationObject = json_decode($this->ReadPropertyString('Location'), true);
 			$Latitude = str_replace(",",".",$locationObject['latitude']);
 			$Longitude = str_replace(",",".",$locationObject['longitude']);
-			//$Longitude = str_replace(",",".",$this->ReadPropertyString("longitude"));
-			//$Latitude = str_replace(",",".",$this->ReadPropertyString("latitude"));
 
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Latitude.','.$Longitude.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
@@ -715,12 +664,14 @@ if (!defined('vtBoolean')) {
 							if (strpos(IPS_GetKernelDir(), "/") !== false) {
 								//Linux OS
 								$ImageFile[$i] = IPS_GetKernelDir()."modules/.store/elueckel.wundergroundpwssync/WundergroundPWSSync/icons/".$DPIcon[$i].".png";
-								$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
+								//$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
+								$MediaID = @IPS_GetObjectIDByIdent("DP".$i."IconWebfront", $this->InstanceID);
 								if ($MediaID == 0) {
 									$MediaID[$i] = IPS_CreateMedia(1);
-									IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
-									IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon');
+									IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon webfront');
 									IPS_SetParent($MediaID[$i], $this->InstanceID);
+									IPS_SetIdent($MediaID[$i], "DP".$i."IconWebfront", );
+									IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
 								}
 								else {
 									//$MediaID[$i] = $MediaID;
@@ -731,25 +682,20 @@ if (!defined('vtBoolean')) {
 								//Windows OS
 								$ImageFile[$i] = IPS_GetKernelDir()."modules\\.store\\elueckel.wundergroundpwssync\\WundergroundPWSSync\\icons\\".$DPIcon[$i].".png";
 								
-								$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
+								//$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
+								$MediaID = @IPS_GetObjectIDByIdent("DP".$i."IconWebfront", $this->InstanceID);
 								if ($MediaID == 0) {
 									$MediaID[$i] = IPS_CreateMedia(1);
-									IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
-									IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon');
+									IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon webfront');
 									IPS_SetParent($MediaID[$i], $this->InstanceID);
+									IPS_SetIdent($MediaID[$i], "DP".$i."IconWebfront", );
+									IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
 								}
 								else {
 									//$MediaID[$i] = $MediaID;
 									IPS_SetMediaFile($MediaID, $ImageFile[$i], true);
 								}
-									//IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon');
-									//IPS_SetParent($MediaID[$i], $this->InstanceID);
-								/*
-								$MediaID[$i] = IPS_CreateMedia(1);
-								IPS_SetMediaFile($MediaID[$i], $ImageFile[$i], true);
-								IPS_SetName($MediaID[$i], $this->Translate('Daypart ').$i.' icon');
-								IPS_SetParent($MediaID[$i], $this->InstanceID);
-								*/
+
 							}
 							
 						}
@@ -773,10 +719,7 @@ if (!defined('vtBoolean')) {
 			}	
 
 			If ($this->ReadPropertyBoolean("JSONRawForecast") == "1") {
-				//$JSONRawForecast = $RawJSON;
-				//$RawJSONForecast = json_encode($RawData);
 				SetValue($this->GetIDForIdent("JSONRawForecastVar"), (string)$RawData);
-
 			}
 
 		}
@@ -1031,12 +974,6 @@ if (!defined('vtBoolean')) {
         		$this->SetBuffer('RawJSONStation', $RawJSONStation);
 				$Bufferdata = $this->GetBuffer("RawJSONStation");
         		$this->SendDebug('Raw Data Current Weather: ', $Bufferdata ,0);
-				//Encode
-				/*
-				$this->SetBuffer('RawJSONStation', $RawJSONStation);
-				$Bufferdata = $this->GetBuffer("RawJSONStation");
-				$this->SendDebug('Raw Data: ', $Bufferdata ,0);
-				*/
 			}
 
 		}
