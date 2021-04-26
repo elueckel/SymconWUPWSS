@@ -84,7 +84,7 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * Neu - Komplett neue Öberfläche für die Konfiguration des Moduls
 * Code Cleanup 
 
-### Version 3.1 02-04-2020
+### Version 3.1 07-04-2020
 * Neu - Darstellung der Vorhersage Icons als Medienelementen z.B. zur Verwendung mit IPSView
 
 ## WICHTIG:
