@@ -556,7 +556,7 @@ if (!defined('vtBoolean')) {
 						SetValue($this->GetIDForIdent("D".$count."TemperatureMin"), (float)$TemperatureMin[$count]);
 					}
 
-					switch ($count {
+					switch ($count) {
 						case 2:
 							$RainD1 = GetValue($this->GetIDForIdent("D1QPF");
 							$RainD2 = GetValue($this->GetIDForIdent("D2QPF");
@@ -586,7 +586,7 @@ if (!defined('vtBoolean')) {
 							$RainD5 = GetValue($this->GetIDForIdent("D5QPF");
 							$RainAmount = $RainD1 + $RainD2 + $RainD3 + $RainD4 + $RainD5;
 							SetValue($this->GetIDForIdent("D5RainAmount"), (float)$RainAmount);
-							break;
+						break;
 					}
 					
 					$i++;
