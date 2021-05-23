@@ -123,6 +123,7 @@ if (!defined('vtBoolean')) {
 
 				$sourceID = $this->ReadPropertyInteger("SourceID");
 				$ForecastInterval = $this->ReadPropertyInteger("ForecastInterval");
+				$CalculateUpcomingRain = $this->ReadPropertyBoolean("CalculateUpcomingRain");
 
 				//Variablen anlegen
 
@@ -509,6 +510,7 @@ if (!defined('vtBoolean')) {
 			$locationObject = json_decode($this->ReadPropertyString('Location'), true);
 			$Latitude = str_replace(",",".",$locationObject['latitude']);
 			$Longitude = str_replace(",",".",$locationObject['longitude']);
+			$CalculateUpcomingRain = $this->ReadPropertyBoolean("CalculateUpcomingRain");
 
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$Latitude.','.$Longitude.'&format=json&units=m&language='.$Language.'&apiKey='.$WU_API);
@@ -552,6 +554,39 @@ if (!defined('vtBoolean')) {
 					if (isset($RawJSON->temperatureMin[$i])) {
 						$TemperatureMin[$count] = $RawJSON->temperatureMin[$i];
 						SetValue($this->GetIDForIdent("D".$count."TemperatureMin"), (float)$TemperatureMin[$count]);
+					}
+
+					switch ($count {
+						case 2:
+							$RainD1 = GetValue($this->GetIDForIdent("D1QPF");
+							$RainD2 = GetValue($this->GetIDForIdent("D2QPF");
+							$RainAmount = $RainD1 + $RainD2;
+							SetValue($this->GetIDForIdent("D2RainAmount"), (float)$RainAmount);
+							break;
+						case 3:
+							$RainD1 = GetValue($this->GetIDForIdent("D1QPF");
+							$RainD2 = GetValue($this->GetIDForIdent("D2QPF");
+							$RainD3 = GetValue($this->GetIDForIdent("D3QPF");
+							$RainAmount = $RainD1 + $RainD2 + $RainD3;
+							SetValue($this->GetIDForIdent("D3RainAmount"), (float)$RainAmount);
+							break;
+						case 4:
+							$RainD1 = GetValue($this->GetIDForIdent("D1QPF");
+							$RainD2 = GetValue($this->GetIDForIdent("D2QPF");
+							$RainD3 = GetValue($this->GetIDForIdent("D3QPF");
+							$RainD4 = GetValue($this->GetIDForIdent("D4QPF");
+							$RainAmount = $RainD1 + $RainD2 + $RainD3 + $RainD4;
+							SetValue($this->GetIDForIdent("D4RainAmount"), (float)$RainAmount);
+							break;
+						case 5:
+							$RainD1 = GetValue($this->GetIDForIdent("D1QPF");
+							$RainD2 = GetValue($this->GetIDForIdent("D2QPF");
+							$RainD3 = GetValue($this->GetIDForIdent("D3QPF");
+							$RainD4 = GetValue($this->GetIDForIdent("D4QPF");
+							$RainD5 = GetValue($this->GetIDForIdent("D5QPF");
+							$RainAmount = $RainD1 + $RainD2 + $RainD3 + $RainD4 + $RainD5;
+							SetValue($this->GetIDForIdent("D5RainAmount"), (float)$RainAmount);
+							break;
 					}
 					
 					$i++;
