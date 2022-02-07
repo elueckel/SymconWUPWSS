@@ -858,7 +858,7 @@ if (!defined('vtBoolean')) {
 				$responseUrl .= "&UV=".$UVIndex;
 			}
 
-			$Response =file_get_contents($responseUrl);
+			$Response = @file_get_contents($responseUrl);
 			$this->SendDebug("Wunderground PWS Update","Wunderground Upload Service: ".$Response, 0);
 
 		}
