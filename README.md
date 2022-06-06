@@ -90,7 +90,7 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 ### Version 3.1.1 25-05-2021
 * Fix - Regenmenge aufaddieren hat nicht funktioniert
 
-### Version 3.1.1 06-06-2022
+### Version 3.1.2 06-06-2022
 * Fix - UV Wert wurde nicht geladen
 
 ## WICHTIG:
