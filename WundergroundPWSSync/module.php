@@ -1000,6 +1000,13 @@ if (!defined('vtBoolean')) {
 					SetValue($this->GetIDForIdent("DLVRainTotal"), (float)$DLJSONRainTotal);
 				}
             }
+		
+	    If ($this->ReadPropertyBoolean("DLUV") == "1") {
+				if (isset($RawJSON->observations[0]->uv)) {
+					$DLJSONUV = $RawJSON->observations[0]->uv;
+					SetValue($this->GetIDForIdent("DLVUV"), (float)$DLJSONUV );
+				}
+            }
 
 			If ($this->ReadPropertyBoolean("JSONRawStation") == "1") {
 				//$JSONRawStation = $RawJSON;
