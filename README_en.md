@@ -80,6 +80,9 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 ### Version 3.1.1 25-05-2021
 * Fix - Calculating cummulated rain did not work
 
+### Version 3.1.1 06-06-2022
+* Fix - UV Value was not fetched
+
 
 # IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.
