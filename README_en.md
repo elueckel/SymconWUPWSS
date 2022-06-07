@@ -74,8 +74,14 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 * New Complete new UI for configuration
 * Code Cleanup 
 
-### Version 3.1 07-04-2020
+### Version 3.1 07-04-2021
 * New - Module now creates media objects for daily forecast to be used e.g. with IPSView
+
+### Version 3.1.1 25-05-2021
+* Fix - Calculating cummulated rain did not work
+
+### Version 3.1.1 06-06-2022
+* Fix - UV Value was not fetched
 
 
 # IMPORTANT:

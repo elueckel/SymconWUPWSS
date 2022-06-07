@@ -84,8 +84,14 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 * Neu - Komplett neue Öberfläche für die Konfiguration des Moduls
 * Code Cleanup 
 
-### Version 3.1 07-04-2020
+### Version 3.1 07-04-2021
 * Neu - Darstellung der Vorhersage Icons als Medienelementen z.B. zur Verwendung mit IPSView
+
+### Version 3.1.1 25-05-2021
+* Fix - Regenmenge aufaddieren hat nicht funktioniert
+
+### Version 3.1.2 06-06-2022
+* Fix - UV Wert wurde nicht geladen
 
 ## WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen.
