@@ -27,6 +27,11 @@
 					"caption": "Location"
 				},
 				{
+					"type": "CheckBox",
+					"name": "Manual_Geodata",
+					"caption": "Location via variables in object tree"
+				},
+				{
 					"name": "Language",
 					"type": "Select",
 					"caption": "Language",
