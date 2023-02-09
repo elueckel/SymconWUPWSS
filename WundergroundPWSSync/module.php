@@ -129,10 +129,9 @@ if (!defined('vtBoolean')) {
 				//Variablen anlegen
 
 				$vpos = 1;
-				$this->MaintainVariable('man_Longitude', $this->Translate('Longitude'), vtString, "", $vpos++, $this->ReadPropertyBoolean("Manual_Geodata") == true);
 				$this->MaintainVariable('man_Latitude', $this->Translate('Latitude'), vtString, "", $vpos++, $this->ReadPropertyBoolean("Manual_Geodata") == true);
-
-
+				$this->MaintainVariable('man_Longitude', $this->Translate('Longitude'), vtString, "", $vpos++, $this->ReadPropertyBoolean("Manual_Geodata") == true);
+				
 				$vpos = 10;
 
 				$this->MaintainVariable('DP0DN', $this->Translate('Daypart 0 (Current 12h) Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
