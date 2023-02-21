@@ -27,6 +27,7 @@ if (!defined('vtBoolean')) {
 			//$this->RegisterPropertyString("Latitude","");
 			//$this->RegisterPropertyString("Longitude","");
 			//$this->RegisterPropertyString("Location", '{"latitude":$this->RegisterPropertyString("Latitude"),"longitude":$this->RegisterPropertyString("Longitude")}');
+			$this->RegisterPropertyBoolean("Manual_Geodata","0");
 			$this->RegisterPropertyString("Location", '{"latitude":0,"longitude":0}');
 			$this->RegisterPropertyInteger("ForecastShort","0");
 			$this->RegisterPropertyBoolean("CalculateUpcomingRain","0");
@@ -127,7 +128,10 @@ if (!defined('vtBoolean')) {
 
 				//Variablen anlegen
 
-
+				$vpos = 1;
+				$this->MaintainVariable('man_Latitude', $this->Translate('Latitude'), vtString, "", $vpos++, $this->ReadPropertyBoolean("Manual_Geodata") == true);
+				$this->MaintainVariable('man_Longitude', $this->Translate('Longitude'), vtString, "", $vpos++, $this->ReadPropertyBoolean("Manual_Geodata") == true);
+				
 				$vpos = 10;
 
 				$this->MaintainVariable('DP0DN', $this->Translate('Daypart 0 (Current 12h) Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
@@ -507,9 +511,19 @@ if (!defined('vtBoolean')) {
 			$WU_ID = $this->ReadPropertyString("WU_ID");
 			$Language = $this->ReadPropertyString("Language");
 			$WU_API = $this->ReadPropertyString("WU_API");
-			$locationObject = json_decode($this->ReadPropertyString('Location'), true);
-			$Latitude = str_replace(",",".",$locationObject['latitude']);
-			$Longitude = str_replace(",",".",$locationObject['longitude']);
+
+			if ($this->ReadPropertyBoolean("Manual_Geodata") == false) {
+				$this->SendDebug('Geolocation: ', 'From Symcon Location Module',0);
+				$locationObject = json_decode($this->ReadPropertyString('Location'), true);
+				$Latitude = str_replace(",",".",$locationObject['latitude']);
+				$Longitude = str_replace(",",".",$locationObject['longitude']);
+			} 
+			else if ($this->ReadPropertyBoolean("Manual_Geodata") == true) {
+				$this->SendDebug('Geolocation: ', 'From Object Tree - Latitude: '.GetValue($this->GetIDForIdent("man_Latitude")).' / Longitude: '.GetValue($this->GetIDForIdent("man_Longitude")),0);
+				$Latitude = str_replace(",",".",GetValue($this->GetIDForIdent("man_Latitude")));
+				$Longitude = str_replace(",",".",GetValue($this->GetIDForIdent("man_Longitude")));
+			}
+
 			$CalculateUpcomingRain = $this->ReadPropertyBoolean("CalculateUpcomingRain");
 
 			$ch = curl_init();

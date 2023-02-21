@@ -93,6 +93,9 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 ### Version 3.1.2 06-06-2022
 * Fix - UV Wert wurde nicht geladen
 
+### Version 3.2 08-02-2023
+* Neu - Es ist möglich die Geolokation im Objektbaum zu setzen
+
 ## WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen.
 * Das kostenlose Limit für den Download von Daten liegt bei 1500 calls pro Tag oder 30 pro minute für den Download von Daten

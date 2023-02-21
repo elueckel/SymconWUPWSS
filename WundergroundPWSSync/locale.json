@@ -13,6 +13,7 @@
 			"WU API Key":"WU API Key",
 			"Latitude":"Breitengrad",
 			"Longitude":"Längengrad",
+			"Location via variables in object tree":"Lokation im Objektbaum gesetzt",
 			"Language":"Sprache",
 			"German":"Deutsch",
 			"English":"Englisch",
