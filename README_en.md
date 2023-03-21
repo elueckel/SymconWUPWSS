@@ -86,6 +86,9 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 ### Version 3.2 08-02-2023
 * New - It is possible to set the location of the weather forecast in the object tree
 
+### Version 3.21 21-03-2023
+* Fix - Translation of Weather Download Variables
+
 
 # IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.
