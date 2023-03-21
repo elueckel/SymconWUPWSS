@@ -321,18 +321,18 @@
 			"snow": "Schnee",
 			"precip": "Niederschlag",
 			"Daypart ": "Tagesabschnitt",
-			“Download Temperature”: “Andere Station Temperatur”,
-			“Download Solar Radiation”: “Andere Station Solar Strahlung”,
-			“Download UV Index”: “Andere Station UV-Index”,
-			“Download Wind Direction”: “Andere Station Windrichtung”,
-			“Download Humidity”: “Andere Station Luftfeuchtigkeit”,
-			“Download Dew Point”: “Andere Station Taupunkt”,
-			“Download Windchill”: “Andere Station Gefühlte Temperatur“,
-			“Download Wind Speed”: “Andere Station Windgeschwindigkeit“,
-			“Download Wind Gust”: “Andere Station Windböhen”,
-			“Download Pressure”: “Andere Station Luftdruck”,
-			“Download Rain Rate”: “Andere Station Regen Rate”,
-			“Download Rain Total”: “Andere Station Gesamte Regenmenge”
+			"Download Temperature": "Andere Station Temperatur",
+			"Download Solar Radiation": "Andere Station Solar Strahlung",
+			"Download UV Index": "Andere Station UV-Index",
+			"Download Wind Direction": "Andere Station Windrichtung",
+			"Download Humidity": "Andere Station Luftfeuchtigkeit",
+			"Download Dew Point": "Andere Station Taupunkt",
+			"Download Windchill": "Andere Station Gefühlte Temperatur",
+			"Download Wind Speed": "Andere Station Windgeschwindigkeit",
+			"Download Wind Gust": "Andere Station Windböhen",
+			"Download Pressure": "Andere Station Luftdruck",
+			"Download Rain Rate": "Andere Station Regen Rate",
+			"Download Rain Total": "Andere Station Gesamte Regenmenge"
 		}
 	}
 }
