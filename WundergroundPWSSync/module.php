@@ -788,7 +788,8 @@ if (!defined('vtBoolean')) {
 
 			$responseUrl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?ID=".$WU_ID."&PASSWORD=".$WU_Password."&dateutc=".$time;
 
-			If ($this->ReadPropertyInteger("OutsideTemperature") != "")	{
+			//If ($this->ReadPropertyInteger("OutsideTemperature") != "")	{
+			If (isset($this->ReadPropertyInteger("OutsideTemperature")))	{
 				$Temperature = GetValue($this->ReadPropertyInteger("OutsideTemperature"));
 				$TemperatureF = str_replace(",",".",(($Temperature * 9) /5 + 32));
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload Temperature F: ".$TemperatureF, 0);
@@ -799,7 +800,8 @@ if (!defined('vtBoolean')) {
 
 			// Prepare Dewpoint for upload
 
-			If ($this->ReadPropertyInteger("DewPoint") != "") {
+			//If ($this->ReadPropertyInteger("DewPoint") != "") {
+			If (isset($this->ReadPropertyInteger("DewPoint"))) {
 				$DewPoint = GetValue($this->ReadPropertyInteger("DewPoint"));
 				$DewPointF = str_replace(",",".",(($DewPoint * 9) /5 + 32));
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload Taupunkt F: ".$DewPointF, 0);
@@ -810,7 +812,8 @@ if (!defined('vtBoolean')) {
 
 			// Prepare Humidity for upload
 
-			If ($this->ReadPropertyInteger("Humidity") != "") {
+			//If ($this->ReadPropertyInteger("Humidity") != "") {
+			If (isset($this->ReadPropertyInteger("Humidity"))) {
 				$Humidity = GetValue($this->ReadPropertyInteger("Humidity"));
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload Humidity: ".$Humidity, 0);
 
@@ -820,7 +823,8 @@ if (!defined('vtBoolean')) {
 
 			// Prepare Windirection for upload
 
-			If ($this->ReadPropertyInteger("WindDirection") != "")	{
+			//If ($this->ReadPropertyInteger("WindDirection") != "")	{
+			If (isset("WindDirection")))	{
 				$WindDirection = GetValue($this->ReadPropertyInteger("WindDirection"));
 				$WindDirectionU = str_replace(",",".",$WindDirection);
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Direction: ".$WindDirectionU, 0);
@@ -831,7 +835,8 @@ if (!defined('vtBoolean')) {
 
 			// Prepare Windspeed for upload
 
-			If ($this->ReadPropertyInteger("WindSpeed") != "") {
+			//If ($this->ReadPropertyInteger("WindSpeed") != "") {
+			If (isset($this->ReadPropertyInteger("WindSpeed"))) {
 				$WindSpeed = GetValue($this->ReadPropertyInteger("WindSpeed"));
 
 				If ($this->ReadPropertyString("WindConversion") == "kmh") {
@@ -849,7 +854,8 @@ if (!defined('vtBoolean')) {
 
 			// Prepare Windgust for upload
 
-			If ($this->ReadPropertyInteger("WindGust") != "") {
+			//If ($this->ReadPropertyInteger("WindGust") != "") {
+			If (isset($this->ReadPropertyInteger("WindGust"))) {
 				$WindGust = GetValue($this->ReadPropertyInteger("WindGust"));
 
 				If ($this->ReadPropertyString("WindConversion") == "kmh") {
@@ -867,7 +873,8 @@ if (!defined('vtBoolean')) {
 
 			// Prepare Rain last hour for upload
 
-			If ($this->ReadPropertyInteger("Rain_last_Hour") != "")	{
+			//If ($this->ReadPropertyInteger("Rain_last_Hour") != "")	{
+			If (isset($this->ReadPropertyInteger("Rain_last_Hour")))	{
 				$Rain_last_Hour = GetValue($this->ReadPropertyInteger("Rain_last_Hour"));
 				$Rain_last_Hour = str_replace(",",".",Round(($Rain_last_Hour / 25.4),2));
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload Rain Last Hour: ".$Rain_last_Hour, 0);
@@ -878,7 +885,8 @@ if (!defined('vtBoolean')) {
 
 			// Prepare Rain 24h for upload
 
-			If ($this->ReadPropertyInteger("Rain24h") != "") {
+			//If ($this->ReadPropertyInteger("Rain24h") != "") {
+			If (isset($this->ReadPropertyInteger("Rain24h"))) {
 				$Rain24h = GetValue($this->ReadPropertyInteger("Rain24h"));
 				$Rain24h = str_replace(",",".",Round(($Rain24h / 25.4),2));
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload Rain in 24h: ".$Rain24h, 0);
@@ -889,7 +897,8 @@ if (!defined('vtBoolean')) {
 
 			// Prepare Airpressure for upload
 
-			If ($this->ReadPropertyInteger("AirPressure") != "") {
+			//If ($this->ReadPropertyInteger("AirPressure") != "") {
+			If (isset($this->ReadPropertyInteger("AirPressure"))) {
 				$AirPressure = GetValue($this->ReadPropertyInteger("AirPressure"));
 				$BPI = str_replace(",",".",Round(($AirPressure * 0.0295299830714),4));
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload Airpressure in BPI: ".$AirPressure, 0);
@@ -900,7 +909,7 @@ if (!defined('vtBoolean')) {
 
 			// Prepare UV Index for upload
 
-			If ($this->ReadPropertyInteger("UVIndex") != "") {
+			If (isset($this->ReadPropertyInteger("UVIndex"))) {
 				$UVIndex = GetValue($this->ReadPropertyInteger("UVIndex"));
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload UV Index: ".$UVIndex, 0);
 
