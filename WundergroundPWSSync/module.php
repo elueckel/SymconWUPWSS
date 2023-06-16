@@ -824,7 +824,7 @@ if (!defined('vtBoolean')) {
 			// Prepare Windirection for upload
 
 			//If ($this->ReadPropertyInteger("WindDirection") != "")	{
-			If (isset("WindDirection")))	{
+			If (isset("WindDirection"))	{
 				$WindDirection = GetValue($this->ReadPropertyInteger("WindDirection"));
 				$WindDirectionU = str_replace(",",".",$WindDirection);
 				$this->SendDebug("Wunderground PWS Update","Wunderground Upload Wind Direction: ".$WindDirectionU, 0);
