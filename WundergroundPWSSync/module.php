@@ -135,43 +135,43 @@ class WundergroundPWSSync extends IPSModule
 			
 			$vpos = 10;
 
-			$this->MaintainVariable('DP0DN', $this->Translate('Daypart 0 (Current 12h) Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
-			$this->MaintainVariable('DP0Name', $this->Translate('Daypart 0 (Current 12h) Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
-			$this->MaintainVariable('DP0Narrative', $this->Translate('Daypart 0 (Current 12h) Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
+			$this->MaintainVariable('DP0DN', $this->Translate('Daypart 0 (Current 12h) Day or Night'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
+			$this->MaintainVariable('DP0Name', $this->Translate('Daypart 0 (Current 12h) Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
+			$this->MaintainVariable('DP0Narrative', $this->Translate('Daypart 0 (Current 12h) Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
 			$this->MaintainVariable('DP0PrecipChance', $this->Translate('Daypart 0 (Current 12h) Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
-			$this->MaintainVariable('DP0PrecipType', $this->Translate('Daypart 0 (Current 12h) Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
+			$this->MaintainVariable('DP0PrecipType', $this->Translate('Daypart 0 (Current 12h) Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0);
 			$this->MaintainVariable('DP0CloudCover', $this->Translate('Daypart 0 (Current 12h) Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP0QPF', $this->Translate('Daypart 0 (Current 12h) Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP0QPFSNOW', $this->Translate('Daypart 0 (Current 12h) Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP0Temperature', $this->Translate('Daypart 0 (Current 12h) Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP0WindChill', $this->Translate('Daypart 0 (Current 12h) Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP0Thunder', $this->Translate('Daypart 0 (Current 12h) Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP0UVDescription', $this->Translate('Daypart 0 (Current 12h) UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP0Thunder', $this->Translate('Daypart 0 (Current 12h) Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP0UVDescription', $this->Translate('Daypart 0 (Current 12h) UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP0UVIndex', $this->Translate('Daypart 0 (Current 12h) UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP0WINDDIR', $this->Translate('Daypart 0 (Current 12h) Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP0WINDDIRText', $this->Translate('Daypart 0 (Current 12h) Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP0WINDDIRPhrase', $this->Translate('Daypart 0 (Current 12h) Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP0WINDDIRText', $this->Translate('Daypart 0 (Current 12h) Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP0WINDDIRPhrase', $this->Translate('Daypart 0 (Current 12h) Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP0WINDSpeed', $this->Translate('Daypart 0 (Current 12h) Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP0Icon', $this->Translate('Daypart 0 (Current 12h) Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
 			$vpos = 50;
 
-			$this->MaintainVariable('DP1DN', $this->Translate('Daypart 1 (Next 12h) Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
-			$this->MaintainVariable('DP1Name', $this->Translate('Daypart 1 (Next 12h) Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
-			$this->MaintainVariable('DP1Narrative', $this->Translate('Daypart 1 (Next 12h) Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
+			$this->MaintainVariable('DP1DN', $this->Translate('Daypart 1 (Next 12h) Day or Night'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
+			$this->MaintainVariable('DP1Name', $this->Translate('Daypart 1 (Next 12h) Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
+			$this->MaintainVariable('DP1Narrative', $this->Translate('Daypart 1 (Next 12h) Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
 			$this->MaintainVariable('DP1PrecipChance', $this->Translate('Daypart 1 (Next 12h) Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
-			$this->MaintainVariable('DP1PrecipType', $this->Translate('Daypart 1 (Next 12h) Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
+			$this->MaintainVariable('DP1PrecipType', $this->Translate('Daypart 1 (Next 12h) Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1);
 			$this->MaintainVariable('DP1CloudCover', $this->Translate('Daypart 1 (Next 12h) Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP1QPF', $this->Translate('Daypart 1 (Next 12h) Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP1QPFSNOW', $this->Translate('Daypart 1 (Next 12h) Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP1Temperature', $this->Translate('Daypart 1 (Next 12h) Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP1WindChill', $this->Translate('Daypart 1 (Next 12h) Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP1Thunder', $this->Translate('Daypart 1 (Next 12h) Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP1UVDescription', $this->Translate('Daypart 1 (Next 12h) UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPUV") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP1Thunder', $this->Translate('Daypart 1 (Next 12h) Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP1UVDescription', $this->Translate('Daypart 1 (Next 12h) UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPUV") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP1UVIndex', $this->Translate('Daypart 1 (Next 12h) UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP1WINDDIR', $this->Translate('Daypart 1 (Next 12h) Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP1WINDDIRText', $this->Translate('Daypart 1 (Next 12h) Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP1WINDDIRPhrase', $this->Translate('Daypart 1 (Next 12h) Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP1WINDDIRText', $this->Translate('Daypart 1 (Next 12h) Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP1WINDDIRPhrase', $this->Translate('Daypart 1 (Next 12h) Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1" AND $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP1WINDSpeed', $this->Translate('Daypart 1 (Next 12h) Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP1Icon', $this->Translate('Daypart 1 (Next 12h) Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 1 AND $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
@@ -184,21 +184,21 @@ class WundergroundPWSSync extends IPSModule
 				$vpos++,
 				$this->ReadPropertyInteger("ForecastDP") > 2
 			);
-			$this->MaintainVariable('DP2Name', $this->Translate('Daypart 2 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
-			$this->MaintainVariable('DP2Narrative', $this->Translate('Daypart 2 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
+			$this->MaintainVariable('DP2Name', $this->Translate('Daypart 2 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
+			$this->MaintainVariable('DP2Narrative', $this->Translate('Daypart 2 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
 			$this->MaintainVariable('DP2PrecipChance', $this->Translate('Daypart 2 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
-			$this->MaintainVariable('DP2PrecipType', $this->Translate('Daypart 2 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
+			$this->MaintainVariable('DP2PrecipType', $this->Translate('Daypart 2 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2);
 			$this->MaintainVariable('DP2CloudCover', $this->Translate('Daypart 2 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP2QPF', $this->Translate('Daypart 2 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP2QPFSNOW', $this->Translate('Daypart 2 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP2Temperature', $this->Translate('Daypart 2 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP2WindChill', $this->Translate('Daypart 2 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP2Thunder', $this->Translate('Daypart 2 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP2UVDescription', $this->Translate('Daypart 2 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP2Thunder', $this->Translate('Daypart 2 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP2UVDescription', $this->Translate('Daypart 2 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP2UVIndex', $this->Translate('Daypart 2 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP2WINDDIR', $this->Translate('Daypart 2 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP2WINDDIRText', $this->Translate('Daypart 2 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP2WINDDIRPhrase', $this->Translate('Daypart 2 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP2WINDDIRText', $this->Translate('Daypart 2 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP2WINDDIRPhrase', $this->Translate('Daypart 2 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP2WINDSpeed', $this->Translate('Daypart 2 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP2Icon', $this->Translate('Daypart 2 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
@@ -211,21 +211,21 @@ class WundergroundPWSSync extends IPSModule
 				$vpos++,
 				$this->ReadPropertyInteger("ForecastDP") > 3
 			);
-			$this->MaintainVariable('DP3Name', $this->Translate('Daypart 3 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
-			$this->MaintainVariable('DP3Narrative', $this->Translate('Daypart 3 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
+			$this->MaintainVariable('DP3Name', $this->Translate('Daypart 3 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
+			$this->MaintainVariable('DP3Narrative', $this->Translate('Daypart 3 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
 			$this->MaintainVariable('DP3PrecipChance', $this->Translate('Daypart 3 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
-			$this->MaintainVariable('DP3PrecipType', $this->Translate('Daypart 3 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
+			$this->MaintainVariable('DP3PrecipType', $this->Translate('Daypart 3 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3);
 			$this->MaintainVariable('DP3CloudCover', $this->Translate('Daypart 3 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 0 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP3QPF', $this->Translate('Daypart 3 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP3QPFSNOW', $this->Translate('Daypart 3 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP3Temperature', $this->Translate('Daypart 3 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP3WindChill', $this->Translate('Daypart 3 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP3Thunder', $this->Translate('Daypart 3 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP3Thunder', $this->Translate('Daypart 3 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
 			$this->MaintainVariable('DP3UVDescription', $this->Translate('Daypart 3 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP3UVIndex', $this->Translate('Daypart 3 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP3WINDDIR', $this->Translate('Daypart 3 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP3WINDDIRText', $this->Translate('Daypart 3 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP3WINDDIRPhrase', $this->Translate('Daypart 3 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP3WINDDIRText', $this->Translate('Daypart 3 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP3WINDDIRPhrase', $this->Translate('Daypart 3 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP3WINDSpeed', $this->Translate('Daypart 3 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP3Icon', $this->Translate('Daypart 3 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 3 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
@@ -238,21 +238,21 @@ class WundergroundPWSSync extends IPSModule
 				$vpos++,
 				$this->ReadPropertyInteger("ForecastDP") > 4
 			);
-			$this->MaintainVariable('DP4Name', $this->Translate('Daypart 4 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
-			$this->MaintainVariable('DP4Narrative', $this->Translate('Daypart 4 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
+			$this->MaintainVariable('DP4Name', $this->Translate('Daypart 4 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
+			$this->MaintainVariable('DP4Narrative', $this->Translate('Daypart 4 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
 			$this->MaintainVariable('DP4PrecipChance', $this->Translate('Daypart 4 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
-			$this->MaintainVariable('DP4PrecipType', $this->Translate('Daypart 4 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
+			$this->MaintainVariable('DP4PrecipType', $this->Translate('Daypart 4 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4);
 			$this->MaintainVariable('DP4CloudCover', $this->Translate('Daypart 4 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP4QPF', $this->Translate('Daypart 4 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP4QPFSNOW', $this->Translate('Daypart 4 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP4Temperature', $this->Translate('Daypart 4 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP4WindChill', $this->Translate('Daypart 4 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP4Thunder', $this->Translate('Daypart 4 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP4UVDescription', $this->Translate('Daypart 4 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP4Thunder', $this->Translate('Daypart 4 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP4UVDescription', $this->Translate('Daypart 4 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP4UVIndex', $this->Translate('Daypart 4 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP4WINDDIR', $this->Translate('Daypart 4 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP4WINDDIRText', $this->Translate('Daypart 4 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP4WINDDIRPhrase', $this->Translate('Daypart 4 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP4WINDDIRText', $this->Translate('Daypart 4 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP4WINDDIRPhrase', $this->Translate('Daypart 4 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP4WINDSpeed', $this->Translate('Daypart 4 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP4Icon', $this->Translate('Daypart 4 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 4 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
@@ -265,21 +265,21 @@ class WundergroundPWSSync extends IPSModule
 				$vpos++,
 				$this->ReadPropertyInteger("ForecastDP") > 5
 			);
-			$this->MaintainVariable('DP5Name', $this->Translate('Daypart 5 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
-			$this->MaintainVariable('DP5Narrative', $this->Translate('Daypart 5 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
+			$this->MaintainVariable('DP5Name', $this->Translate('Daypart 5 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
+			$this->MaintainVariable('DP5Narrative', $this->Translate('Daypart 5 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
 			$this->MaintainVariable('DP5PrecipChance', $this->Translate('Daypart 5 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
-			$this->MaintainVariable('DP5PrecipType', $this->Translate('Daypart 5 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
+			$this->MaintainVariable('DP5PrecipType', $this->Translate('Daypart 5 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5);
 			$this->MaintainVariable('DP5CloudCover', $this->Translate('Daypart 5 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP5QPF', $this->Translate('Daypart 5 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP5QPFSNOW', $this->Translate('Daypart 5 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP5Temperature', $this->Translate('Daypart 5 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP5WindChill', $this->Translate('Daypart 5 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP5Thunder', $this->Translate('Daypart 5 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP5UVDescription', $this->Translate('Daypart 5 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP5Thunder', $this->Translate('Daypart 5 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP5UVDescription', $this->Translate('Daypart 5 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP5UVIndex', $this->Translate('Daypart 5 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP5WINDDIR', $this->Translate('Daypart 5 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP5WINDDIRText', $this->Translate('Daypart 5 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP5WINDDIRPhrase', $this->Translate('Daypart 5 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP5WINDDIRText', $this->Translate('Daypart 5 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP5WINDDIRPhrase', $this->Translate('Daypart 5 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP5WINDSpeed', $this->Translate('Daypart 5 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 5 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP5Icon', $this->Translate('Daypart 5 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 2 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
@@ -292,21 +292,21 @@ class WundergroundPWSSync extends IPSModule
 				$vpos++,
 				$this->ReadPropertyInteger("ForecastDP") > 6
 			);
-			$this->MaintainVariable('DP6Name', $this->Translate('Daypart 6 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6);
-			$this->MaintainVariable('DP6Narrative', $this->Translate('Daypart 6 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6);
+			$this->MaintainVariable('DP6Name', $this->Translate('Daypart 6 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6);
+			$this->MaintainVariable('DP6Narrative', $this->Translate('Daypart 6 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6);
 			$this->MaintainVariable('DP6PrecipChance', $this->Translate('Daypart 6 - Precip Chance'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6);
-			$this->MaintainVariable('DP6PrecipType', $this->Translate('Daypart 6 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6);
+			$this->MaintainVariable('DP6PrecipType', $this->Translate('Daypart 6 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6);
 			$this->MaintainVariable('DP6CloudCover', $this->Translate('Daypart 6 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP6QPF', $this->Translate('Daypart 6 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP6QPFSNOW', $this->Translate('Daypart 6 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP6Temperature', $this->Translate('Daypart 6 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP6WindChill', $this->Translate('Daypart 6 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP6Thunder', $this->Translate('Daypart 6 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP6UVDescription', $this->Translate('Daypart 6 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP6Thunder', $this->Translate('Daypart 6 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP6UVDescription', $this->Translate('Daypart 6 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP6UVIndex', $this->Translate('Daypart 6 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP6WINDDIR', $this->Translate('Daypart 6 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP6WINDDIRText', $this->Translate('Daypart 6 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP6WINDDIRPhrase', $this->Translate('Daypart 6 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP6WINDDIRText', $this->Translate('Daypart 6 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP6WINDDIRPhrase', $this->Translate('Daypart 6 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP6WINDSpeed', $this->Translate('Daypart 6 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP6Icon', $this->Translate('Daypart 6 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 6 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
@@ -319,21 +319,21 @@ class WundergroundPWSSync extends IPSModule
 				$vpos++,
 				$this->ReadPropertyInteger("ForecastDP") > 7
 			);
-			$this->MaintainVariable('DP7Name', $this->Translate('Daypart 7 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
-			$this->MaintainVariable('DP7Narrative', $this->Translate('Daypart 7 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
+			$this->MaintainVariable('DP7Name', $this->Translate('Daypart 7 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
+			$this->MaintainVariable('DP7Narrative', $this->Translate('Daypart 7 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
 			$this->MaintainVariable('DP7PrecipChance', $this->Translate('Daypart 7 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
-			$this->MaintainVariable('DP7PrecipType', $this->Translate('Daypart 7 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
+			$this->MaintainVariable('DP7PrecipType', $this->Translate('Daypart 7 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7);
 			$this->MaintainVariable('DP7CloudCover', $this->Translate('Daypart 7 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP7QPF', $this->Translate('Daypart 7 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP7QPFSNOW', $this->Translate('Daypart 7 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP7Temperature', $this->Translate('Daypart 7 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP7WindChill', $this->Translate('Daypart 7 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP7Thunder', $this->Translate('Daypart 7 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP7UVDescription', $this->Translate('Daypart 7 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP7Thunder', $this->Translate('Daypart 7 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP7UVDescription', $this->Translate('Daypart 7 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP7UVIndex', $this->Translate('Daypart 7 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP7WINDDIR', $this->Translate('Daypart 7 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP7WINDDIRText', $this->Translate('Daypart 7 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP7WINDDIRPhrase', $this->Translate('Daypart 7 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP7WINDDIRText', $this->Translate('Daypart 7 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP7WINDDIRPhrase', $this->Translate('Daypart 7 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP7WINDSpeed', $this->Translate('Daypart 7 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP7Icon', $this->Translate('Daypart 7 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 7 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
@@ -346,21 +346,21 @@ class WundergroundPWSSync extends IPSModule
 				$vpos++,
 				$this->ReadPropertyInteger("ForecastDP") > 8
 			);
-			$this->MaintainVariable('DP8Name', $this->Translate('Daypart 8 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
-			$this->MaintainVariable('DP8Narrative', $this->Translate('Daypart 8 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
+			$this->MaintainVariable('DP8Name', $this->Translate('Daypart 8 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
+			$this->MaintainVariable('DP8Narrative', $this->Translate('Daypart 8 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
 			$this->MaintainVariable('DP8PrecipChance', $this->Translate('Daypart 8 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
-			$this->MaintainVariable('DP8PrecipType', $this->Translate('Daypart 8 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
+			$this->MaintainVariable('DP8PrecipType', $this->Translate('Daypart 8 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8);
 			$this->MaintainVariable('DP8CloudCover', $this->Translate('Daypart 8 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP8QPF', $this->Translate('Daypart 8 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP8QPFSNOW', $this->Translate('Daypart 8 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP8Temperature', $this->Translate('Daypart 8 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP8WindChill', $this->Translate('Daypart 8 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP8Thunder', $this->Translate('Daypart 8 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP8UVDescription', $this->Translate('Daypart 8 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP8Thunder', $this->Translate('Daypart 8 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP8UVDescription', $this->Translate('Daypart 8 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP8UVIndex', $this->Translate('Daypart 8 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP8WINDDIR', $this->Translate('Daypart 8 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP8WINDDIRText', $this->Translate('Daypart 8 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP8WINDDIRPhrase', $this->Translate('Daypart 8 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP8WINDDIRText', $this->Translate('Daypart 8 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP8WINDDIRPhrase', $this->Translate('Daypart 8 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP8WINDSpeed', $this->Translate('Daypart 8 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP8Icon', $this->Translate('Daypart 8 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 8 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
@@ -373,76 +373,76 @@ class WundergroundPWSSync extends IPSModule
 				$vpos++,
 				$this->ReadPropertyInteger("ForecastDP") > 9
 			);
-			$this->MaintainVariable('DP9Name', $this->Translate('Daypart 9 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
-			$this->MaintainVariable('DP9Narrative', $this->Translate('Daypart 9 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
+			$this->MaintainVariable('DP9Name', $this->Translate('Daypart 9 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
+			$this->MaintainVariable('DP9Narrative', $this->Translate('Daypart 9 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
 			$this->MaintainVariable('DP9PrecipChance', $this->Translate('Daypart 9 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
-			$this->MaintainVariable('DP9PrecipType', $this->Translate('Daypart 9 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
+			$this->MaintainVariable('DP9PrecipType', $this->Translate('Daypart 9 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9);
 			$this->MaintainVariable('DP9CloudCover', $this->Translate('Daypart 9 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP9QPF', $this->Translate('Daypart 9 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP9QPFSNOW', $this->Translate('Daypart 9 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP9Temperature', $this->Translate('Daypart 9 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP9WindChill', $this->Translate('Daypart 9 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP9Thunder', $this->Translate('Daypart 9 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP9UVDescription', $this->Translate('Daypart 9 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP9Thunder', $this->Translate('Daypart 9 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP9UVDescription', $this->Translate('Daypart 9 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP9UVIndex', $this->Translate('Daypart 9 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP9WINDDIR', $this->Translate('Daypart 9 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP9WINDDIRText', $this->Translate('Daypart 9 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP9WINDDIRPhrase', $this->Translate('Daypart 9 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP9WINDDIRText', $this->Translate('Daypart 9 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP9WINDDIRPhrase', $this->Translate('Daypart 9 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP9WINDSpeed', $this->Translate('Daypart 9 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP9Icon', $this->Translate('Daypart 9 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 9 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
 			$vpos = 500;
 
-			$this->MaintainVariable('DP10DN', $this->Translate('Daypart 10 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
-			$this->MaintainVariable('DP10Name', $this->Translate('Daypart 10 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
-			$this->MaintainVariable('DP10Narrative', $this->Translate('Daypart 10 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
+			$this->MaintainVariable('DP10DN', $this->Translate('Daypart 10 - Day or Night'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
+			$this->MaintainVariable('DP10Name', $this->Translate('Daypart 10 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
+			$this->MaintainVariable('DP10Narrative', $this->Translate('Daypart 10 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
 			$this->MaintainVariable('DP10PrecipChance', $this->Translate('Daypart 10 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
-			$this->MaintainVariable('DP10PrecipType', $this->Translate('Daypart 10 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
+			$this->MaintainVariable('DP10PrecipType', $this->Translate('Daypart 10 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10);
 			$this->MaintainVariable('DP10CloudCover', $this->Translate('Daypart 10 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP10QPF', $this->Translate('Daypart 10 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP10QPFSNOW', $this->Translate('Daypart 10 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP10Temperature', $this->Translate('Daypart 10 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP10WindChill', $this->Translate('Daypart 10 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP10Thunder', $this->Translate('Daypart 10 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP10UVDescription', $this->Translate('Daypart 10 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP10Thunder', $this->Translate('Daypart 10 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP10UVDescription', $this->Translate('Daypart 10 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP10UVIndex', $this->Translate('Daypart 10 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP10WINDDIR', $this->Translate('Daypart 10 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP10WINDDIRText', $this->Translate('Daypart 10 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP10WINDDIRPhrase', $this->Translate('Daypart 10 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP10WINDDIRText', $this->Translate('Daypart 10 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP10WINDDIRPhrase', $this->Translate('Daypart 10 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP10WINDSpeed', $this->Translate('Daypart 10 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP10Icon', $this->Translate('Daypart 10 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 10 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
 			$vpos = 550;
 
-			$this->MaintainVariable('DP11DN', $this->Translate('Daypart 11 - Day or Night'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
-			$this->MaintainVariable('DP11Name', $this->Translate('Daypart 11 - Part of day'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
-			$this->MaintainVariable('DP11Narrative', $this->Translate('Daypart 11 - Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
+			$this->MaintainVariable('DP11DN', $this->Translate('Daypart 11 - Day or Night'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
+			$this->MaintainVariable('DP11Name', $this->Translate('Daypart 11 - Part of day'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
+			$this->MaintainVariable('DP11Narrative', $this->Translate('Daypart 11 - Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
 			$this->MaintainVariable('DP11PrecipChance', $this->Translate('Daypart 11 - Precip Chance'), vtInteger, "~Humidity", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
-			$this->MaintainVariable('DP11PrecipType', $this->Translate('Daypart 11 - Precip Type'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
+			$this->MaintainVariable('DP11PrecipType', $this->Translate('Daypart 11 - Precip Type'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11);
 			$this->MaintainVariable('DP11CloudCover', $this->Translate('Daypart 11 - Cloud Cover'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPCloudCover") == "1");
 			$this->MaintainVariable('DP11QPF', $this->Translate('Daypart 11 - Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP11QPFSNOW', $this->Translate('Daypart 11 - Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPRain") == "1");
 			$this->MaintainVariable('DP11Temperature', $this->Translate('Daypart 11 - Temperature'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
 			$this->MaintainVariable('DP11WindChill', $this->Translate('Daypart 11 - Wind Chill'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPTemperature") == "1");
-			$this->MaintainVariable('DP11Thunder', $this->Translate('Daypart 11 - Thunder'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
-			$this->MaintainVariable('DP11UVDescription', $this->Translate('Daypart 11 - UV Description'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP11Thunder', $this->Translate('Daypart 11 - Thunder'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPThunder") == "1");
+			$this->MaintainVariable('DP11UVDescription', $this->Translate('Daypart 11 - UV Description'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPUV") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP11UVIndex', $this->Translate('Daypart 11 - UV Index'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPUV") == "1");
 			$this->MaintainVariable('DP11WINDDIR', $this->Translate('Daypart 11 - Wind Direction'), vtFloat, "~WindDirection.F", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
-			$this->MaintainVariable('DP11WINDDIRText', $this->Translate('Daypart 11 - Wind Direction Text'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
-			$this->MaintainVariable('DP11WINDDIRPhrase', $this->Translate('Daypart 11 - Wind Phrase'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP11WINDDIRText', $this->Translate('Daypart 11 - Wind Direction Text'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
+			$this->MaintainVariable('DP11WINDDIRPhrase', $this->Translate('Daypart 11 - Wind Phrase'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPWind") == "1" and $this->ReadPropertyBoolean("ForecastDPNarrative") == "1");
 			$this->MaintainVariable('DP11WINDSpeed', $this->Translate('Daypart 11 - Wind Speed'), vtFloat, "~WindSpeed.kmh", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPWind") == "1");
 			$this->MaintainVariable('DP11Icon', $this->Translate('Daypart 11 - Icon'), vtInteger, "", $vpos++, $this->ReadPropertyInteger("ForecastDP") > 11 and $this->ReadPropertyBoolean("ForecastDPIcon") == "1");
 
 			$vpos = 1000;
 
-			$this->MaintainVariable('D1Forecast', $this->Translate('Day 1 Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "0");
+			$this->MaintainVariable('D1Forecast', $this->Translate('Day 1 Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "0");
 			$this->MaintainVariable('D1QPF', $this->Translate('Day 1 Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "0");
 			$this->MaintainVariable('D1QPFSNOW', $this->Translate('Day 1 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "0");
 			$this->MaintainVariable('D1TemperatureMax', $this->Translate('Day 1 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "0");
 			$this->MaintainVariable('D1TemperatureMin', $this->Translate('Day 1 Temperature Min'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "0");
 
 			$vpos = 1050;
-			$this->MaintainVariable('D2Forecast', $this->Translate('Day 2 Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
+			$this->MaintainVariable('D2Forecast', $this->Translate('Day 2 Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
 			$this->MaintainVariable('D2QPF', $this->Translate('Day 2 Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
 			$this->MaintainVariable('D2QPFSNOW', $this->Translate('Day 2 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
 			$this->MaintainVariable('D2TemperatureMax', $this->Translate('Day 2 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "1");
@@ -451,7 +451,7 @@ class WundergroundPWSSync extends IPSModule
 
 
 			$vpos = 1100;
-			$this->MaintainVariable('D3Forecast', $this->Translate('Day 3 Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2");
+			$this->MaintainVariable('D3Forecast', $this->Translate('Day 3 Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2");
 			$this->MaintainVariable('D3QPF', $this->Translate('Day 3 Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2");
 			$this->MaintainVariable('D3QPFSNOW', $this->Translate('Day 3 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2");
 			$this->MaintainVariable('D3TemperatureMax', $this->Translate('Day 3 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "2");
@@ -460,7 +460,7 @@ class WundergroundPWSSync extends IPSModule
 
 
 			$vpos = 1250;
-			$this->MaintainVariable('D4Forecast', $this->Translate('Day 4 Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3");
+			$this->MaintainVariable('D4Forecast', $this->Translate('Day 4 Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3");
 			$this->MaintainVariable('D4QPF', $this->Translate('Day 4 Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3");
 			$this->MaintainVariable('D4QPFSNOW', $this->Translate('Day 4 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3");
 			$this->MaintainVariable('D4TemperatureMax', $this->Translate('Day 4 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "3");
@@ -469,7 +469,7 @@ class WundergroundPWSSync extends IPSModule
 
 
 			$vpos = 1300;
-			$this->MaintainVariable('D5Forecast', $this->Translate('Day 5 Weather Forecast'), vtString, "", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
+			$this->MaintainVariable('D5Forecast', $this->Translate('Day 5 Weather Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
 			$this->MaintainVariable('D5QPF', $this->Translate('Day 5 Precipitation Liquid'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
 			$this->MaintainVariable('D5QPFSNOW', $this->Translate('Day 5 Precipitation Snow'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
 			$this->MaintainVariable('D5TemperatureMax', $this->Translate('Day 5 Temperature Max'), vtFloat, "~Temperature", $vpos++, $this->ReadPropertyInteger("ForecastShort") > "4");
@@ -491,8 +491,8 @@ class WundergroundPWSSync extends IPSModule
 			$this->MaintainVariable('DLVRainTotal', $this->Translate('Download Rain Total'), vtFloat, "~Rainfall", $vpos++, $this->ReadPropertyBoolean("DLRainTotal") == "1");
 
 			$vpos = 3000;
-			$this->MaintainVariable('JSONRawForecastVar', $this->Translate('JSON Raw Data Forecast'), vtString, "", $vpos++, $this->ReadPropertyBoolean("JSONRawForecast") == "1");
-			$this->MaintainVariable('JSONRawStationVar', $this->Translate('JSON Raw Station Data'), vtString, "", $vpos++, $this->ReadPropertyBoolean("JSONRawStation") == "1");
+			$this->MaintainVariable('JSONRawForecastVar', $this->Translate('JSON Raw Data Forecast'), vtString, "~TextBox", $vpos++, $this->ReadPropertyBoolean("JSONRawForecast") == "1");
+			$this->MaintainVariable('JSONRawStationVar', $this->Translate('JSON Raw Station Data'), vtString, "~TextBox", $vpos++, $this->ReadPropertyBoolean("JSONRawStation") == "1");
 
 
 	}

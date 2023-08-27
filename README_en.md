@@ -91,6 +91,7 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 
 ### Version 3.22 27-08-2023
 * New - Icons are stored as media objects can easily be integrated into a webfront
+* New - String variables will be created using the ~TextBox Profile
 * Fix - Upload of Weatherdata
 * Fix - Cumulation auf Weatherdata caused an error when not activated
 

@@ -101,6 +101,7 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 
 ### Version 3.22 27-08-2023
 * Neu - Icons werden als Medienobjekte angezeigt und können somit einfach ins Webfront übernommen werden
+* Neu - String Variablen werden mit dem ~TextBox Profil angelegt
 * Fix - Upload von Wetterdaten
 * Fix - Wenn kumulieren von Regenmengen nicht aktivert war, gab es einen Fehler beim Download der Wetterdaten
 
