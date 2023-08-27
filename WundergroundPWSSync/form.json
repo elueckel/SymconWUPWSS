@@ -373,19 +373,24 @@
 	],
 	"actions": [
 		{
-			"type": "Button",
-			"label": "Test download of weather forecast",
-			"onClick": "WUPWSS_Forecast($id);"
-		},
-		{
-			"type": "Button",
-			"label": "Test upload of weather data",
-			"onClick": "WUPWSS_UploadToWunderground($id);"
-		},
-		{
-			"type": "Button",
-			"label": "Test download of current data from another station",
-			"onClick": "WUPWSS_CurrentPWSData($id);"
+			"type": "RowLayout",
+			"items": [
+				{
+					"type": "Button",
+					"label": "Test download of weather forecast",
+					"onClick": "WUPWSS_Forecast($id);"
+				},
+				{
+					"type": "Button",
+					"label": "Test upload of weather data",
+					"onClick": "WUPWSS_UploadToWunderground($id);"
+				},
+				{
+					"type": "Button",
+					"label": "Test download of current data from another station",
+					"onClick": "WUPWSS_CurrentPWSData($id);"
+				}
+			]
 		}
 	]
 }

@@ -571,37 +571,39 @@ class WundergroundPWSSync extends IPSModule
 					SetValue($this->GetIDForIdent("D".$count."TemperatureMin"), (float)$TemperatureMin[$count]);
 				}
 
-				switch ($count) {
-					case 2:
-						$RainD1 = GetValue($this->GetIDForIdent("D1QPF"));
-						$RainD2 = GetValue($this->GetIDForIdent("D2QPF"));
-						$RainAmount = $RainD1 + $RainD2;
-						SetValue($this->GetIDForIdent("D2RainAmount"), (float)$RainAmount);
+				if ($this->ReadPropertyBoolean("CalculateUpcomingRain") == true) {
+					switch ($count) {
+						case 2:
+							$RainD1 = GetValue($this->GetIDForIdent("D1QPF"));
+							$RainD2 = GetValue($this->GetIDForIdent("D2QPF"));
+							$RainAmount = $RainD1 + $RainD2;
+							SetValue($this->GetIDForIdent("D2RainAmount"), (float)$RainAmount);
+							break;
+						case 3:
+							$RainD1 = GetValue($this->GetIDForIdent("D1QPF"));
+							$RainD2 = GetValue($this->GetIDForIdent("D2QPF"));
+							$RainD3 = GetValue($this->GetIDForIdent("D3QPF"));
+							$RainAmount = $RainD1 + $RainD2 + $RainD3;
+							SetValue($this->GetIDForIdent("D3RainAmount"), (float)$RainAmount);
+							break;
+						case 4:
+							$RainD1 = GetValue($this->GetIDForIdent("D1QPF"));
+							$RainD2 = GetValue($this->GetIDForIdent("D2QPF"));
+							$RainD3 = GetValue($this->GetIDForIdent("D3QPF"));
+							$RainD4 = GetValue($this->GetIDForIdent("D4QPF"));
+							$RainAmount = $RainD1 + $RainD2 + $RainD3 + $RainD4;
+							SetValue($this->GetIDForIdent("D4RainAmount"), (float)$RainAmount);
+							break;
+						case 5:
+							$RainD1 = GetValue($this->GetIDForIdent("D1QPF"));
+							$RainD2 = GetValue($this->GetIDForIdent("D2QPF"));
+							$RainD3 = GetValue($this->GetIDForIdent("D3QPF"));
+							$RainD4 = GetValue($this->GetIDForIdent("D4QPF"));
+							$RainD5 = GetValue($this->GetIDForIdent("D5QPF"));
+							$RainAmount = $RainD1 + $RainD2 + $RainD3 + $RainD4 + $RainD5;
+							SetValue($this->GetIDForIdent("D5RainAmount"), (float)$RainAmount);
 						break;
-					case 3:
-						$RainD1 = GetValue($this->GetIDForIdent("D1QPF"));
-						$RainD2 = GetValue($this->GetIDForIdent("D2QPF"));
-						$RainD3 = GetValue($this->GetIDForIdent("D3QPF"));
-						$RainAmount = $RainD1 + $RainD2 + $RainD3;
-						SetValue($this->GetIDForIdent("D3RainAmount"), (float)$RainAmount);
-						break;
-					case 4:
-						$RainD1 = GetValue($this->GetIDForIdent("D1QPF"));
-						$RainD2 = GetValue($this->GetIDForIdent("D2QPF"));
-						$RainD3 = GetValue($this->GetIDForIdent("D3QPF"));
-						$RainD4 = GetValue($this->GetIDForIdent("D4QPF"));
-						$RainAmount = $RainD1 + $RainD2 + $RainD3 + $RainD4;
-						SetValue($this->GetIDForIdent("D4RainAmount"), (float)$RainAmount);
-						break;
-					case 5:
-						$RainD1 = GetValue($this->GetIDForIdent("D1QPF"));
-						$RainD2 = GetValue($this->GetIDForIdent("D2QPF"));
-						$RainD3 = GetValue($this->GetIDForIdent("D3QPF"));
-						$RainD4 = GetValue($this->GetIDForIdent("D4QPF"));
-						$RainD5 = GetValue($this->GetIDForIdent("D5QPF"));
-						$RainAmount = $RainD1 + $RainD2 + $RainD3 + $RainD4 + $RainD5;
-						SetValue($this->GetIDForIdent("D5RainAmount"), (float)$RainAmount);
-					break;
+					}
 				}
 				
 				$i++;
@@ -714,6 +716,7 @@ class WundergroundPWSSync extends IPSModule
 						if (strpos(IPS_GetKernelDir(), "/") !== false) {
 							//Linux OS
 							$ImageFile[$i] = IPS_GetKernelDir()."modules/.store/elueckel.wundergroundpwssync/WundergroundPWSSync/icons/".$DPIcon[$i].".png";
+							//$ImageFile[$i] = IPS_GetKernelDir()."modules/SymconWUPWSS/WundergroundPWSSync/icons/".$DPIcon[$i].".png";
 							//$MediaID = @IPS_GetObjectIDByName(($this->Translate('Daypart ').$i.' icon'), $this->InstanceID);
 							$MediaID = @IPS_GetObjectIDByIdent("DP".$i."IconWebfront", $this->InstanceID);
 							if ($MediaID == 0) {
