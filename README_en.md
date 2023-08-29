@@ -89,6 +89,12 @@ Add the Instance "WundergroundPWSSync" - manufacturer is "Other"
 ### Version 3.21 21-03-2023
 * Fix - Translation of Weather Download Variables
 
+### Version 3.22 27-08-2023
+* New - Icons are stored as media objects can easily be integrated into a webfront
+* New - String variables will be created using the ~TextBox Profile
+* Fix - Upload of Weatherdata
+* Fix - Cumulation auf Weatherdata caused an error when not activated
+
 
 # IMPORTANT:
 Sometime not all data points are fill by the WU API turning those value into NULL - in this case the module will keep the already existing data.

@@ -1,6 +1,5 @@
 {
-    "elements":
-    [	
+	"elements": [
 		{
 			"type": "Label",
 			"label": "This module allows to download weather forecasts, upload weather data and query another weather station"
@@ -47,7 +46,7 @@
 					]
 				}
 			]
-		},			
+		},
 		{
 			"type": "ExpansionPanel",
 			"caption": "Weather Forecast",
@@ -96,7 +95,7 @@
 							"type": "CheckBox",
 							"name": "CalculateUpcomingRain",
 							"caption": "Cumulate Upcoming Rain"
-						}						
+						}
 					]
 				},
 				{
@@ -169,7 +168,7 @@
 							"label": "Some fields (*) provide additional text based information"
 						}
 					]
-				}	
+				}
 			]
 		},
 		{
@@ -243,6 +242,11 @@
 					"type": "SelectVariable",
 					"name": "UVIndex",
 					"caption": "UV Index"
+				},
+				{
+					"type": "SelectVariable",
+					"name": "SolarRadiation",
+					"caption": "Solar Radiation"
 				},
 				{
 					"name": "WindConversion",
@@ -366,26 +370,27 @@
 				}
 			]
 		}
-
-    ],
-	"actions":
-	[
+	],
+	"actions": [
 		{
-			"type": "Button",
-			"label": "Test download of weather forecast",
-			"onClick": "WUPWSS_Forecast($id);"
-		},
-		{
-			"type": "Button",
-			"label": "Test upload of weather data",
-			"onClick": "WUPWSS_UploadToWunderground($id);"
-		},
-		{
-			"type": "Button",
-			"label": "Test download of current data from another station",
-			"onClick": "WUPWSS_CurrentPWSData($id);"
+			"type": "RowLayout",
+			"items": [
+				{
+					"type": "Button",
+					"label": "Test download of weather forecast",
+					"onClick": "WUPWSS_Forecast($id);"
+				},
+				{
+					"type": "Button",
+					"label": "Test upload of weather data",
+					"onClick": "WUPWSS_UploadToWunderground($id);"
+				},
+				{
+					"type": "Button",
+					"label": "Test download of current data from another station",
+					"onClick": "WUPWSS_CurrentPWSData($id);"
+				}
+			]
 		}
-
 	]
-
 }

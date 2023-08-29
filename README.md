@@ -99,6 +99,12 @@ Unter "Instanz hinzufügen" ist das 'WundergroundPWSSync'-Modul unter dem Herste
 ### Version 3.21 21-03-2023
 * Fix - Übersetzung Wetter Download Variablen
 
+### Version 3.22 27-08-2023
+* Neu - Icons werden als Medienobjekte angezeigt und können somit einfach ins Webfront übernommen werden
+* Neu - String Variablen werden mit dem ~TextBox Profil angelegt
+* Fix - Upload von Wetterdaten
+* Fix - Wenn kumulieren von Regenmengen nicht aktivert war, gab es einen Fehler beim Download der Wetterdaten
+
 ## WICHTIG:
 * Beim Download werden teilweise seitens der API nicht alle Werte gefüllt (sind NULL) - in diesem Fall behält das Modul die alten Daten bei bei neue kommen.
 * Das kostenlose Limit für den Download von Daten liegt bei 1500 calls pro Tag oder 30 pro minute für den Download von Daten
